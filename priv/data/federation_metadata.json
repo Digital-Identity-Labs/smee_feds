@@ -1,0 +1,1100 @@
+{
+  "aaf": {
+    "contact": "mailto:support@aaf.edu.au",
+    "countries": [
+      "au"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://md.aaf.edu.au/"
+      }
+    },
+    "name": "Australian Access Federation (AAF)",
+    "policy": "https://aaf.edu.au/about/federation-rules.html",
+    "url": "http://www.aaf.edu.au/"
+  },
+  "aaieduhr": {
+    "contact": "mailto:team@aaiedu.hr",
+    "countries": [
+      "hr"
+    ],
+    "metadata": {
+      "default": {
+        "url": " https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml"
+      }
+    },
+    "name": "AAI@EduHr",
+    "policy": "http://www.aaiedu.hr/docs/AAI@EduHr-pravilnik-ver1.3.1.pdf",
+    "url": "http://www.aaiedu.hr/"
+  },
+  "aaiedumk": {
+    "countries": [
+      "mk"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://aaiedu.mk/metadata.aaiedumk.xml"
+      }
+    },
+    "name": "AAIEduMK",
+    "url": "http://aaiedu.mk/?lang=en"
+  },
+  "aconet": {
+    "contact": "mailto:eduid@aco.net",
+    "countries": [
+      "at"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://wiki.univie.ac.at/display/federation/Metadata"
+      }
+    },
+    "name": "ACOnet Identity Federation",
+    "policy": "https://wiki.univie.ac.at/display/federation/Policies",
+    "url": "http://www.aco.net/federation.html"
+  },
+  "afire": {
+    "countries": [
+      "am"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://aai.asnet.am/metadata/edugain-upstream.xml"
+      }
+    },
+    "name": "AFIRE",
+    "url": "http://afire.asnet.am/"
+  },
+  "arnaai": {
+    "contact": "mailto:opaai@arn.dz",
+    "countries": [
+      "dz"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://aai.arn.dz/metadata/fed-arn.xml"
+      }
+    },
+    "name": "ARNaai",
+    "policy": "https://www.aai.arn.dz/documentation/aai_arn_Policy_v1.0.pdf",
+    "url": "https://www.aai.arn.dz/"
+  },
+  "arnesaai": {
+    "contact": "mailto:aaa-podpora@arnes.si",
+    "countries": [
+      "si "
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://ds.aai.arnes.si/metadata/"
+      }
+    },
+    "name": "ArnesAAI",
+    "policy": "https://aai.arnes.si/static/doc/ArnesAAI_general.pdf",
+    "url": "https://aai.arnes.si/"
+  },
+  "athens": {
+    "contact": "mailto:contact@openathens.net ",
+    "countries": [
+      "gb",
+      "uk"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://fed.openathens.net/oafed/metadata "
+      }
+    },
+    "name": "OpenAthens",
+    "policy": "https://docs.openathens.net/providers/OpenAthens-Federation.11960724.html",
+    "url": "https://www.openathens.net/"
+  },
+  "azscinet": {
+    "contact": "mailto:edugain@science.az",
+    "countries": [
+      "az"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://registry.science.az/signedmetadata/federation/ANAS-AzScienceNet/metadata.xml "
+      }
+    },
+    "name": "AzScienceNet Federation",
+    "policy": "http://edugain.azsciencenet.az/#documents",
+    "url": "http://edugain.azsciencenet.az/"
+  },
+  "belnet": {
+    "contact": "mailto:federation@belnet.be",
+    "countries": [
+      "be"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://federation.belnet.be/federation-metadata.xml"
+      }
+    },
+    "name": "Belnet Research and Education Federation",
+    "policy": "http://federation.belnet.be/files/federation-policy-EN.pdf",
+    "url": "http://federation.belnet.be/"
+  },
+  "caf": {
+    "countries": [
+      "ca"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://caf-shib2ops.ca/CoreServices/"
+      }
+    },
+    "name": "Canadian Access Federation (CAF)",
+    "url": "https://www.canarie.ca/identity/caf/"
+  },
+  "cafe": {
+    "contact": "mailto:jean.carlo@rnp.br",
+    "countries": [
+      "br"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://ds.cafe.rnp.br/metadata/cafe-metadata.xml"
+      }
+    },
+    "name": "CAFe",
+    "policy": "https://svn.cafe.rnp.br/repos/CAFe/termos_politicas_CAFe/Politica%20da%20Federacao%20CAFe.pdf",
+    "url": "https://www.rnp.br/servicos/cafe"
+  },
+  "cafmoz": {
+    "contact": "mailto:MoRENet.Info@morenet.ac.mz",
+    "countries": [
+      "mz "
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://metadata.cafmoz.morenet.ac.mz/cafmoz-metadata.xml"
+      }
+    },
+    "name": "CAFMoz",
+    "policy": "http://cafmoz.morenet.ac.mz/index.php/en/related-documents",
+    "url": "http://cafmoz.morenet.ac.mz/ "
+  },
+  "carsi": {
+    "contact": "mailto:carsi@pku.edu.cn",
+    "countries": [
+      "cn"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://www.carsi.edu.cn/carsimetadata/carsifed-metadata.xml"
+      }
+    },
+    "name": "CARSI",
+    "url": "http://www.carsi.edu.cn/"
+  },
+  "cofre": {
+    "contact": "mailto:cofre@reuna.cl",
+    "countries": [
+      "cl"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://cofre.reuna.cl/metadata/cofre-metadata-signed.xml"
+      }
+    },
+    "name": "COFRe",
+    "policy": "http://cofre.reuna.cl/index.php/en/federation-rules",
+    "url": "http://cofre.reuna.cl/index.php/en/"
+  },
+  "colfire": {
+    "contact": "mailto:tecnico@renata.edu.co",
+    "countries": [
+      "co"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://colfire.co/metadata/colfire-metadata.xml"
+      }
+    },
+    "name": "COLFIRE",
+    "url": "http://colfire.co/"
+  },
+  "cst": {
+    "contact": "http://cstcloud.net/contact.html",
+    "countries": [
+      "cn"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://www.cstcloud.net/discovery/metadata/cstcloud-fed-metadata-sig.xml"
+      }
+    },
+    "name": "CST Cloud Federation",
+    "policy": "http://cstcloud.net/doc/Identity-Federation-Policy-China-CSTCloud-Federation.pdf",
+    "url": "http://cstcloud.net/"
+  },
+  "dfnaai": {
+    "contact": "mailto:hotline@aai.dfn.de",
+    "countries": [
+      "de"
+    ],
+    "metadata": {
+      "default": {
+        "cert_fp": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
+        "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai.pem",
+        "url": "https://doku.tid.dfn.de/en:metadata"
+      },
+      "mdq": {
+        "cert_fp": "76:E6:8C:F1:AD:18:01:B2:4F:B3:66:5A:B2:BC:99:E2:14:B2:4F:05",
+        "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai-mdq.pem",
+        "url": "https://mdq.aai.dfn.de"
+      }
+    },
+    "name": "DFN-AAI",
+    "policy": "https://doku.tid.dfn.de/en:join",
+    "url": "https://www.aai.dfn.de/"
+  },
+  "edugain": {
+    "contact": "mailto:support@edugain.org",
+    "countries": [],
+    "metadata": {
+      "default": {
+        "cert_fp": "5A:D7:3F:8A:C1:0C:74:56:41:77:45:45:EB:92:76:1F:3D:0D:E6:7C",
+        "cert_url": "https://technical.edugain.org/mds-v2.cer",
+        "url": "https://mds.edugain.org/edugain-v2.xml"
+      }
+    },
+    "name": "Edugain",
+    "policy": "https://technical.edugain.org/documents",
+    "url": "https://edugain.org/"
+  },
+  "edugate": {
+    "contact": "mailto:noc@heanet.ie",
+    "countries": [
+      "ie"
+    ],
+    "metadata": {
+      "default": {
+        "cert_fp": "44:6B:91:4D:9D:C7:C4:B4:09:DA:EE:91:38:82:2F:31:C1:F8:31:1E",
+        "cert_url": "https://edugate.heanet.ie/metadata-signer-2012.crt",
+        "url": "https://edugate.heanet.ie/edugate-federation-metadata-signed.xml"
+      }
+    },
+    "name": "Edugate",
+    "policy": "http://www.heanet.ie/services/identity-access/edugate#join",
+    "url": "https://edugate.heanet.ie/"
+  },
+  "eduidcz": {
+    "contact": "mailto:eduid-admin@eduid.cz",
+    "countries": [
+      "cz"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://www.eduid.cz/en/tech/summary"
+      }
+    },
+    "name": "eduID.cz",
+    "policy": "http://www.eduid.cz/_media/resources/policy_eduid_en-1_1.pdf",
+    "url": "http://eduid.cz/"
+  },
+  "eduidhu": {
+    "contact": "mailto:aai@niif.hu",
+    "countries": [
+      "hu"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://metadata.eduid.hu/current"
+      }
+    },
+    "name": "eduID.hu (HREF Federation)",
+    "policy": "http://eduid.hu/documents",
+    "url": "http://www.eduid.hu/"
+  },
+  "eduidlu": {
+    "contact": "mailto:admin@restena.lu",
+    "countries": [
+      "lu"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://www.eduid.lu/"
+      }
+    },
+    "name": "eduID.lu",
+    "policy": "http://www.eduid.lu/en/EN-AUP.html",
+    "url": "https://www.eduid.lu/"
+  },
+  "eduidmma": {
+    "contact": "mailto:team@eduidm.ma",
+    "countries": [
+      "ma"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://www.eduidm.ma/metadata/eduidm.xml "
+      }
+    },
+    "name": "eduIDM",
+    "policy": "https://www.eduidm.ma/files/policy-eduIDM-en.pdf",
+    "url": "http://www.eduidm.ma/"
+  },
+  "eduidng": {
+    "contact": "mailto:support@eduid.ng",
+    "countries": [
+      "ng"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://registry.eduid.ng/rr3/signedmetadata/federation/eduid_ng/metadata.xml"
+      }
+    },
+    "name": "Nigerian Identity Federation",
+    "policy": "https://www.eduid.ng/Nigeria-Identity-Federation-Policy-Document-v1.0.docx.pdf"
+  },
+  "edurus": {
+    "countries": [
+      "ru"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://www.fedurus.ru/metadata/metadata.fedurus.xml "
+      }
+    },
+    "name": "φEDUrus AAI",
+    "url": "http://www.fedurus.ru/"
+  },
+  "febas": {
+    "contact": "mailto:support@basnet.by",
+    "countries": [
+      "by"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://febas.basnet.by/idpbasnet/saml2/idp/metadata.php "
+      }
+    },
+    "name": "FEBAS",
+    "url": "http://febas.basnet.by/"
+  },
+  "federasi": {
+    "contact": "mailto:andri.setiawan@uii.ac.id",
+    "countries": [
+      "id"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://jagger.federasi.id/signedmetadata/federation/IndonesiaAccessFederation/metadata.xml"
+      }
+    },
+    "name": "Federasi.ID",
+    "policy": " https://federasi.id/federation-policy/",
+    "url": "https://federasi.id/"
+  },
+  "feide": {
+    "contact": "mailto:support@feide.no",
+    "countries": [
+      "no"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://idp.feide.no/simplesaml/saml2/idp/metadata.php &amp; https://metadata.feide.no/"
+      }
+    },
+    "name": "FEIDE",
+    "policy": "https://www.feide.no/sites/feide.no/files/documents/feide_system_architecture.pdf",
+    "url": "https://www.feide.no/"
+  },
+  "fenix": {
+    "contact": "mailto:soporte@fenix.org.mx",
+    "countries": [
+      "mx"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://wayf.fenix.org.mx/simplesaml/module.php/aggregator2/get.php?id=FENIX "
+      }
+    },
+    "name": "FENIX",
+    "policy": "http://www.fenix.org.mx/procedimientos.html",
+    "url": "www.fenix.org.mx"
+  },
+  "fer": {
+    "contact": "mailto:fed-contact@listes.renater.fr",
+    "countries": [
+      "fr"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://metadata.federation.renater.fr/renater/main/main-all-renater-metadata.xml"
+      }
+    },
+    "name": "Fédération Éducation-Recherche",
+    "policy": "https://services.renater.fr/federation/technique/cadre-technique",
+    "url": "https://services.renater.fr/federation/index"
+  },
+  "fidern": {
+    "contact": "mailto:info@fidern.ac.zm",
+    "countries": [
+      "zm"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://rr.ubuntunet.net/signedmetadata/federation/fidern/metadata.xml"
+      }
+    },
+    "name": "FIDERN",
+    "policy": "http://www.fidern.ac.zm/policies",
+    "url": "http://www.fidern.ac.zm/"
+  },
+  "gakunin": {
+    "contact": "mailto:gakunin-office@nii.ac.jp",
+    "countries": [
+      "jp"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://metadata.gakunin.nii.ac.jp/gakunin-metadata.xml"
+      }
+    },
+    "name": "GakuNin",
+    "policy": "https://www.gakunin.jp/en/join/production",
+    "url": "https://www.gakunin.jp/en"
+  },
+  "gif": {
+    "contact": "mailto:gif-support@grena.ge",
+    "countries": [
+      "ge"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://mtd.gif.grena.ge/md/edugain-upstream.xml"
+      }
+    },
+    "name": "GIF",
+    "policy": "https://technical.edugain.org/Declarations/eduGAIN_Declaration_GE_2.pdf",
+    "url": "http://gif.grena.ge/"
+  },
+  "grnet": {
+    "contact": "mailto:support@grnet.gr",
+    "countries": [
+      "gr"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://md.aai.grnet.gr/aggregates/grnet-metadata.xml"
+      }
+    },
+    "name": "GRNET",
+    "policy": "https://aai.grnet.gr/static/policy/policy-en.pdf",
+    "url": "http://aai.grnet.gr/"
+  },
+  "haka": {
+    "contact": "mailto:haka@csc.fi",
+    "countries": [
+      "fi"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://haka.funet.fi/metadata/haka-metadata.xml"
+      }
+    },
+    "name": "Haka",
+    "policy": "https://wiki.eduuni.fi/display/CSCHAKA/Joining+and+registrations",
+    "url": "https://www.csc.fi/haka-kayttajatunnistusjarjestelma"
+  },
+  "hkaf": {
+    "contact": "mailto:hkaf-admin@jucc.edu.hk",
+    "countries": [
+      "hk",
+      "cn"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://md.hkaf.edu.hk/hkaf-metadata.xml "
+      }
+    },
+    "name": "Hong Kong Access Federation",
+    "policy": "https://www.hkaf.edu.hk/federation-policy",
+    "url": "https://www.hkaf.edu.hk"
+  },
+  "idem": {
+    "contact": "mailto:idem@garr.it",
+    "countries": [
+      "it"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://wiki.idem.garr.it/wiki/Metadata"
+      }
+    },
+    "name": "IDEM",
+    "policy": "https://www.idem.garr.it/en/join ",
+    "url": "https://www.idem.garr.it/"
+  },
+  "incommon": {
+    "contact": "mailto:help@incommon.org",
+    "countries": [
+      "us"
+    ],
+    "metadata": {
+      "default": {
+        "cert_fp": "F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36",
+        "cert_url": "http://md.incommon.org/certs/inc-md-cert-mdq.pem",
+        "url": "https://mdq.incommon.org/entities"
+      },
+      "mdq": {
+        "cert_fp": "F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36",
+        "cert_url": "http://md.incommon.org/certs/inc-md-cert-mdq.pem",
+        "url": "https://mdq.incommon.org"
+      }
+    },
+    "name": "InCommon",
+    "policy": "https://incommon.org/about/policies/",
+    "url": "http://incommon.org/"
+  },
+  "infed": {
+    "contact": "mailto:director@inflibnet.ac.in",
+    "countries": [
+      "in"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://parichay.inflibnet.ac.in/metadata/infed.xml"
+      }
+    },
+    "name": "INFED",
+    "policy": "https://parichay.inflibnet.ac.in/documents/",
+    "url": "http://parichay.inflibnet.ac.in/"
+  },
+  "irfed": {
+    "contact": "mailto:irfed@ipm.ir",
+    "countries": [
+      "ir"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://irfed.ir/IRFED.xml"
+      }
+    },
+    "name": "IRFED",
+    "policy": "http://www.irfed.ir/IR%20FED%20Policy%20-%20English.pdf",
+    "url": "http://www.irfed.ir/"
+  },
+  "iuccif": {
+    "contact": "mailto:info@iif.iucc.ac.il",
+    "countries": [
+      "il"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://iif.iucc.ac.il/idp/module.php/aggregator2/get.php?id=iif"
+      }
+    },
+    "name": "IUCC Identity Federation",
+    "policy": "https://iif.iucc.ac.il/wordpress/wp-content/uploads/2014/06/IIF-Policy.pdf",
+    "url": "https://iif.iucc.ac.il/"
+  },
+  "kafe": {
+    "contact": "mailto:coreen@kreonet.net",
+    "countries": [
+      "kr"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://fedinfo.kreonet.net/signedmetadata/federation/KAFE-profed/metadata.xml"
+      }
+    },
+    "name": "KAFE",
+    "policy": "https://coreen.kreonet.net/e_join",
+    "url": "https://coreen.kreonet.net/kafe "
+  },
+  "krena": {
+    "contact": "mailto:support@kif.kg",
+    "countries": [
+      "kg"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://www.kif.kg/index.php/en/metadata"
+      }
+    },
+    "name": "KRENA IF",
+    "policy": "https://www.kif.kg/index.php/en/documents",
+    "url": "https://www.kif.kg"
+  },
+  "laife": {
+    "contact": "mailto:laife-admin@lanet.lv",
+    "countries": [
+      "lv"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://laife.lanet.lv/metadata/laife-edugain-metadata.xml"
+      }
+    },
+    "name": "LAIFE",
+    "policy": "https://laife.lanet.lv/wiki/Latvian-Academic-Identity-Federation-Policy.pdf",
+    "url": "https://laife.lanet.lv/wiki/doku.php"
+  },
+  "leaf": {
+    "contact": "mailto:leaf@renam.md",
+    "countries": [
+      "md"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://manage.federations.renam.md/signedmetadata/federation/LEAF-MD/metadata.xml"
+      }
+    },
+    "name": "LEAF",
+    "policy": "http://federations.renam.md/index.php?menu=docs",
+    "url": "http://federations.renam.md/"
+  },
+  "liaf": {
+    "contact": "mailto:learn@ac.lk",
+    "countries": [
+      "lk"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://liaf.ac.lk/#metadata"
+      }
+    },
+    "name": "LIAF",
+    "policy": "https://liaf.ac.lk/#join",
+    "url": "https://liaf.ac.lk/"
+  },
+  "life": {
+    "contact": "mailto:LIFE@aub.edu.lb",
+    "countries": [
+      "lb"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://life.aub.edu.lb/ "
+      }
+    },
+    "name": "LIFE",
+    "policy": "http://life.aub.edu.lb/wp-content/uploads/2016/12/Identity-Federation-Policy-AUB.pdf",
+    "url": "http://life.aub.edu.lb/"
+  },
+  "litnet": {
+    "countries": [
+      "lt"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://fedi.litnet.lt/en/metadata"
+      }
+    },
+    "name": "Litnet Federation",
+    "policy": "https://fedi.litnet.lt/en/policy",
+    "url": "http://www.litnet.lt/"
+  },
+  "mate": {
+    "countries": [
+      "ar"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://mds.innova-red.net/piloto-mate-1.xml"
+      }
+    },
+    "name": "MATE",
+    "policy": "http://www.federacionmate.gob.ar/sites/all/themes/marinelli/doc/policy_main_en_MATE_V0.0.1.pdf",
+    "url": "http://www.federacionmate.gob.ar/"
+  },
+  "minga": {
+    "contact": "mailto:neg@cedia.org.ec",
+    "countries": [
+      "ec"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://minga.cedia.org.ec/metadata/minga-metadata-edugain.xml "
+      }
+    },
+    "name": "MINGA",
+    "url": "http://www.cedia.org.ec/index.php/minga"
+  },
+  "omankid": {
+    "contact": "mailto:webadmin@trc.gov.om",
+    "countries": [
+      "om"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://home.trc.gov.om/tabid/601/language/en-US/Default.aspx"
+      }
+    },
+    "name": "OMAN_KID",
+    "policy": "https://www.trc.gov.om/TRC%20KID%20Policyv1.0.pdf",
+    "url": "http://home.trc.gov.om/tabid/601/language/en-US/Default.aspx"
+  },
+  "omren": {
+    "contact": "mailto:info@omren.om",
+    "countries": [
+      "om"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://omren.om/omrenfed.xml"
+      }
+    },
+    "name": "OMREN Federation",
+    "url": "https://fed.omren.om"
+  },
+  "peano": {
+    "countries": [
+      "ua"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://idp.uran.ua/rr3/signedmetadata/federation/PEANO/metadata.xml"
+      }
+    },
+    "name": "PEANO",
+    "url": "http://peano.uran.ua/"
+  },
+  "pionier": {
+    "contact": "mailto:Kontakt@aai.pionier.net.pl",
+    "countries": [
+      "pl"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://aai.pionier.net.pl/pionierid.xml"
+      }
+    },
+    "name": "Polish Identity Federation PIONIER.Id",
+    "url": "http://aai.pionier.net.pl/"
+  },
+  "pkifed": {
+    "contact": "mailto:edugain-ot@hec.gov.pk",
+    "countries": [
+      "pk"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://rr.pern.edu.pk/rr3/signedmetadata/federation/PERN-Federation/metadata.xml"
+      }
+    },
+    "name": "PKIFED",
+    "policy": "http://pkifed.pk/wp-content/uploads/2018/09/PKIFED-Identity-Federation-Policy-v0.1.pdf",
+    "url": "https://pkifed.pk/"
+  },
+  "rafiki": {
+    "contact": "Federation Contact",
+    "countries": [
+      "ke"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://rr.rafiki.ke/signedmetadata/federation/rafiki/metadata.xml"
+      }
+    },
+    "name": "RAFIKI",
+    "policy": "https://rafiki.ke/sites/default/files/2022-01/RAFIKI_Identity_Federation_Policy.pdf",
+    "url": "https://rafiki.ke/"
+  },
+  "rctsaai": {
+    "contact": "mailto:rctsaai@fccn.pt",
+    "countries": [
+      "pt"
+    ],
+    "metadata": {
+      "default": {
+        "url": " https://registry.rctsaai.pt/rr/signedmetadata/federation/rctsaai/metadata.xml"
+      }
+    },
+    "name": "RCTSaai",
+    "url": "https://www.fccn.pt/seguranca/rcts-aai/"
+  },
+  "ricerka": {
+    "contact": "mailtoitservices@um.edu.mt",
+    "countries": [
+      "mt"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://id.ricerka.net.mt/metadata/edugain-upstream.xml"
+      }
+    },
+    "name": "RiċerkaNet Identity Federation",
+    "policy": "https://id.ricerka.net.mt/docs/",
+    "url": "https://id.ricerka.net.mt/"
+  },
+  "rif": {
+    "contact": "technical@renu.ac.ug",
+    "countries": [
+      "ug"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://rif.renu.ac.ug/rr/signedmetadata/federation/RIF/metadata.xml"
+      }
+    },
+    "name": "RIF",
+    "policy": "https://rif.renu.ac.ug/docs/rifp.pdf",
+    "url": "https://rif.renu.ac.ug/"
+  },
+  "roedunetid": {
+    "contact": "mailto:eduid@roedu.net",
+    "countries": [
+      "ro"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://sp.roedu.net/roedunetid-metadata-idp-signed.xml"
+      }
+    },
+    "name": "RoEduNetID",
+    "policy": " https://edugain.roedu.net/wp-content/uploads/2019/03/RoEduNet-Identity_Federation_Policy-v0.92.pdf",
+    "url": "http://www.roedu.net/"
+  },
+  "runnet": {
+    "contact": "mailto:aai@runnet.ru",
+    "countries": [
+      "ru"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://j.edugain.runnet.ru/j/metadata/federation/RUNNET/IDP/metadata.xml"
+      }
+    },
+    "name": "RUNNET AAI",
+    "policy": "http://www.runnet.ru/en/services-en/runnetaai-en",
+    "url": "http://www.runnet.ru/en/services-en/runnetaai-en"
+  },
+  "safeid": {
+    "contact": "mailto:admin@safeid.sk",
+    "countries": [
+      "sk"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://www.safeid.sk/metadata/metadata.safeid.sk.xml"
+      }
+    },
+    "name": "SafeID",
+    "policy": "https://www.safeid.sk/doku.php?id=en:policy",
+    "url": "https://www.safeid.sk/"
+  },
+  "safire": {
+    "contact": "mailto:safire@tenet.ac.za ",
+    "countries": [
+      "za"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://safire.ac.za/technical/metadata"
+      }
+    },
+    "name": "South African Identity Federation (SAFIRE)",
+    "policy": "https://safire.ac.za/safire/policy/participation/",
+    "url": "https://safire.ac.za/"
+  },
+  "sgaf": {
+    "contact": "mailto:admin@singaren.net.sg",
+    "countries": [
+      "sg"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://ds.sgaf.org.sg/distribution/metadata/sgaf-metadata.xml"
+      }
+    },
+    "name": "Singapore Access Federation (SGAF)",
+    "policy": "https://www.singaren.net.sg/document/SGAF-Federation-Rules.pdf",
+    "url": "http://www.singaren.net.sg/SGAF "
+  },
+  "sifulan": {
+    "contact": "mailto:support@sifulan.my",
+    "countries": [
+      "my"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://sifulan.my/metadata/metadata.xml "
+      }
+    },
+    "name": "SIFULAN",
+    "policy": "https://sifulan.my/download/SIFULAN-Federation-Policy-v1.1.pdf",
+    "url": "https://sifulan.my/"
+  },
+  "sir": {
+    "contact": "mailto:sir@rediris.es",
+    "countries": [
+      "es"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://www.rediris.es/sir/metadata.html.en"
+      }
+    },
+    "name": "SIR",
+    "policy": "http://www.rediris.es/sir/docs/idp_conditions_use_1.0_20080220.pdf",
+    "url": "https://www.rediris.es/sir2/"
+  },
+  "surfconext": {
+    "contact": "mailto:support@surfconext.nl",
+    "countries": [
+      "nl"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://metadata.surfconext.nl/"
+      }
+    },
+    "name": "SURFconext",
+    "policy": "https://wiki.surfnet.nl/display/eduGAIN/eduGAIN",
+    "url": "http://www.surfconext.nl"
+  },
+  "swamid": {
+    "contact": "mailto:operations@swamid.se",
+    "countries": [
+      "se"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://mds.swamid.se/md/"
+      }
+    },
+    "name": "SWAMID",
+    "policy": "https://www.sunet.se/swamid/policy/",
+    "url": "https://www.sunet.se/swamid/"
+  },
+  "switch": {
+    "contact": "mailto:aai@switch.ch",
+    "countries": [
+      "ch"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://www.switch.ch/aai/metadata"
+      }
+    },
+    "name": "SWITCHaai",
+    "policy": "https://www.switch.ch/edu-id/terms/",
+    "url": "http://www.switch.ch/aai/index.html"
+  },
+  "taat": {
+    "contact": "mailto:eenet@eenet.ee",
+    "countries": [
+      "ee"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://met.refeds.org/media/metadata/taat-federation-metadata.xml<br />"
+      }
+    },
+    "name": "TAAT",
+    "policy": "http://taat.edu.ee/main/wp-content/uploads/Federation_Policy_1.3.pdf",
+    "url": "http://taat.edu.ee/main/about/"
+  },
+  "thaildf": {
+    "contact": "mailto:idf@thairen.net.th",
+    "countries": [
+      "th"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://idf.thairen.net.th/Metadata.html"
+      }
+    },
+    "name": "ThaiIDF",
+    "policy": "http://idf.thairen.net.th/pdf/ThaiREN-Identity-Federation-Policy-v0.1.pdf",
+    "url": "http://idf.thairen.net.th/"
+  },
+  "tidf": {
+    "contact": "mailto:info@tarena.tj",
+    "countries": [
+      "tj"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://tidf.tj/metadata/tidf-metadata.xml"
+      }
+    },
+    "name": "TARENA Identity Federation",
+    "policy": "https://tidf.tj/?page_id=21",
+    "url": "https://tidf.tj/"
+  },
+  "tigerfed": {
+    "contact": "mailto:noc@bdren.net.bd",
+    "countries": [
+      "bd"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/federation/tiger-fed/metadata.xml "
+      }
+    },
+    "name": "TIGERfed",
+    "policy": "http://tigerfed.net.bd/assets/upload/IdentityFederationPolicy-v1.0.pdf",
+    "url": " http://tigerfed.net.bd/ "
+  },
+  "tuakiri": {
+    "contact": "mailto:tuakiri@reannz.co.nz",
+    "countries": [
+      "nz"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://tuakiri.ac.nz/confluence/display/Tuakiri/Tuakiri+Metadata"
+      }
+    },
+    "name": "Tuakiri New Zealand Access Federation",
+    "policy": "https://tuakiri.ac.nz/documents/",
+    "url": "https://tuakiri.ac.nz/confluence/display/Tuakiri/Home"
+  },
+  "ukamf": {
+    "contact": "mailto:service@ukfederation.org.uk",
+    "countries": [
+      "uk",
+      "gb"
+    ],
+    "metadata": {
+      "default": {
+        "cert_fp": "AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66",
+        "cert_url": "http://metadata.ukfederation.org.uk/ukfederation.pem",
+        "url": "http://metadata.ukfederation.org.uk/"
+      },
+      "mdq": {
+        "cert_fp": "3F:6B:F4:AF:E0:1B:3C:D7:C1:F2:3D:F6:EA:C5:60:AE:B1:5A:E8:26",
+        "cert_url": "http://mdq.ukfederation.org.uk/ukfederation-mdq.pem",
+        "type": "mdq",
+        "url": "http://mdq.ukfederation.org.uk/"
+      }
+    },
+    "name": "UK Access Management Federation",
+    "policy": "http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf",
+    "url": "http://www.ukfederation.org.uk/"
+  },
+  "wayf": {
+    "contact": "mailto:sekretariat@wayf.dk",
+    "countries": [
+      "dk"
+    ],
+    "metadata": {
+      "default": {
+        "url": "https://www.wayf.dk/en/node/32"
+      }
+    },
+    "name": "WAYF",
+    "url": "http://wayf.dk/"
+  },
+  "yetkim": {
+    "contact": "mailto:yetkim@ulakbim.gov.tr",
+    "countries": [
+      "tr"
+    ],
+    "metadata": {
+      "default": {
+        "url": "http://md.yetkim.org.tr/yetkim-upstream.xml"
+      }
+    },
+    "name": "YETKİM",
+    "policy": "https://yetkim.org.tr/en/join/",
+    "url": "https://yetkim.org.tr/en/"
+  }
+}

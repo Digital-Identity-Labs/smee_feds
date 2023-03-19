@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "arnaai": {
+      "type": "object",
+      "properties": {
+        "countries": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url"
+              ]
+            }
+          },
+          "required": [
+            "default"
+          ]
+        },
+        "policy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "countries",
+        "name",
+        "url",
+        "contact",
+        "metadata",
+        "policy"
+      ]
+    }
+  },
+  "required": [
+    "arnaai"
+  ]
+}
