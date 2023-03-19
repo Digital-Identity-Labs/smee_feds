@@ -96,8 +96,7 @@
   "athens": {
     "contact": "mailto:contact@openathens.net ",
     "countries": [
-      "gb",
-      "uk"
+      "gb"
     ],
     "metadata": {
       "default": {
@@ -1050,7 +1049,6 @@
   "ukamf": {
     "contact": "mailto:service@ukfederation.org.uk",
     "countries": [
-      "uk",
       "gb"
     ],
     "metadata": {

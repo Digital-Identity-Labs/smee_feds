@@ -21,8 +21,19 @@ defmodule SmeeFeds.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:countries, "~> 1.6"},
+      {:smee, ">= 0.0.0"},
+      {:jason, "~> 1.4"},
+
+      {:ex_json_schema, "~> 0.9.2", only: [:dev, :test]},
+      {:apex, "~> 1.2", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.6.7", only: [:dev, :test], runtime: false},
+      {:excoveralls, "~> 0.14 and >= 0.14.4", only: [:dev, :test]},
+      {:benchee, "~> 1.0.1", only: [:dev, :test]},
+      {:ex_doc, "~> 0.23.0", only: :dev, runtime: false},
+      {:earmark, "~> 1.3", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0.0-rc.4", only: [:dev], runtime: false},
+      {:doctor, "~> 0.17.0", only: :dev, runtime: false}
     ]
   end
 end
