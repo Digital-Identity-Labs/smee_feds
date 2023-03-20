@@ -7,7 +7,7 @@ defmodule SmeeFeds.Document do
   alias SmeeFeds.Federation
 
   def csv(federations) do
-    
+
   end
 
   def markdown(federations) do
