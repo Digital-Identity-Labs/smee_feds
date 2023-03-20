@@ -14,7 +14,6 @@ defmodule SmeeFeds.Filter do
 
   alias SmeeFeds.Federation
 
-
   def eu(enum, bool \\ true) do
     enum
     |> Enum.filter(
