@@ -1,9 +1,7 @@
 defmodule SmeeFeds.DataLoader do
-
   @moduledoc false
 
-
-  @default_data_file Path.join(Application.app_dir(:smee_feds, "priv"), "data/federation_metadata.json")
+  @default_data_file Path.join(Application.app_dir(:smee_feds, "priv"), "data/federations.json")
   @external_resource @default_data_file
 
   def load() do

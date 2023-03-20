@@ -42,6 +42,8 @@
     "url": "http://aaiedu.mk/?lang=en"
   },
   "aconet": {
+    "active": false,
+    "comment": "Keeps timing out, not sure why",
     "contact": "mailto:eduid@aco.net",
     "countries": [
       "at"
@@ -400,6 +402,8 @@
     "url": "https://federasi.id/"
   },
   "feide": {
+    "active": false,
+    "comment": "Keeps timing out, not sure why",
     "contact": "mailto:support@feide.no",
     "countries": [
       "no"
