@@ -1,0 +1,24 @@
+{
+  "ukamf": {
+    "contact": "mailto:service@ukfederation.org.uk",
+    "countries": [
+      "gb"
+    ],
+    "metadata": {
+      "default": {
+        "cert_fp": "AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66",
+        "cert_url": "http://metadata.ukfederation.org.uk/ukfederation.pem",
+        "url": "http://metadata.ukfederation.org.uk/"
+      },
+      "mdq": {
+        "cert_fp": "3F:6B:F4:AF:E0:1B:3C:D7:C1:F2:3D:F6:EA:C5:60:AE:B1:5A:E8:26",
+        "cert_url": "http://mdq.ukfederation.org.uk/ukfederation-mdq.pem",
+        "type": "mdq",
+        "url": "http://mdq.ukfederation.org.uk/"
+      }
+    },
+    "name": "UK Access Management Federation",
+    "policy": "http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf",
+    "url": "http://www.ukfederation.org.uk/"
+  }
+}
