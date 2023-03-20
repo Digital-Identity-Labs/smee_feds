@@ -65,11 +65,11 @@ defmodule SmeeFeds do
   end
 
   def federation(id) do
-    Federation.get(id)
+    get(id)
   end
 
   def get(id) do
-    Federation.get(id)
+    get(id)
   end
 
 end
