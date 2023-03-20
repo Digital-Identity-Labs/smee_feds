@@ -64,12 +64,4 @@ defmodule SmeeFeds do
     |> Enum.sort()
   end
 
-  def federation(id) do
-    get(id)
-  end
-
-  def get(id) do
-    get(id)
-  end
-
 end
