@@ -24,6 +24,7 @@ defmodule SmeeFeds.MixProject do
       {:countries, "~> 1.6"},
       {:smee, ">= 0.0.0"},
       {:jason, "~> 1.4"},
+      {:csv, "~> 3.0"},
 
       {:ex_json_schema, "~> 0.9.2", only: [:dev, :test]},
       {:apex, "~> 1.2", only: [:dev, :test], runtime: false},
