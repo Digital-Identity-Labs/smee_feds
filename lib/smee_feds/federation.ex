@@ -23,12 +23,12 @@ defmodule SmeeFeds.Federation do
       contact: data[:contact],
       name: data[:name],
       url: data[:url],
-      countries: normalize_country_codes(data),
+      countries: normalize_country_codes(data[:countries]),
       policy: data[:contact],
       sources: %{}
     }
 
-    sources = (data[:metadata] || [])
+    sources = (data[:sources] || %{})
               |> Enum.map(fn {id, data} -> {id, Smee.Source.new(data[:url], Map.to_list(data))} end)
               |> Enum.into(%{})
 
@@ -69,8 +69,13 @@ defmodule SmeeFeds.Federation do
 
   #############################################################################
 
-  defp normalize_country_codes(data) do
-    Map.get(data, :countries, [])
+  defp normalize_country_codes(countries_list) when is_nil(countries_list) or countries_list == [] do
+    []
+  end
+
+  defp normalize_country_codes(countries_list) do
+    countries_list
+    |> Apex.ap()
     |> Enum.map(
          fn code -> "#{code}"
                     |> String.trim()

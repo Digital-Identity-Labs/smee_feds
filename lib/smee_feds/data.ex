@@ -8,7 +8,22 @@ defmodule SmeeFeds.Data do
                       {_, _} -> false
                     end
                   )
-               |> Enum.map(fn {id, data} -> {id, SmeeFeds.Federation.new(id, data)} end)
+               |> Enum.map(
+                    fn {id, data} ->
+                      {
+                        id,
+                        SmeeFeds.Federation.new(
+                          id,
+                          contact: data[:contact],
+                          name: data[:name],
+                          url: data[:url],
+                          countries: data[:countries],
+                          policy: data[:policy],
+                          sources: data[:sources]
+                        )
+                      }
+                    end
+                  )
                |> Enum.into(%{})
 
   def federations do

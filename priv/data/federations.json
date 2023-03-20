@@ -4,7 +4,7 @@
     "countries": [
       "au"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://md.aaf.edu.au/aaf-metadata.xml",
         "cert_url": "https://md.aaf.edu.au/aaf-metadata-certificate.pem",
@@ -20,7 +20,7 @@
     "countries": [
       "hr"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml"
       }
@@ -33,7 +33,7 @@
     "countries": [
       "mk"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://aaiedu.mk/metadata.aaiedumk.xml"
       }
@@ -48,7 +48,7 @@
     "countries": [
       "at"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://eduid.at/md/aconet-interfed.xml"
       }
@@ -61,7 +61,7 @@
     "countries": [
       "am"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://aai.asnet.am/metadata/edugain-upstream.xml"
       }
@@ -75,7 +75,7 @@
     "countries": [
       "dz"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://aai.arn.dz/metadata/fed-arn.xml"
       }
@@ -89,7 +89,7 @@
     "countries": [
       "si "
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://ds.aai.arnes.si/metadata/aai.arnes.si.sha256.xml",
         "cert_url": "http://ds.aai.arnes.si/metadata/arnesaai-metadata-signing.crt",
@@ -105,7 +105,7 @@
     "countries": [
       "gb"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://fed.openathens.net/oafed/metadata"
       }
@@ -120,7 +120,7 @@
     "countries": [
       "az"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://registry.science.az/signedmetadata/federation/ANAS-AzScienceNet/metadata.xml"
       }
@@ -134,7 +134,7 @@
     "countries": [
       "be"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://federation.belnet.be/federation-metadata.xml"
       }
@@ -147,7 +147,7 @@
     "countries": [
       "ca"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://caf-shib2ops.ca/CoreServices/caf_metadata_signed_sha256.xml",
         "cert_url": "https://caf-shib2ops.ca/CoreServices/caf_metadata_verify.crt",
@@ -162,7 +162,7 @@
     "countries": [
       "br"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://ds.cafe.rnp.br/metadata/cafe-metadata.xml"
       }
@@ -177,7 +177,7 @@
     "countries": [
       "mz "
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://metadata.cafmoz.morenet.ac.mz/cafmoz-metadata.xml"
       }
@@ -191,7 +191,7 @@
     "countries": [
       "cn"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://www.carsi.edu.cn/carsimetadata/carsifed-metadata.xml"
       }
@@ -204,7 +204,7 @@
     "countries": [
       "cl"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://cofre.reuna.cl/metadata/cofre-metadata-signed.xml"
       }
@@ -219,7 +219,7 @@
     "countries": [
       "co"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://colfire.co/metadata/colfire-metadata.xml"
       }
@@ -232,7 +232,7 @@
     "countries": [
       "cn"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://www.cstcloud.net/discovery/metadata/cstcloud-fed-metadata-sig.xml"
       }
@@ -246,7 +246,7 @@
     "countries": [
       "de"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "cert_fp": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
         "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai.pem",
@@ -265,7 +265,7 @@
   "edugain": {
     "contact": "mailto:support@edugain.org",
     "countries": [],
-    "metadata": {
+    "sources": {
       "default": {
         "cert_fp": "5A:D7:3F:8A:C1:0C:74:56:41:77:45:45:EB:92:76:1F:3D:0D:E6:7C",
         "cert_url": "https://technical.edugain.org/mds-v2.cer",
@@ -281,7 +281,7 @@
     "countries": [
       "ie"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "cert_fp": "44:6B:91:4D:9D:C7:C4:B4:09:DA:EE:91:38:82:2F:31:C1:F8:31:1E",
         "cert_url": "https://edugate.heanet.ie/metadata-signer-2012.crt",
@@ -297,7 +297,7 @@
     "countries": [
       "cz"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://metadata.eduid.cz/entities/eduid"
       }
@@ -311,7 +311,7 @@
     "countries": [
       "hu"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://metadata.eduid.hu/"
       }
@@ -326,7 +326,7 @@
     "countries": [
       "lu"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://www.eduid.lu/"
       }
@@ -340,7 +340,7 @@
     "countries": [
       "ma"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://www.eduidm.ma/metadata/eduidm.xml"
       }
@@ -354,7 +354,7 @@
     "countries": [
       "ng"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://registry.eduid.ng/rr3/signedmetadata/federation/eduid_ng/metadata.xml"
       }
@@ -366,7 +366,7 @@
     "countries": [
       "ru"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://www.fedurus.ru/metadata/metadata.fedurus.xml"
       }
@@ -379,7 +379,7 @@
     "countries": [
       "by"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://febas.basnet.by/shared/upload.xml"
       }
@@ -392,7 +392,7 @@
     "countries": [
       "id"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://jagger.federasi.id/signedmetadata/federation/IndonesiaAccessFederation/metadata.xml"
       }
@@ -408,7 +408,7 @@
     "countries": [
       "no"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://metadata.feide.no/edugain-metadata.xml"
       }
@@ -422,7 +422,7 @@
     "countries": [
       "mx"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://wayf.fenix.org.mx/simplesaml/module.php/aggregator2/get.php?id=FENIX"
       }
@@ -436,7 +436,7 @@
     "countries": [
       "fr"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://metadata.federation.renater.fr/renater/main/main-all-renater-metadata.xml"
       }
@@ -451,7 +451,7 @@
     "countries": [
       "zm"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://rr.ubuntunet.net/signedmetadata/federation/fidern/metadata.xml"
       }
@@ -465,7 +465,7 @@
     "countries": [
       "jp"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://metadata.gakunin.nii.ac.jp/gakunin-metadata.xml"
       }
@@ -479,7 +479,7 @@
     "countries": [
       "ge"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://mtd.gif.grena.ge/md/edugain-upstream.xml"
       }
@@ -493,7 +493,7 @@
     "countries": [
       "gr"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://md.aai.grnet.gr/aggregates/grnet-metadata.xml"
       }
@@ -507,7 +507,7 @@
     "countries": [
       "fi"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://haka.funet.fi/metadata/haka-metadata.xml"
       }
@@ -522,7 +522,7 @@
       "hk",
       "cn"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://md.hkaf.edu.hk/hkaf-metadata.xml"
       }
@@ -536,7 +536,7 @@
     "countries": [
       "it"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://md.idem.garr.it/metadata/idem-metadata-sha256.xml"
       }
@@ -550,7 +550,7 @@
     "countries": [
       "us"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://md.incommon.org/InCommon/InCommon-metadata.xml"
       },
@@ -569,7 +569,7 @@
     "countries": [
       "in"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://parichay.inflibnet.ac.in/metadata/infed.xml"
       }
@@ -583,7 +583,7 @@
     "countries": [
       "ir"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://irfed.ir/IRFED.xml"
       }
@@ -597,7 +597,7 @@
     "countries": [
       "il"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://iif-ng.iucc.ac.il/md/iif-ng.xml"
       }
@@ -611,7 +611,7 @@
     "countries": [
       "kr"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://fedinfo.kreonet.net/signedmetadata/federation/KAFE-profed/metadata.xml"
       }
@@ -625,7 +625,7 @@
     "countries": [
       "kg"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://www.kif.kg/metadata/kif-metadata.xml"
       }
@@ -639,7 +639,7 @@
     "countries": [
       "lv"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://laife.lanet.lv/metadata/laife-edugain-metadata.xml"
       }
@@ -654,7 +654,7 @@
     "countries": [
       "md"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://manage.federations.renam.md/signedmetadata/federation/LEAF-MD/metadata.xml"
       }
@@ -668,7 +668,7 @@
     "countries": [
       "lk"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://fr.ac.lk/signedmetadata/metadata.xml"
       }
@@ -683,7 +683,7 @@
     "countries": [
       "lb"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://life.aub.edu.lb/"
       }
@@ -696,7 +696,7 @@
     "countries": [
       "lt"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://fedi.litnet.lt/metadata/litnet.xml"
       }
@@ -709,7 +709,7 @@
     "countries": [
       "ar"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://mds.innova-red.net/piloto-mate-1.xml"
       }
@@ -723,7 +723,7 @@
     "countries": [
       "ec"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://minga.cedia.org.ec/metadata/minga-metadata-edugain.xml"
       }
@@ -737,7 +737,7 @@
     "countries": [
       "om"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://home.trc.gov.om/tabid/601/language/en-US/Default.aspx"
       }
@@ -752,7 +752,7 @@
     "countries": [
       "om"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://omren.om/omrenfed.xml"
       }
@@ -764,7 +764,7 @@
     "countries": [
       "ua"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://idp.uran.ua/rr3/signedmetadata/federation/PEANO/metadata.xml"
       }
@@ -777,7 +777,7 @@
     "countries": [
       "pl"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://aai.pionier.net.pl/pionierid.xml"
       }
@@ -790,7 +790,7 @@
     "countries": [
       "pk"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://rr.pern.edu.pk/rr3/signedmetadata/federation/PERN-Federation/metadata.xml"
       }
@@ -804,7 +804,7 @@
     "countries": [
       "ke"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://rr.rafiki.ke/signedmetadata/federation/rafiki/metadata.xml"
       }
@@ -818,7 +818,7 @@
     "countries": [
       "pt"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://registry.rctsaai.pt/rr/signedmetadata/federation/rctsaai/metadata.xml"
       }
@@ -831,7 +831,7 @@
     "countries": [
       "mt"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://id.ricerka.net.mt/metadata/edugain-upstream.xml"
       }
@@ -845,7 +845,7 @@
     "countries": [
       "ug"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://rif.renu.ac.ug/rr/signedmetadata/federation/RIF/metadata.xml"
       }
@@ -859,7 +859,7 @@
     "countries": [
       "ro"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://sp.roedu.net/roedunetid-metadata-idp-signed.xml"
       }
@@ -873,7 +873,7 @@
     "countries": [
       "ru"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://j.edugain.runnet.ru/j/metadata/federation/RUNNET/IDP/metadata.xml"
       }
@@ -887,7 +887,7 @@
     "countries": [
       "sk"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://www.safeid.sk/metadata/metadata.safeid.sk.xml"
       }
@@ -901,7 +901,7 @@
     "countries": [
       "za"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://safire.ac.za/technical/metadata"
       }
@@ -915,7 +915,7 @@
     "countries": [
       "sg"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://ds.sgaf.org.sg/distribution/metadata/sgaf-metadata.xml"
       }
@@ -929,7 +929,7 @@
     "countries": [
       "my"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://sifulan.my/metadata/metadata.xml"
       }
@@ -943,7 +943,7 @@
     "countries": [
       "es"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://www.rediris.es/sir/metadata.html.en"
       }
@@ -957,7 +957,7 @@
     "countries": [
       "nl"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://metadata.surfconext.nl/edugain-upstream.xml"
       }
@@ -971,7 +971,7 @@
     "countries": [
       "se"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://mds.swamid.se/md/swamid-2.0.xml"
       }
@@ -985,7 +985,7 @@
     "countries": [
       "ch"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://metadata.aai.switch.ch/metadata.switchaai.xml"
       }
@@ -999,7 +999,7 @@
     "countries": [
       "ee"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://met.refeds.org/media/metadata/taat-federation-metadata.xml"
       }
@@ -1013,7 +1013,7 @@
     "countries": [
       "th"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://idf.thairen.net.th/Metadata.html"
       }
@@ -1027,7 +1027,7 @@
     "countries": [
       "tj"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://tidf.tj/metadata/tidf-metadata.xml"
       }
@@ -1041,7 +1041,7 @@
     "countries": [
       "bd"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/federation/tiger-fed/metadata.xml"
       }
@@ -1055,7 +1055,7 @@
     "countries": [
       "nz"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://directory.tuakiri.ac.nz/metadata/tuakiri-metadata-signed.xml"
       }
@@ -1069,7 +1069,7 @@
     "countries": [
       "gb"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "cert_fp": "AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66",
         "cert_url": "http://metadata.ukfederation.org.uk/ukfederation.pem",
@@ -1091,7 +1091,7 @@
     "countries": [
       "dk"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "https://metadata.wayf.dk/wayf-metadata.xml"
       }
@@ -1104,7 +1104,7 @@
     "countries": [
       "tr"
     ],
-    "metadata": {
+    "sources": {
       "default": {
         "url": "http://md.yetkim.org.tr/yetkim-upstream.xml"
       }
