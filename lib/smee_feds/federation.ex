@@ -36,10 +36,6 @@ defmodule SmeeFeds.Federation do
 
   end
 
-  #  def find_by_country(country) do
-  #
-  #  end
-
   def contact(federation) do
     federation.contact
   end
@@ -71,7 +67,7 @@ defmodule SmeeFeds.Federation do
     |> ugh_brexit!()
   end
 
-  #########
+  #############################################################################
 
   defp normalize_country_codes(data) do
     Map.get(data, :countries, [])

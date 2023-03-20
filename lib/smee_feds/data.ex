@@ -1,7 +1,5 @@
 defmodule SmeeFeds.Data do
-  @moduledoc """
-  Documentation for `SmeeFeds`.
-  """
+  @moduledoc false
 
   @federations SmeeFeds.DataLoader.load()
                |> Enum.reject(
