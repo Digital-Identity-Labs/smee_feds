@@ -87,7 +87,7 @@
   "arnesaai": {
     "contact": "mailto:aaa-podpora@arnes.si",
     "countries": [
-      "si "
+      "si"
     ],
     "sources": {
       "default": {
@@ -175,7 +175,7 @@
     "active": false,
     "contact": "mailto:MoRENet.Info@morenet.ac.mz",
     "countries": [
-      "mz "
+      "mz"
     ],
     "sources": {
       "default": {
@@ -184,7 +184,7 @@
     },
     "name": "CAFMoz",
     "policy": "http://cafmoz.morenet.ac.mz/index.php/en/related-documents",
-    "url": "http://cafmoz.morenet.ac.mz/ "
+    "url": "http://cafmoz.morenet.ac.mz/"
   },
   "carsi": {
     "contact": "mailto:carsi@pku.edu.cn",
@@ -618,7 +618,7 @@
     },
     "name": "KAFE",
     "policy": "https://coreen.kreonet.net/e_join",
-    "url": "https://coreen.kreonet.net/kafe "
+    "url": "https://coreen.kreonet.net/kafe"
   },
   "krena": {
     "contact": "mailto:support@kif.kg",
@@ -922,7 +922,7 @@
     },
     "name": "Singapore Access Federation (SGAF)",
     "policy": "https://www.singaren.net.sg/document/SGAF-Federation-Rules.pdf",
-    "url": "http://www.singaren.net.sg/SGAF "
+    "url": "http://www.singaren.net.sg/SGAF"
   },
   "sifulan": {
     "contact": "mailto:support@sifulan.my",
@@ -1048,7 +1048,7 @@
     },
     "name": "TIGERfed",
     "policy": "http://tigerfed.net.bd/assets/upload/IdentityFederationPolicy-v1.0.pdf",
-    "url": "http://tigerfed.net.bd/ "
+    "url": "http://tigerfed.net.bd/"
   },
   "tuakiri": {
     "contact": "mailto:tuakiri@reannz.co.nz",
