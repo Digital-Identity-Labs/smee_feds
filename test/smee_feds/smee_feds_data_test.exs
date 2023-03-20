@@ -24,5 +24,4 @@ defmodule SmeeFedsDataTest do
 
   end
 
-
 end

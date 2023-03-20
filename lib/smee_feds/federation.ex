@@ -29,7 +29,9 @@ defmodule SmeeFeds.Federation do
     }
 
     sources = (data[:sources] || %{})
-              |> Enum.map(fn {id, data} -> {id, Smee.Source.new(data[:url], Map.to_list(data))} end)
+              |> Enum.map(
+                   fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(federation, data))} end
+                 )
               |> Enum.into(%{})
 
     struct(federation, %{sources: sources})
@@ -45,12 +47,48 @@ defmodule SmeeFeds.Federation do
     |> Map.values()
   end
 
-  def mdq(federation) do
-    Map.get((federation.sources || %{}), :mdq)
+  def mdq(%Federation{sources: nil}) do
+    nil
   end
 
-  def aggregate(federation) do
-    Map.get((federation.sources || %{}), :default)
+  def mdq(
+        %Federation{
+          sources: %{
+            mdq: mdq
+          }
+        }
+      ) do
+    mdq
+  end
+
+  def mdq(%Federation{sources: sources}) when is_map(sources) do
+    Enum.find(sources, fn {id, source} -> source.type == :mdq end)
+    |> case() do
+         {_id, source} -> source
+         nil -> nil
+       end
+  end
+
+  def aggregate(%Federation{sources: nil}) do
+    nil
+  end
+
+  def aggregate(
+        %Federation{
+          sources: %{
+            default: default
+          }
+        }
+      ) do
+    default
+  end
+
+  def aggregate(%Federation{sources: sources}) when is_map(sources) do
+    Enum.find(sources, fn {id, source} -> source.type == :aggregate end)
+    |> case() do
+         {_id, source} -> source
+         nil -> nil
+       end
   end
 
   def url(federation) do
@@ -61,6 +99,10 @@ defmodule SmeeFeds.Federation do
     federation.policy
   end
 
+  def countries(%Federation{countries: trouble}) when is_nil(trouble) or trouble == []  do
+    []
+  end
+
   def countries(federation) do
     Map.get(federation, :countries, [])
     |> Enum.map(fn code -> Countries.get(code) end)
@@ -69,13 +111,21 @@ defmodule SmeeFeds.Federation do
 
   #############################################################################
 
+  defp normalize_source_options(federation, data) do
+    [
+      type: String.to_atom("#{data[:type]}"),
+      cert_url: data[:cert_url],
+      cert_fingerprint: data[:cert_fp],
+      label: "#{federation.name}: #{data[:type]}"
+    ]
+  end
+
   defp normalize_country_codes(countries_list) when is_nil(countries_list) or countries_list == [] do
     []
   end
 
   defp normalize_country_codes(countries_list) do
     countries_list
-    |> Apex.ap()
     |> Enum.map(
          fn code -> "#{code}"
                     |> String.trim()
