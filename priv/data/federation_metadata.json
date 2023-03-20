@@ -6,7 +6,9 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://md.aaf.edu.au/"
+        "url": "https://md.aaf.edu.au/aaf-metadata.xml",
+        "cert_url": "https://md.aaf.edu.au/aaf-metadata-certificate.pem",
+        "cert_fp": "E2:FC:CC:CB:0E:0F:3B:32:FA:55:87:29:08:DE:E0:34:DA:A2:15:5A"
       }
     },
     "name": "Australian Access Federation (AAF)",
@@ -20,7 +22,7 @@
     ],
     "metadata": {
       "default": {
-        "url": " https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml"
+        "url": "https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml"
       }
     },
     "name": "AAI@EduHr",
@@ -46,7 +48,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://wiki.univie.ac.at/display/federation/Metadata"
+        "url": "https://eduid.at/md/aconet-interfed.xml"
       }
     },
     "name": "ACOnet Identity Federation",
@@ -66,6 +68,7 @@
     "url": "http://afire.asnet.am/"
   },
   "arnaai": {
+    "active": false,
     "contact": "mailto:opaai@arn.dz",
     "countries": [
       "dz"
@@ -86,7 +89,9 @@
     ],
     "metadata": {
       "default": {
-        "url": "http://ds.aai.arnes.si/metadata/"
+        "url": "http://ds.aai.arnes.si/metadata/aai.arnes.si.sha256.xml",
+        "cert_url": "http://ds.aai.arnes.si/metadata/arnesaai-metadata-signing.crt",
+        "cert_fp": "28:7B:9A:AA:FF:5A:6E:F1:02:AD:7D:BA:E3:3C:40:59:17:4F:1E:89"
       }
     },
     "name": "ArnesAAI",
@@ -100,7 +105,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://fed.openathens.net/oafed/metadata "
+        "url": "https://fed.openathens.net/oafed/metadata"
       }
     },
     "name": "OpenAthens",
@@ -108,13 +113,14 @@
     "url": "https://www.openathens.net/"
   },
   "azscinet": {
+    "active": false,
     "contact": "mailto:edugain@science.az",
     "countries": [
       "az"
     ],
     "metadata": {
       "default": {
-        "url": "https://registry.science.az/signedmetadata/federation/ANAS-AzScienceNet/metadata.xml "
+        "url": "https://registry.science.az/signedmetadata/federation/ANAS-AzScienceNet/metadata.xml"
       }
     },
     "name": "AzScienceNet Federation",
@@ -141,7 +147,9 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://caf-shib2ops.ca/CoreServices/"
+        "url": "https://caf-shib2ops.ca/CoreServices/caf_metadata_signed_sha256.xml",
+        "cert_url": "https://caf-shib2ops.ca/CoreServices/caf_metadata_verify.crt",
+        "cert_fp": "B0:94:65:5C:38:9D:4D:2A:12:0B:1B:25:5D:92:97:38:DE:71:2B:CD"
       }
     },
     "name": "Canadian Access Federation (CAF)",
@@ -162,6 +170,7 @@
     "url": "https://www.rnp.br/servicos/cafe"
   },
   "cafmoz": {
+    "active": false,
     "contact": "mailto:MoRENet.Info@morenet.ac.mz",
     "countries": [
       "mz "
@@ -203,6 +212,7 @@
     "url": "http://cofre.reuna.cl/index.php/en/"
   },
   "colfire": {
+    "active": false,
     "contact": "mailto:tecnico@renata.edu.co",
     "countries": [
       "co"
@@ -213,7 +223,7 @@
       }
     },
     "name": "COLFIRE",
-    "url": "http://colfire.co/"
+    "url": "https://www.renata.edu.co/colfire/"
   },
   "cst": {
     "contact": "http://cstcloud.net/contact.html",
@@ -287,7 +297,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "http://www.eduid.cz/en/tech/summary"
+        "url": "https://metadata.eduid.cz/entities/eduid"
       }
     },
     "name": "eduID.cz",
@@ -301,7 +311,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "http://metadata.eduid.hu/current"
+        "url": "https://metadata.eduid.hu/"
       }
     },
     "name": "eduID.hu (HREF Federation)",
@@ -309,6 +319,7 @@
     "url": "http://www.eduid.hu/"
   },
   "eduidlu": {
+    "active": false,
     "contact": "mailto:admin@restena.lu",
     "countries": [
       "lu"
@@ -329,7 +340,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://www.eduidm.ma/metadata/eduidm.xml "
+        "url": "https://www.eduidm.ma/metadata/eduidm.xml"
       }
     },
     "name": "eduIDM",
@@ -355,7 +366,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "http://www.fedurus.ru/metadata/metadata.fedurus.xml "
+        "url": "http://www.fedurus.ru/metadata/metadata.fedurus.xml"
       }
     },
     "name": "φEDUrus AAI",
@@ -368,7 +379,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://febas.basnet.by/idpbasnet/saml2/idp/metadata.php "
+        "url": "https://febas.basnet.by/shared/upload.xml"
       }
     },
     "name": "FEBAS",
@@ -395,7 +406,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://idp.feide.no/simplesaml/saml2/idp/metadata.php &amp; https://metadata.feide.no/"
+        "url": "https://metadata.feide.no/edugain-metadata.xml"
       }
     },
     "name": "FEIDE",
@@ -409,7 +420,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://wayf.fenix.org.mx/simplesaml/module.php/aggregator2/get.php?id=FENIX "
+        "url": "https://wayf.fenix.org.mx/simplesaml/module.php/aggregator2/get.php?id=FENIX"
       }
     },
     "name": "FENIX",
@@ -431,6 +442,7 @@
     "url": "https://services.renater.fr/federation/index"
   },
   "fidern": {
+    "active": false,
     "contact": "mailto:info@fidern.ac.zm",
     "countries": [
       "zm"
@@ -508,7 +520,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://md.hkaf.edu.hk/hkaf-metadata.xml "
+        "url": "https://md.hkaf.edu.hk/hkaf-metadata.xml"
       }
     },
     "name": "Hong Kong Access Federation",
@@ -522,11 +534,11 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://wiki.idem.garr.it/wiki/Metadata"
+        "url": "http://md.idem.garr.it/metadata/idem-metadata-sha256.xml"
       }
     },
     "name": "IDEM",
-    "policy": "https://www.idem.garr.it/en/join ",
+    "policy": "https://www.idem.garr.it/en/join",
     "url": "https://www.idem.garr.it/"
   },
   "incommon": {
@@ -536,9 +548,7 @@
     ],
     "metadata": {
       "default": {
-        "cert_fp": "F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36",
-        "cert_url": "http://md.incommon.org/certs/inc-md-cert-mdq.pem",
-        "url": "https://mdq.incommon.org/entities"
+        "url": "https://md.incommon.org/InCommon/InCommon-metadata.xml"
       },
       "mdq": {
         "cert_fp": "F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36",
@@ -585,7 +595,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "http://iif.iucc.ac.il/idp/module.php/aggregator2/get.php?id=iif"
+        "url": "https://iif-ng.iucc.ac.il/md/iif-ng.xml"
       }
     },
     "name": "IUCC Identity Federation",
@@ -613,7 +623,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://www.kif.kg/index.php/en/metadata"
+        "url": "https://www.kif.kg/metadata/kif-metadata.xml"
       }
     },
     "name": "KRENA IF",
@@ -635,6 +645,7 @@
     "url": "https://laife.lanet.lv/wiki/doku.php"
   },
   "leaf": {
+    "active": false,
     "contact": "mailto:leaf@renam.md",
     "countries": [
       "md"
@@ -655,7 +666,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://liaf.ac.lk/#metadata"
+        "url": "https://fr.ac.lk/signedmetadata/metadata.xml"
       }
     },
     "name": "LIAF",
@@ -663,13 +674,14 @@
     "url": "https://liaf.ac.lk/"
   },
   "life": {
+    "active": false,
     "contact": "mailto:LIFE@aub.edu.lb",
     "countries": [
       "lb"
     ],
     "metadata": {
       "default": {
-        "url": "http://life.aub.edu.lb/ "
+        "url": "http://life.aub.edu.lb/"
       }
     },
     "name": "LIFE",
@@ -682,7 +694,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "http://fedi.litnet.lt/en/metadata"
+        "url": "https://fedi.litnet.lt/metadata/litnet.xml"
       }
     },
     "name": "Litnet Federation",
@@ -709,13 +721,14 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://minga.cedia.org.ec/metadata/minga-metadata-edugain.xml "
+        "url": "https://minga.cedia.org.ec/metadata/minga-metadata-edugain.xml"
       }
     },
     "name": "MINGA",
     "url": "http://www.cedia.org.ec/index.php/minga"
   },
   "omankid": {
+    "active": false,
     "contact": "mailto:webadmin@trc.gov.om",
     "countries": [
       "om"
@@ -730,6 +743,7 @@
     "url": "http://home.trc.gov.om/tabid/601/language/en-US/Default.aspx"
   },
   "omren": {
+    "active": false,
     "contact": "mailto:info@omren.om",
     "countries": [
       "om"
@@ -802,7 +816,7 @@
     ],
     "metadata": {
       "default": {
-        "url": " https://registry.rctsaai.pt/rr/signedmetadata/federation/rctsaai/metadata.xml"
+        "url": "https://registry.rctsaai.pt/rr/signedmetadata/federation/rctsaai/metadata.xml"
       }
     },
     "name": "RCTSaai",
@@ -847,7 +861,7 @@
       }
     },
     "name": "RoEduNetID",
-    "policy": " https://edugain.roedu.net/wp-content/uploads/2019/03/RoEduNet-Identity_Federation_Policy-v0.92.pdf",
+    "policy": "https://edugain.roedu.net/wp-content/uploads/2019/03/RoEduNet-Identity_Federation_Policy-v0.92.pdf",
     "url": "http://www.roedu.net/"
   },
   "runnet": {
@@ -913,7 +927,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://sifulan.my/metadata/metadata.xml "
+        "url": "https://sifulan.my/metadata/metadata.xml"
       }
     },
     "name": "SIFULAN",
@@ -941,7 +955,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://metadata.surfconext.nl/"
+        "url": "https://metadata.surfconext.nl/edugain-upstream.xml"
       }
     },
     "name": "SURFconext",
@@ -955,7 +969,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://mds.swamid.se/md/"
+        "url": "https://mds.swamid.se/md/swamid-2.0.xml"
       }
     },
     "name": "SWAMID",
@@ -969,7 +983,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://www.switch.ch/aai/metadata"
+        "url": "http://metadata.aai.switch.ch/metadata.switchaai.xml"
       }
     },
     "name": "SWITCHaai",
@@ -983,7 +997,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://met.refeds.org/media/metadata/taat-federation-metadata.xml<br />"
+        "url": "https://met.refeds.org/media/metadata/taat-federation-metadata.xml"
       }
     },
     "name": "TAAT",
@@ -1025,12 +1039,12 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/federation/tiger-fed/metadata.xml "
+        "url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/federation/tiger-fed/metadata.xml"
       }
     },
     "name": "TIGERfed",
     "policy": "http://tigerfed.net.bd/assets/upload/IdentityFederationPolicy-v1.0.pdf",
-    "url": " http://tigerfed.net.bd/ "
+    "url": "http://tigerfed.net.bd/ "
   },
   "tuakiri": {
     "contact": "mailto:tuakiri@reannz.co.nz",
@@ -1039,7 +1053,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://tuakiri.ac.nz/confluence/display/Tuakiri/Tuakiri+Metadata"
+        "url": "https://directory.tuakiri.ac.nz/metadata/tuakiri-metadata-signed.xml"
       }
     },
     "name": "Tuakiri New Zealand Access Federation",
@@ -1075,7 +1089,7 @@
     ],
     "metadata": {
       "default": {
-        "url": "https://www.wayf.dk/en/node/32"
+        "url": "https://metadata.wayf.dk/wayf-metadata.xml"
       }
     },
     "name": "WAYF",
