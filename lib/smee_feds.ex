@@ -6,9 +6,14 @@ defmodule SmeeFeds do
   alias SmeeFeds.Federation
   alias SmeeFeds.Data
 
+  def ids() do
+    Data.federations()
+    |> Map.keys()
+  end
+
   def ids(federations \\ federations()) do
     federations
-    |> Map.keys()
+    |> Enum.map(fn f -> f.id end)
   end
 
   def federations(federations) when is_list(federations) do
