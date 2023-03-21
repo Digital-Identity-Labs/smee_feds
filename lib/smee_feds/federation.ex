@@ -113,12 +113,23 @@ defmodule SmeeFeds.Federation do
 
   defp normalize_source_options(federation, data) do
     [
-      type: String.to_atom("#{data[:type]}"),
+      type: normalize_source_type(data[:type]),
       cert_url: data[:cert_url],
       cert_fingerprint: data[:cert_fp],
       label: "#{federation.name}: #{data[:type]}"
     ]
   end
+
+  defp normalize_source_type(type) do
+    cond  do
+      is_nil(type) -> :aggregate
+      type == "" -> :aggregate
+      is_atom(type) -> type
+      is_binary(type) -> String.to_existing_atom(type)
+    end
+  end
+
+  String.to_atom("#{}")
 
   defp normalize_country_codes(countries_list) when is_nil(countries_list) or countries_list == [] do
     []
