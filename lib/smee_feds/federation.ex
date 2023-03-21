@@ -11,6 +11,7 @@ defmodule SmeeFeds.Federation do
     :contact,
     :name,
     :url,
+    :uri,
     countries: [],
     policy: nil,
     sources: %{}
@@ -23,6 +24,7 @@ defmodule SmeeFeds.Federation do
       contact: data[:contact],
       name: data[:name],
       url: data[:url],
+      uri: data[:uri],
       countries: normalize_country_codes(data[:countries]),
       policy: data[:contact],
       sources: %{}
@@ -62,7 +64,7 @@ defmodule SmeeFeds.Federation do
   end
 
   def mdq(%Federation{sources: sources}) when is_map(sources) do
-    Enum.find(sources, fn {id, source} -> source.type == :mdq end)
+    Enum.find(sources, fn {_id, source} -> source.type == :mdq end)
     |> case() do
          {_id, source} -> source
          nil -> nil
@@ -128,8 +130,6 @@ defmodule SmeeFeds.Federation do
       is_binary(type) -> String.to_existing_atom(type)
     end
   end
-
-  String.to_atom("#{}")
 
   defp normalize_country_codes(countries_list) when is_nil(countries_list) or countries_list == [] do
     []

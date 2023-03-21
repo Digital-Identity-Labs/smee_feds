@@ -1072,7 +1072,7 @@
       "default": {
         "cert_fp": "AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66",
         "cert_url": "http://metadata.ukfederation.org.uk/ukfederation.pem",
-        "url": "http://metadata.ukfederation.org.uk/"
+        "url": "http://metadata.ukfederation.org.uk/ukfederation-metadata.xml"
       },
       "mdq": {
         "cert_fp": "3F:6B:F4:AF:E0:1B:3C:D7:C1:F2:3D:F6:EA:C5:60:AE:B1:5A:E8:26",
@@ -1083,7 +1083,8 @@
     },
     "name": "UK Access Management Federation",
     "policy": "http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf",
-    "url": "http://www.ukfederation.org.uk/"
+    "url": "http://www.ukfederation.org.uk/",
+    "uri": "http://ukfederation.org.uk"
   },
   "wayf": {
     "contact": "mailto:sekretariat@wayf.dk",
