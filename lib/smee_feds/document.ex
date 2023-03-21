@@ -71,6 +71,7 @@ defmodule SmeeFeds.Document do
             "contact": f.contact,
             "sources": jsources(f.sources)
           }
+          |> purge_nulls()
         }
       end
     )
@@ -81,6 +82,12 @@ defmodule SmeeFeds.Document do
   #  def xml(federations) do
   #
   #  end
+
+  defp purge_nulls(map) do
+    map
+    |> Enum.filter(fn {_key, value} -> !is_nil(value) end)
+    |> Map.new()
+  end
 
   defp emt(text) do
     "#{text}"
@@ -103,12 +110,21 @@ defmodule SmeeFeds.Document do
                "url": source.url,
                "cert_url": source.cert_url,
                "cert_fp": source.cert_fingerprint,
-               "type": source.type || "aggregate"
+               "type": jstype(source)
              }
+             |> purge_nulls()
            }
          end
        )
     |> Enum.into(%{})
+  end
+
+  defp jstype(source) do
+    case source.type do
+      "" -> "aggregate"
+      nil -> "aggregate"
+      other -> "#{other}"
+    end
   end
 
   defp ems(source) do
