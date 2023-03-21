@@ -5,6 +5,9 @@ defmodule SmeeFeds do
 
   alias SmeeFeds.Federation
   alias SmeeFeds.Data
+  alias Smee.Metadata
+  alias Smee.Entity
+  alias Smee.Source
 
   def ids() do
     Data.federations()
@@ -18,7 +21,6 @@ defmodule SmeeFeds do
 
   def federations(federations) when is_list(federations) do
     federations
-#    |> Enum.filter(fn f -> %Federation{} = f end)
     |> Enum.map(
          fn
            %Federation{} = f -> f
@@ -50,6 +52,33 @@ defmodule SmeeFeds do
   def get(id) do
     Data.federations()
     |> Map.get(id)
+  end
+
+  def publisher(smee_struct, federations \\ federations()) do
+    federations
+    |> Enum.find(fn federation -> publisher?(federation, smee_struct)  end)
+  end
+
+  def publisher?(federation, %Metadata{uri: uri, url: url} = metadata) do
+    cond do
+      uri == federation.uri -> true
+      Enum.any?(Federation.sources(federation), fn s -> s.url == url end) -> true
+      true -> false
+    end
+  end
+
+  def publisher?(federation, %Entity{metadata_uri: uri} = entity) do
+    cond do
+      uri == federation.uri -> true
+      true -> false
+    end
+  end
+
+  def publisher?(federation, %Source{url: url} = entity) do
+    cond do
+      Enum.any?(Federation.sources(federation), fn s -> s.url == url end) -> true
+      true -> false
+    end
   end
 
   def countries(federations \\ federations()) do
