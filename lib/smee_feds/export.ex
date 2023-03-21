@@ -1,4 +1,4 @@
-defmodule SmeeFeds.Document do
+defmodule SmeeFeds.Export do
 
   @moduledoc """
 
@@ -79,9 +79,8 @@ defmodule SmeeFeds.Document do
     |> Jason.encode!()
   end
 
-  #  def xml(federations) do
-  #
-  #  end
+  #############################################################################
+
 
   defp purge_nulls(map) do
     map
