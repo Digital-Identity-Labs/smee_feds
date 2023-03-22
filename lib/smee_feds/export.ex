@@ -8,7 +8,7 @@ defmodule SmeeFeds.Export do
   alias Smee.Source
   alias Countries.Country
 
-  def csv(federations) do
+  def csv(federations \\ SmeeFeds.federations()) do
     Enum.map(
       federations,
       fn f ->
@@ -28,7 +28,7 @@ defmodule SmeeFeds.Export do
     |> Enum.join("")
   end
 
-  def markdown(federations) do
+  def markdown(federations \\ SmeeFeds.federations()) do
     top = """
     | ID | Name | URL | Countries | Policy URL | Contact | Aggregate URL | MDQ URL |
     |----|-----|-----|-----------|--------|---------|-----------|-----|
@@ -57,7 +57,7 @@ defmodule SmeeFeds.Export do
 
   end
 
-  def json(federations) do
+  def json(federations \\ SmeeFeds.federations()) do
     Enum.map(
       federations,
       fn f ->
@@ -80,7 +80,6 @@ defmodule SmeeFeds.Export do
   end
 
   #############################################################################
-
 
   defp purge_nulls(map) do
     map
