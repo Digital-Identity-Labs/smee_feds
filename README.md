@@ -3,9 +3,9 @@
 `SmeeFeds` is a small federation management extension to [Smee](https://github.com/Digital-Identity-Labs/smee) for use in
 research, testing and development.
 
-[Smee](https://github.com/Digital-Identity-Labs/smee) has tools for handling the sources of SAML metadata, but 
-nothing to represent the publishers of metadata. SmeeFeds add a few tools for handling federations, and includes a large
-collection of information about research and education federations
+[Smee](https://github.com/Digital-Identity-Labs/smee) has tools for handling the sources of SAML metadata but 
+nothing to represent the publishers of metadata. SmeeFeds adds a few tools for handling federations and includes a large
+collection of information about research and education federations.
 
 [![Hex pm](http://img.shields.io/hexpm/v/smee_feds.svg?style=flat)](https://hex.pm/packages/smee_feds)
 [![API Docs](https://img.shields.io/badge/api-docs-yellow.svg?style=flat)](http://hexdocs.pm/smee_feds/)
@@ -90,12 +90,12 @@ File.write!("feds.csv", csv)
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `Smee` to your list of dependencies in `mix.exs`:
+by adding `smee_feds` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:SmeeFeds, "~> 0.1.0"}
+    {:smee_feds, "~> 0.1.0"}
   ]
 end
 ```
@@ -108,20 +108,22 @@ please make sure you read the documentation for installing Smee before using Sme
 The main reason SmeeFeds was hurriedly put together on a Sunday afternoon is that I needed to test Smee with a variety
 of federations, and my various scattered notes and comments and tests with URLs and certificate fingerprints were becoming a nuisance.
 
+It's possibly an over-engineered solution to that problem but it was fun.
+
 ## Alternatives and Sources
 
 The best source of this information is the websites of the federations themselves, and the best way to find those
 websites is to read the websites of Edugain and REFEDS.
 
 * [Edugain](https://edugain.org/) "eduGAIN comprises over 80 participant federations connecting more than 8,000 Identity and Service Providers" 
-* [Refeds](https://refeds.org/) "REFEDS is a community of practitioners actively engaged in access and identity work within their home countries and supportive of standards-compliant developments to enhance international collaboration"
+* [REFEDS](https://refeds.org/) "REFEDS is a community of practitioners actively engaged in access and identity work within their home countries and supportive of standards-compliant developments to enhance international collaboration"
 * [MET](https://met.refeds.org/) "Metadata explorer tool is a fast way to find federations, entities, and their relations through entity/federation metadata file information."
 
 ## Documentation
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/smee>.
+be found at <https://hexdocs.pm/smee_feds>.
 
 ## Contributing
 
