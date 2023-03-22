@@ -17,6 +17,7 @@ defmodule SmeeFeds.Data do
                           contact: data[:contact],
                           name: data[:name],
                           url: data[:url],
+                          uri: data[:uri],
                           countries: data[:countries],
                           policy: data[:policy],
                           sources: data[:sources]
