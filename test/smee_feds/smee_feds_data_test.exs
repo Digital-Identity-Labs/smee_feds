@@ -24,4 +24,12 @@ defmodule SmeeFedsDataTest do
 
   end
 
+  describe "Brexit (without swearing)" do
+
+    test "UK is no longer part of the EU but Countries library hasn't been updated, so manually fixed" do
+      assert %Countries.Country{eu_member: false} = Map.get(Data.federations(), :ukamf) |> Federation.countries() |> List.first()
+    end
+
+  end
+
 end
