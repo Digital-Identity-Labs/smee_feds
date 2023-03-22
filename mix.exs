@@ -7,7 +7,9 @@ defmodule SmeeFeds.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      compilers: Mix.compilers() ++ [:rambo]
+      # Needed until issue fixed in Rambo
     ]
   end
 
@@ -25,6 +27,8 @@ defmodule SmeeFeds.MixProject do
       {:smee, ">= 0.0.0"},
       {:jason, "~> 1.4"},
       {:csv, "~> 3.0"},
+      {:rambo, "~> 0.3.4"},
+      # temporary fix
 
       {:ex_json_schema, "~> 0.9.2", only: [:dev, :test]},
       {:apex, "~> 1.2", only: [:dev, :test], runtime: false},
