@@ -1,7 +1,7 @@
 defmodule SmeeFeds.Export do
 
   @moduledoc """
-
+   X
   """
 
   alias SmeeFeds.Federation
@@ -100,8 +100,9 @@ defmodule SmeeFeds.Export do
   @spec emc(countries :: list(binary())) :: binary()
   defp emc(countries) do
     countries
-    |> Enum.map(fn c -> String.downcase(emt(c)) end)
-    |> Enum.join(", ")
+    |> Enum.map_join(", ", fn c -> String.downcase(emt(c)) end)
+    #    |> Enum.map(fn c -> String.downcase(emt(c)) end)
+    #    |> Enum.join(", ")
   end
 
   @spec jsources(sources :: map()) :: map()
