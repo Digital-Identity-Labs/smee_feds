@@ -13,7 +13,8 @@ defmodule SmeeFeds.Filter do
   """
 
   alias SmeeFeds.Federation
-  
+
+  @spec eu(enum :: Enumerable.t(), bool :: boolean) :: Enumerable.t()
   def eu(enum, bool \\ true) do
     enum
     |> Enum.filter(
@@ -23,6 +24,7 @@ defmodule SmeeFeds.Filter do
        )
   end
 
+  @spec region(enum :: Enumerable.t(), region :: binary(), bool :: boolean) :: Enumerable.t()
   def region(enum, region, bool \\ true)
   def region(enum, region, true) do
     enum
@@ -42,6 +44,7 @@ defmodule SmeeFeds.Filter do
        )
   end
 
+  @spec sub_region(enum :: Enumerable.t(), sub_region :: binary(), bool :: boolean) :: Enumerable.t()
   def sub_region(enum, sub_region, bool \\ true)
   def sub_region(enum, sub_region, true) do
     enum
@@ -61,6 +64,7 @@ defmodule SmeeFeds.Filter do
        )
   end
 
+  @spec super_region(enum :: Enumerable.t(), super_region :: binary(), bool :: boolean) :: Enumerable.t()
   def super_region(enum, super_region, bool \\ true)
   def super_region(enum, super_region, true) do
     enum

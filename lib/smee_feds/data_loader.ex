@@ -8,6 +8,7 @@ defmodule SmeeFeds.DataLoader do
   @schema File.read!(@schema_file)
           |> Jason.decode!()
 
+  @spec load() :: map()
   def load() do
     file()
     |> File.read!()
@@ -16,10 +17,12 @@ defmodule SmeeFeds.DataLoader do
     |> Enum.into(%{})
   end
 
+  @spec file() :: binary()
   def file() do
     Application.get_env(:smee_feds, :data_file, @default_data_file)
   end
 
+  @spec validate(json :: map()) :: map()
   def validate(json) do
     case ExJsonSchema.Validator.validate(@schema, json) do
       :ok -> json

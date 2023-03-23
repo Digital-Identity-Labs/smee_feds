@@ -3,8 +3,20 @@ defmodule SmeeFeds.Federation do
   Documentation for `SmeeFeds`.
   """
   alias SmeeFeds.Federation
+  alias Smee.Source
 
   @enforce_keys [:id]
+
+  @type t :: %__MODULE__{
+               id: atom(),
+               contact: nil | binary(),
+               name: nil | binary(),
+               url: nil | binary(),
+               uri: nil | binary(),
+               policy: nil | binary(),
+               countries: list(),
+               sources: map()
+             }
 
   defstruct [
     :id,
@@ -17,20 +29,21 @@ defmodule SmeeFeds.Federation do
     sources: %{}
   ]
 
-  def new(id, data \\ []) do
+  @spec new(id :: atom() | binary() ) :: Federation.t()
+  def new(id, options \\ []) do
 
     federation = %Federation{
       id: String.to_atom("#{id}"),
-      contact: data[:contact],
-      name: data[:name],
-      url: data[:url],
-      uri: data[:uri],
-      countries: normalize_country_codes(data[:countries]),
-      policy: data[:contact],
+      contact: options[:contact],
+      name: options[:name],
+      url: options[:url],
+      uri: options[:uri],
+      countries: normalize_country_codes(options[:countries]),
+      policy: options[:contact],
       sources: %{}
     }
 
-    sources = (data[:sources] || %{})
+    sources = (options[:sources] || %{})
               |> Enum.map(
                    fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(federation, data))} end
                  )
@@ -40,15 +53,18 @@ defmodule SmeeFeds.Federation do
 
   end
 
+  @spec contact(federation :: Federation.t()) :: binary()
   def contact(federation) do
     federation.contact
   end
 
+  @spec sources(federation :: Federation.t()) :: list(Source.t())
   def sources(federation) do
     Map.get(federation, :sources, %{})
     |> Map.values()
   end
 
+  @spec mdq(federation :: Federation.t()) :: Source.t() | nil
   def mdq(%Federation{sources: nil}) do
     nil
   end
@@ -71,6 +87,7 @@ defmodule SmeeFeds.Federation do
        end
   end
 
+  @spec aggregate(federation :: Federation.t()) :: Source.t() | nil
   def aggregate(%Federation{sources: nil}) do
     nil
   end
@@ -93,14 +110,17 @@ defmodule SmeeFeds.Federation do
        end
   end
 
+  @spec url(federation :: Federation.t()) :: binary()
   def url(federation) do
     federation.url
   end
 
+  @spec policy_url(federation :: Federation.t()) :: binary()
   def policy_url(federation) do
     federation.policy
   end
 
+  @spec countries(federation :: Federation.t()) :: list(binary())
   def countries(%Federation{countries: trouble}) when is_nil(trouble) or trouble == []  do
     []
   end
@@ -113,6 +133,7 @@ defmodule SmeeFeds.Federation do
 
   #############################################################################
 
+  @spec normalize_source_options(federation ::  Federation.t(), data :: map() ) :: keyword()
   defp normalize_source_options(federation, data) do
     [
       type: normalize_source_type(data[:type]),
@@ -122,6 +143,7 @@ defmodule SmeeFeds.Federation do
     ]
   end
 
+  @spec normalize_source_type(type :: nil | atom() | binary()) :: atom()
   defp normalize_source_type(type) do
     cond  do
       is_nil(type) -> :aggregate
@@ -131,6 +153,7 @@ defmodule SmeeFeds.Federation do
     end
   end
 
+  @spec normalize_country_codes(countries_list :: list(atom() | binary())) :: list(binary())
   defp normalize_country_codes(countries_list) when is_nil(countries_list) or countries_list == [] do
     []
   end
@@ -145,6 +168,7 @@ defmodule SmeeFeds.Federation do
        )
   end
 
+  @spec ugh_brexit!(countries :: list()) :: list()
   defp ugh_brexit!(countries) do
     countries
     |> Enum.map(
@@ -157,7 +181,6 @@ defmodule SmeeFeds.Federation do
              }
            ),
                                       else: country
-
          end
        )
   end

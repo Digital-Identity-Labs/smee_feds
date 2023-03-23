@@ -8,6 +8,7 @@ defmodule SmeeFeds.Export do
   alias Smee.Source
   alias Countries.Country
 
+  @spec csv(federations :: list(Federation.t())) :: binary()
   def csv(federations \\ SmeeFeds.federations()) do
     Enum.map(
       federations,
@@ -28,6 +29,7 @@ defmodule SmeeFeds.Export do
     |> Enum.join("")
   end
 
+  @spec markdown(federations :: list(Federation.t())) :: binary()
   def markdown(federations \\ SmeeFeds.federations()) do
     top = """
     | ID | Name | URL | Countries | Policy URL | Contact | Aggregate URL | MDQ URL |
@@ -57,6 +59,7 @@ defmodule SmeeFeds.Export do
 
   end
 
+  @spec json(federations :: list(Federation.t())) :: binary()
   def json(federations \\ SmeeFeds.federations()) do
     Enum.map(
       federations,
@@ -81,23 +84,27 @@ defmodule SmeeFeds.Export do
 
   #############################################################################
 
+  @spec purge_nulls(map :: map()) :: map()
   defp purge_nulls(map) do
     map
     |> Enum.filter(fn {_key, value} -> !is_nil(value) end)
     |> Map.new()
   end
 
+  @spec emt(text :: binary() | atom()) :: binary()
   defp emt(text) do
     "#{text}"
     |> String.replace("|", "")
   end
 
+  @spec emc(countries :: list(binary())) :: binary()
   defp emc(countries) do
     countries
     |> Enum.map(fn c -> String.downcase(emt(c)) end)
     |> Enum.join(", ")
   end
 
+  @spec jsources(sources :: map()) :: map()
   defp jsources(sources) do
     sources
     |> Enum.map(
@@ -117,6 +124,7 @@ defmodule SmeeFeds.Export do
     |> Enum.into(%{})
   end
 
+  @spec jstype(source :: map()) :: binary()
   defp jstype(source) do
     case source.type do
       "" -> "aggregate"
@@ -125,6 +133,7 @@ defmodule SmeeFeds.Export do
     end
   end
 
+  @spec ems(source :: nil | map()) :: binary()
   defp ems(source) do
     case source do
       nil -> ""

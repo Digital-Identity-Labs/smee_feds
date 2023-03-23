@@ -1,6 +1,8 @@
 defmodule SmeeFeds.Data do
   @moduledoc false
 
+  alias SmeeFeds.Federation
+
   @federations SmeeFeds.DataLoader.load()
                |> Enum.reject(
                     fn
@@ -12,7 +14,7 @@ defmodule SmeeFeds.Data do
                     fn {id, data} ->
                       {
                         id,
-                        SmeeFeds.Federation.new(
+                        Federation.new(
                           id,
                           contact: data[:contact],
                           name: data[:name],
@@ -27,24 +29,27 @@ defmodule SmeeFeds.Data do
                   )
                |> Enum.into(%{})
 
+  @spec federations() :: map()
   def federations do
     if production_environment?(), do: IO.warn "Please do not use the default SmeeFeds database in production", []
     @federations
   end
 
   #############################################################################
-
+  @spec production_environment?() :: boolean()
   defp production_environment? do
 
     cond do
-      function_exported?(Mix, :env, 0) && Mix.env() == :prod -> true
+      function_exported?(Mix, :env, 0) && apply(Mix, :env, []) == :prod -> true
       System.get_env("MIX_ENV") == "prod" -> true
-      function_exported?(Mix, :env, 0) && Mix.env() == :test -> false
-      function_exported?(Mix, :env, 0) && Mix.env() == :dev -> false
+      function_exported?(Mix, :env, 0) && apply(Mix, :env, []) == :test -> false
+      function_exported?(Mix, :env, 0) && apply(Mix, :env, []) == :dev -> false
       System.get_env("MIX_ENV") == "test" -> false
       System.get_env("MIX_ENV") == "dev" -> false
       true -> true
     end
+
+
 
   end
 
