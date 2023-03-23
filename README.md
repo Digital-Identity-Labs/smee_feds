@@ -21,9 +21,9 @@ collection of information about research and education federations.
 The top level `SmeeFeds` module has tools for selecting individual federation details or lists of many at once.
 SmeeFeds contain more tools for handling federations, such as:
 
+* `SmeeFeds.Federation` - tools for accessing data such as metadata download URLs, contacts, homepages, and so on.
 * `SmeeFeds.Export` - convert lists of federations into data for export, or simple text reports
 * `SmeeFeds.Filter` - filter lists of federations by various criteria
-* `SmeeFeds.Federation` - tools for accessing data such as metadata download URLs, contacts, homepages, and so on.
 
 ## IMPORTANT DISCLAIMER AND WARNING
 
