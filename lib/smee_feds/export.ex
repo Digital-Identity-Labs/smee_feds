@@ -1,13 +1,22 @@
 defmodule SmeeFeds.Export do
 
   @moduledoc """
-   X
+  Converts lists of federations into other formats suitable for export and use in other applications.
+
+  Some exports are focused on presenting the data (such as `markdown/1`, others are lossy summaries (`csv/1`) and some are
+    contain all data (`json/1`).
   """
 
   alias SmeeFeds.Federation
   alias Smee.Source
   alias Countries.Country
 
+  @doc """
+  Creates a CSV export of the provided federations as a single string.
+
+  Not all information is included - the CSV only contains ID, name, URL, countries, policy url and metadata URLs for the
+    main aggregate and MDQ service. Other information is not included.
+  """
   @spec csv(federations :: list(Federation.t())) :: binary()
   def csv(federations \\ SmeeFeds.federations()) do
     Enum.map(
@@ -29,6 +38,14 @@ defmodule SmeeFeds.Export do
     |> Enum.join("")
   end
 
+  @doc """
+  Produces a simple Markdown-formatted table summarising the provided list of federations.
+
+    Not all information is included - the CSV only contains ID, name, URL, countries, policy url and metadata URLs for the
+    main aggregate and MDQ service. Other information is not included.
+
+  The Markdown output can be used with most modern markdown parsers, including Github comments.
+  """
   @spec markdown(federations :: list(Federation.t())) :: binary()
   def markdown(federations \\ SmeeFeds.federations()) do
     top = """
@@ -59,6 +76,12 @@ defmodule SmeeFeds.Export do
 
   end
 
+  @doc """
+  Produces a string containing all passed federations (or default set) in JSON format.
+
+  The JSON *should* contain all federation information and can be used by SmeeFeds as a replacement for the default source of
+  federation information.
+  """
   @spec json(federations :: list(Federation.t())) :: binary()
   def json(federations \\ SmeeFeds.federations()) do
     Enum.map(

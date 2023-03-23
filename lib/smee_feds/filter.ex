@@ -1,19 +1,21 @@
 defmodule SmeeFeds.Filter do
 
   @moduledoc """
-  Process a stream of entities to include or exclude entity structs matching the specified criteria.
+  Processes a list or stream of federations to include or exclude federation structs matching the specified criteria.
 
-  These functions are intended to be used with streams but should also work with simple lists too - but using lists to
-  process larger metadata files is **strongly discouraged**.
-
-  By default these functions include matching entities and exclude those that do not match, but this an be reversed.
-  By default `Smee.Filter.idp/3` will exclude entities that are no IdPs. But by specifying `false` as the third
-  parameter the filter will be inverted and exclude entities that have an IdP role.
+  By default these functions include matching federations and exclude those that do not match, but this an be reversed.
+  For example, by default `SmeeFeds.Filter.eu/3` will exclude entities that are not in the EU, but by specifying `false` as the third
+  parameter the filter will be inverted and exclude entities that are in the EU.
 
   """
 
   alias SmeeFeds.Federation
 
+  @doc """
+  Filter a list of stream of federations so that only those in the EU remain.
+
+  The filter is positive by default but can be inverted by specifying `false`
+  """
   @spec eu(enum :: Enumerable.t(), bool :: boolean) :: Enumerable.t()
   def eu(enum, bool \\ true) do
     enum
@@ -24,6 +26,13 @@ defmodule SmeeFeds.Filter do
        )
   end
 
+  @doc """
+  Filter a list of stream of federations so that only those in the specified region remain.
+
+  The list of available regions can be seen by calling `SmeeFeds.regions()`
+
+  The filter is positive by default but can be inverted by specifying `false`
+  """
   @spec region(enum :: Enumerable.t(), region :: binary(), bool :: boolean) :: Enumerable.t()
   def region(enum, region, bool \\ true)
   def region(enum, region, true) do
@@ -44,6 +53,13 @@ defmodule SmeeFeds.Filter do
        )
   end
 
+  @doc """
+  Filter a list of stream of federations so that only those in the specified sub_region remain.
+
+  The list of available regions can be seen by calling `SmeeFeds.sub_regions()`
+
+  The filter is positive by default but can be inverted by specifying `false`
+  """
   @spec sub_region(enum :: Enumerable.t(), sub_region :: binary(), bool :: boolean) :: Enumerable.t()
   def sub_region(enum, sub_region, bool \\ true)
   def sub_region(enum, sub_region, true) do
@@ -64,6 +80,13 @@ defmodule SmeeFeds.Filter do
        )
   end
 
+  @doc """
+  Filter a list of stream of federations so that only those in the specified super_region remain.
+
+  The list of available regions can be seen by calling `SmeeFeds.super_regions()`
+
+  The filter is positive by default but can be inverted by specifying `false`
+  """
   @spec super_region(enum :: Enumerable.t(), super_region :: binary(), bool :: boolean) :: Enumerable.t()
   def super_region(enum, super_region, bool \\ true)
   def super_region(enum, super_region, true) do

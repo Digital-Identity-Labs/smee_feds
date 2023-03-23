@@ -29,6 +29,10 @@ defmodule SmeeFeds.Federation do
     sources: %{}
   ]
 
+  @doc """
+  X
+
+  """
   @spec new(id :: atom() | binary() ) :: Federation.t()
   def new(id, options \\ []) do
 
@@ -53,17 +57,29 @@ defmodule SmeeFeds.Federation do
 
   end
 
+  @doc """
+  X
+
+  """
   @spec contact(federation :: Federation.t()) :: binary()
   def contact(federation) do
     federation.contact
   end
 
+  @doc """
+  X
+
+  """
   @spec sources(federation :: Federation.t()) :: list(Source.t())
   def sources(federation) do
     Map.get(federation, :sources, %{})
     |> Map.values()
   end
 
+  @doc """
+  X
+
+  """
   @spec mdq(federation :: Federation.t()) :: Source.t() | nil
   def mdq(%Federation{sources: nil}) do
     nil
@@ -87,6 +103,10 @@ defmodule SmeeFeds.Federation do
        end
   end
 
+  @doc """
+  X
+
+  """
   @spec aggregate(federation :: Federation.t()) :: Source.t() | nil
   def aggregate(%Federation{sources: nil}) do
     nil
@@ -110,16 +130,28 @@ defmodule SmeeFeds.Federation do
        end
   end
 
+  @doc """
+  X
+
+  """
   @spec url(federation :: Federation.t()) :: binary()
   def url(federation) do
     federation.url
   end
 
+  @doc """
+  X
+
+  """
   @spec policy_url(federation :: Federation.t()) :: binary()
   def policy_url(federation) do
     federation.policy
   end
 
+  @doc """
+  X
+
+  """
   @spec countries(federation :: Federation.t()) :: list(binary())
   def countries(%Federation{countries: trouble}) when is_nil(trouble) or trouble == []  do
     []
