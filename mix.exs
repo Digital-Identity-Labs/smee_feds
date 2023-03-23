@@ -6,10 +6,29 @@ defmodule SmeeFeds.MixProject do
       app: :smee_feds,
       version: "0.1.0",
       elixir: "~> 1.14",
+      description: "A federation extension for Smee",
+      package: package(),
+      name: "Smee",
+      source_url: "https://github.com/Digital-Identity-Labs/smee_feds",
+      build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
+      test_coverage: [
+        tool: ExCoveralls
+      ],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
+      docs: [
+        main: "readme",
+        # logo: "path/to/logo.png",
+        extras: ["README.md", "LICENSE"]
+      ],
       deps: deps(),
-      compilers: Mix.compilers() ++ [:rambo]
-      # Needed until issue fixed in Rambo
+      compilers: Mix.compilers() ++ [:rambo], # Needed until issue fixed in Rambo
+      elixirc_paths: elixirc_paths(Mix.env)
     ]
   end
 
@@ -41,4 +60,18 @@ defmodule SmeeFeds.MixProject do
       {:doctor, "~> 0.17.0", only: :dev, runtime: false}
     ]
   end
+
+  defp package() do
+    [
+      licenses: ["Apache-2.0"],
+      links: %{
+        "GitHub" => "https://github.com/Digital-Identity-Labs/smee_feds"
+      }
+    ]
+  end
+
+  # Specifies which paths to compile per environment.
+  defp elixirc_paths(:test), do: ["lib", "test/support", "priv"]
+  defp elixirc_paths(_), do: ["lib", "priv"]
+
 end
