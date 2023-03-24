@@ -11,6 +11,8 @@ collection of information about research and education federations.
 [![API Docs](https://img.shields.io/badge/api-docs-yellow.svg?style=flat)](http://hexdocs.pm/smee_feds/)
 ![Github Elixir CI](https://github.com/Digital-Identity-Labs/smee_feds/workflows/Elixir%20CI/badge.svg)
 
+[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fraw.githubusercontent.com%2FDigital-Identity-Labs%2Fsmee_feds%2Fmain%2Fsmee_feds_notebook.livemd)
+
 ## Features
 
 * Easily find information on National Research and Education organisation (NREN) federations.
