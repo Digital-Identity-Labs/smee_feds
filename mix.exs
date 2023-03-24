@@ -8,7 +8,7 @@ defmodule SmeeFeds.MixProject do
       elixir: "~> 1.14",
       description: "A federation extension for Smee",
       package: package(),
-      name: "Smee",
+      name: "SmeeFeds",
       source_url: "https://github.com/Digital-Identity-Labs/smee_feds",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
