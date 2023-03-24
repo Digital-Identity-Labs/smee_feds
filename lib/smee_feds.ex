@@ -171,7 +171,7 @@ defmodule SmeeFeds do
 
   """
   @spec publisher?(Federation.t(), smee_struct :: Source.t() | Metadata.t() | Entity.t()) :: boolean()
-  def publisher?(federation, %Metadata{uri: uri, url: url} = metadata) do
+  def publisher?(federation, %Metadata{uri: uri, url: url}) do
     cond do
       uri == federation.uri -> true
       Enum.any?(Federation.sources(federation), fn s -> s.url == url end) -> true
@@ -179,14 +179,14 @@ defmodule SmeeFeds do
     end
   end
 
-  def publisher?(federation, %Entity{metadata_uri: uri} = entity) do
+  def publisher?(federation, %Entity{metadata_uri: uri}) do
     cond do
       uri == federation.uri -> true
       true -> false
     end
   end
 
-  def publisher?(federation, %Source{url: url} = entity) do
+  def publisher?(federation, %Source{url: url}) do
     cond do
       Enum.any?(Federation.sources(federation), fn s -> s.url == url end) -> true
       true -> false

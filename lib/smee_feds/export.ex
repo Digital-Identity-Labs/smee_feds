@@ -9,7 +9,6 @@ defmodule SmeeFeds.Export do
 
   alias SmeeFeds.Federation
   alias Smee.Source
-  alias Countries.Country
 
   @doc """
   Creates a CSV export of the provided federations as a single string.
@@ -90,12 +89,12 @@ defmodule SmeeFeds.Export do
         {
           f.id,
           %{
-            "name": f.name,
-            "url": f.url,
-            "countries": f.countries,
-            "policy": f.policy,
-            "contact": f.contact,
-            "sources": jsources(f.sources)
+            name: f.name,
+            url: f.url,
+            countries: f.countries,
+            policy: f.policy,
+            contact: f.contact,
+            sources: jsources(f.sources)
           }
           |> purge_nulls()
         }
@@ -136,10 +135,10 @@ defmodule SmeeFeds.Export do
            {
              "#{id}",
              %{
-               "url": source.url,
-               "cert_url": source.cert_url,
-               "cert_fp": source.cert_fingerprint,
-               "type": jstype(source)
+               url: source.url,
+               cert_url: source.cert_url,
+               cert_fp: source.cert_fingerprint,
+               type: jstype(source)
              }
              |> purge_nulls()
            }

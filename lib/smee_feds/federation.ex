@@ -137,7 +137,7 @@ defmodule SmeeFeds.Federation do
   end
 
   def aggregate(%Federation{sources: sources}) when is_map(sources) do
-    Enum.find(sources, fn {id, source} -> source.type == :aggregate end)
+    Enum.find(sources, fn {_id, source} -> source.type == :aggregate end)
     |> case() do
          {_id, source} -> source
          nil -> nil
