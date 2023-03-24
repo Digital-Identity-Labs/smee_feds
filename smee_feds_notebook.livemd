@@ -3,8 +3,8 @@
 # SmeeFeds Workbook
 
 ```elixir
-Mix.install([{:smee, ">= 0.0.0"}, {:rambo, "~> 0.3.4"}])
-alias Smee.{Metadata, Entity, Source}
+Mix.install([{:smee_feds, ">= 0.1.1"}, {:rambo, "~> 0.3.4"}])
+alias Smee.{Metadata, Entity, Source, MDQ}
 alias SmeeFeds.Federation
 ```
 
@@ -21,7 +21,7 @@ xml =
 
 ```elixir
 cern_idp =
-  SmeeFeds.get(:incommon)
+  SmeeFeds.get(:ukamf)
   |> SmeeFeds.Federation.mdq()
   |> MDQ.lookup!("https://cern.ch/login")
 ```
