@@ -1,6 +1,7 @@
 defmodule SmeeFeds.Federation do
   @moduledoc """
-  Documentation for `SmeeFeds`.
+  Federation provides structs that represents federated metadata publishers, and some simple tools to manage the
+  information in them.
   """
   alias SmeeFeds.Federation
   alias Smee.Source
@@ -30,7 +31,20 @@ defmodule SmeeFeds.Federation do
   ]
 
   @doc """
-  X
+  Creates a new Federation struct. The only requirement is a unique ID, passed as the first parameter.
+
+  Other information can be passed as an option:
+
+  * `contact`: general contact address for the federation, as a URL.
+  * `name`: The full, official name of the federation
+  * `url`: The URL of the federation's homepage
+  * `uri`: The publisher URI of the federation
+  * `countries`: A list of 2-letter country codes for countries the federation officially provides services for.
+  * `policy`: URL for the federation's metadata policy documentation
+  * `sources`: Map of atom IDs and `Smee.Source` structs. Use 'default:` for the default aggregate, and `mdq:` for the
+    default MDQ service.
+
+  SmeeFeds comes with a list of built-in federations - use `SmeeFeds.federations/0` to view them.
 
   """
   @spec new(id :: atom() | binary() ) :: Federation.t()
@@ -58,8 +72,7 @@ defmodule SmeeFeds.Federation do
   end
 
   @doc """
-  X
-
+  Gets the general contact information for the federation as a URL.
   """
   @spec contact(federation :: Federation.t()) :: binary()
   def contact(federation) do
@@ -67,8 +80,9 @@ defmodule SmeeFeds.Federation do
   end
 
   @doc """
-  X
+  Lists all sources for the federation (it does not return their keys/labels)
 
+  If no sources have been defined it will return an empty list.
   """
   @spec sources(federation :: Federation.t()) :: list(Source.t())
   def sources(federation) do
@@ -77,7 +91,7 @@ defmodule SmeeFeds.Federation do
   end
 
   @doc """
-  X
+  Returns the default MDQ service for the federation, or nil if none has been defined.
 
   """
   @spec mdq(federation :: Federation.t()) :: Source.t() | nil
@@ -104,7 +118,7 @@ defmodule SmeeFeds.Federation do
   end
 
   @doc """
-  X
+  Returns the default aggregate metadata details for the federation, or nil if none has been defined.
 
   """
   @spec aggregate(federation :: Federation.t()) :: Source.t() | nil
@@ -131,7 +145,7 @@ defmodule SmeeFeds.Federation do
   end
 
   @doc """
-  X
+  Returns the homepage URL for the federation, or nil.
 
   """
   @spec url(federation :: Federation.t()) :: binary()
@@ -140,7 +154,7 @@ defmodule SmeeFeds.Federation do
   end
 
   @doc """
-  X
+  Returns the policy URL for the federation (if known) or nil
 
   """
   @spec policy_url(federation :: Federation.t()) :: binary()
@@ -149,8 +163,9 @@ defmodule SmeeFeds.Federation do
   end
 
   @doc """
-  X
+  Returns the countries associated with the federation as `Countries` structs.
 
+  See [Countries](https://hexdocs.pm/countries/api-reference.html) documentation for more information.
   """
   @spec countries(federation :: Federation.t()) :: list(binary())
   def countries(%Federation{countries: trouble}) when is_nil(trouble) or trouble == []  do
