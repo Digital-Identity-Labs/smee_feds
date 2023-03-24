@@ -4,7 +4,7 @@ defmodule SmeeFeds.MixProject do
   def project do
     [
       app: :smee_feds,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.14",
       description: "A federation extension for Smee",
       package: package(),
@@ -48,7 +48,7 @@ defmodule SmeeFeds.MixProject do
       {:csv, "~> 3.0"},
       {:rambo, "~> 0.3.4"},     # temporary fix
       {:ex_json_schema, "~> 0.9.2"},
-    
+
       {:apex, "~> 1.2", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.6.7", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.14 and >= 0.14.4", only: [:dev, :test]},
