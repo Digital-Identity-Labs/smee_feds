@@ -49,6 +49,9 @@ defmodule SmeeFeds do
   @doc """
   Returns the ids of all federations in the default collection as a list of atoms.
 
+  ## Example
+
+      iex> ids = SmeeFeds.ids()
   """
   @spec ids(federations :: list() | nil) :: list(atom())
   def ids() do
@@ -59,6 +62,10 @@ defmodule SmeeFeds do
   @doc """
   Returns the ids of all federations in the provided list of federations as a list of atoms.
 
+  ## Example
+
+       iex> federations = SmeeFeds.federations([:ukamf, :ref])
+       iex> ids = SmeeFeds.ids(federations)
   """
   def ids(federations) do
     federations
@@ -69,6 +76,9 @@ defmodule SmeeFeds do
   Returns a list of `SmeeFeds.Federation` structs when passed a list of
    federation IDs (as atoms).
 
+  ## Example
+
+      iex> federations = SmeeFeds.federations([:ukamf, :ref])
   """
   @spec federations(federations :: list()) :: list(Federation.t())
   def federations(federations) when is_list(federations) do
@@ -86,6 +96,9 @@ defmodule SmeeFeds do
   Returns a list of `SmeeFeds.Federation` structs.
 
   Returns all known federations from the default collection.
+
+  ## Example
+      iex> federations = SmeeFeds.federations()
   """
   @spec federations() :: list(Federation.t())
   def federations() do
@@ -96,6 +109,8 @@ defmodule SmeeFeds do
   @doc """
   Finds a federation in the default database by ID and returns the full federation record.
 
+  ## Example
+      iex> incommon = SmeeFeds.federation(:incommon)
   """
   @spec federation(federation :: atom() | binary()) :: Federation.t() | nil
   def federation(id) do
@@ -105,6 +120,8 @@ defmodule SmeeFeds do
   @doc """
   Finds a federation in the default database by ID and returns the full federation record.
 
+  ## Example
+      iex> incommon = SmeeFeds.get(:incommon)
   """
   @spec get(federation :: atom() | binary()) :: Federation.t() | nil
   def get(id) when is_binary(id) do
@@ -126,6 +143,13 @@ defmodule SmeeFeds do
   Tries to find the federation that published the provided Smee record (source, entity or metadata)
 
   The first matching federation record will be returned if found, or nil if no federations match.
+
+  ## Example
+
+      iex> source = Smee.source("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
+      iex> federation = SmeeFeds.publisher(source)
+      %SmeeFeds.Federation{id: :ukamf} = federation
+
   """
   @spec publisher(smee_struct :: Source.t() | Metadata.t() | Entity.t()) :: Federation.t() | nil
   def publisher(smee_struct, federations \\ federations()) do
@@ -137,6 +161,13 @@ defmodule SmeeFeds do
   Is a federation the publisher of the provided Smee Source, Metadata, or Entity?
 
   Returns true if the federation and source, metadata or entity share a URL or publisher URI, false otherwise.
+
+  ## Example
+
+      iex> source = Smee.source("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
+      iex> federation = SmeeFeds.get(:ukamf)
+      iex> SmeeFeds.publisher?(federation, source)
+      true
 
   """
   @spec publisher?(Federation.t(), smee_struct :: Source.t() | Metadata.t() | Entity.t()) :: boolean()
@@ -165,6 +196,11 @@ defmodule SmeeFeds do
   @doc """
   Lists all countries in the provided list of federations (or the default set if no federations are passed)
 
+  ## Examples
+
+      iex> SmeeFeds.countries()
+      iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.countries()
+
   """
   @spec countries(list(Federation.t())) :: list(struct())
   def countries(federations \\ federations()) do
@@ -179,6 +215,11 @@ defmodule SmeeFeds do
   @doc """
   Lists all regions in the provided list of federations (or the default set if no federations are passed)
 
+  ## Examples
+
+      iex> SmeeFeds.regions()
+      iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.regions()
+      ["Americas", "Europe"]
   """
   @spec regions(list(Federation.t())) :: list(struct())
   def regions(federations \\ federations()) do
@@ -190,8 +231,13 @@ defmodule SmeeFeds do
   end
 
   @doc """
-    Lists all sub_regions in the provided list of federations (or the default set if no federations are passed)
+  Lists all sub_regions in the provided list of federations (or the default set if no federations are passed)
 
+  ## Examples
+
+      iex> SmeeFeds.sub_regions()
+      iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.sub_regions()
+      ["Northern America", "Northern Europe"]
   """
   @spec sub_regions(list(Federation.t())) :: list(struct())
   def sub_regions(federations \\ federations()) do
@@ -205,6 +251,11 @@ defmodule SmeeFeds do
   @doc """
   Lists all super_regions in the provided list of federations (or the default set if no federations are passed)
 
+  ## Examples
+
+      iex> SmeeFeds.super_regions()
+      iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.super_regions()
+      ["AMER", "EMEA"]
   """
   @spec super_regions(list(Federation.t())) :: list(struct())
   def super_regions(federations \\ federations()) do
