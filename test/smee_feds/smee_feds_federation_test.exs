@@ -54,7 +54,7 @@ defmodule SmeeFedsFederationTest do
   describe "aggregate/1" do
 
     test "returns the default aggregate as a Smee Source if it exists" do
-      assert %Source{type: aggregate} = Federation.aggregate(SmeeFeds.get(:ukamf))
+      assert %Source{type: :aggregate} = Federation.aggregate(SmeeFeds.get(:ukamf))
     end
 
     test "returns the first aggregate as a Smee Source if no default exists" do

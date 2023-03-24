@@ -1,8 +1,6 @@
 defmodule SmeeFedsFilterTest do
   use ExUnit.Case
-
-  alias SmeeFeds.Data
-  alias SmeeFeds.Federation
+  
   alias SmeeFeds.Filter
 
 
