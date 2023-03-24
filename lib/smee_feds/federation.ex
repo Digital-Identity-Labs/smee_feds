@@ -41,7 +41,7 @@ defmodule SmeeFeds.Federation do
   * `uri`: The publisher URI of the federation
   * `countries`: A list of 2-letter country codes for countries the federation officially provides services for.
   * `policy`: URL for the federation's metadata policy documentation
-  * `sources`: Map of atom IDs and `Smee.Source` structs. Use 'default:` for the default aggregate, and `mdq:` for the
+  * `sources`: Map of atom IDs and `Smee.Source` structs. Use `default:` for the default aggregate, and `mdq:` for the
     default MDQ service.
 
   SmeeFeds comes with a list of built-in federations - use `SmeeFeds.federations/0` to view them.
