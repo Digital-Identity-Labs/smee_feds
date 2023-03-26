@@ -1106,7 +1106,9 @@
     ],
     "sources": {
       "default": {
-        "url": "http://md.yetkim.org.tr/yetkim-upstream.xml"
+        "url": "http://md.yetkim.org.tr/yetkim-metadata.xml",
+        "cert_url": "https://yetkim.org.tr/yetkim.cer",
+        "cert_fp": "AD:12:24:89:62:B9:1E:26:F2:FC:62:7B:61:46:E6:CC:E0:FD:30:F3"
       }
     },
     "name": "YETKİM",
