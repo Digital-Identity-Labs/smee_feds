@@ -47,7 +47,7 @@ defmodule SmeeFeds.Federation do
   SmeeFeds comes with a list of built-in federations - use `SmeeFeds.federations/0` to view them.
 
   """
-  @spec new(id :: atom() | binary() ) :: Federation.t()
+  @spec new(id :: atom() | binary(), options :: keyword() ) :: Federation.t()
   def new(id, options \\ []) do
 
     federation = %Federation{
@@ -57,7 +57,7 @@ defmodule SmeeFeds.Federation do
       url: options[:url],
       uri: options[:uri],
       countries: normalize_country_codes(options[:countries]),
-      policy: options[:contact],
+      policy: options[:policy],
       sources: %{}
     }
 
