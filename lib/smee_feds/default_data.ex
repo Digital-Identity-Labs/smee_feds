@@ -5,7 +5,7 @@ defmodule SmeeFeds.DefaultData do
 
   @default_data_file Path.join(Application.app_dir(:smee_feds, "priv"), "data/federations.json")
   @external_resource @default_data_file
-  @federations Import.load!(@default_data_file, active: true)
+  @federations Import.json!(@default_data_file, active: true)
 
   @spec federations() :: map()
   def federations do
