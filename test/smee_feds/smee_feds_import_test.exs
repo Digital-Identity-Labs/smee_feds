@@ -1,40 +1,29 @@
 defmodule SmeeFedsDataLoaderTest do
   use ExUnit.Case, async: false
 
-  alias SmeeFeds.DataLoader
+  @default_data_file Path.join(Application.app_dir(:smee_feds, "priv"), "data/federations.json")
+
+  alias SmeeFeds.Import
 
   describe "load/0" do
 
     test "returns a map of federation data" do
-      assert is_map(DataLoader.load())
+      assert is_map(Import.load!(@default_data_file))
     end
 
     test "all keys are atoms" do
-      assert Enum.all?(Map.keys(DataLoader.load()), fn k -> is_atom(k) end)
+      assert Enum.all?(Map.keys(Import.load!(@default_data_file)), fn k -> is_atom(k) end)
     end
 
     test "all values are maps" do
-      assert Enum.all?(Map.values(DataLoader.load()), fn v -> is_map(v) end)
+      assert Enum.all?(Map.values(Import.load!(@default_data_file)), fn v -> is_map(v) end)
     end
 
     test "by default over 60 records should be present" do
-      assert 60 < Enum.count(Map.keys(DataLoader.load()))
+      assert 60 < Enum.count(Map.keys(Import.load!(@default_data_file)))
     end
 
   end
-
-  describe "file/0" do
-
-    test "by default returns the location of built-in federation data" do
-      assert String.ends_with?(
-               DataLoader.file(),
-               "smee_feds/_build/test/lib/smee_feds/priv/data/federations.json"
-             )
-    end
-
-    test "the file actually exists too" do
-      assert File.exists?(DataLoader.file())
-    end
 
 #    test "a new file can be defined using a config option" do
 #
@@ -48,7 +37,7 @@ defmodule SmeeFedsDataLoaderTest do
 #             )
 #
 #    end
-
-  end
+#
+#  end
 
 end

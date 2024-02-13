@@ -58,7 +58,7 @@ defmodule SmeeFedsFederationTest do
     end
 
     test "returns the first aggregate as a Smee Source if no default exists" do
-      assert %Source{type: aggregate, url: "http://example.com"} = Federation.aggregate(
+      assert %Source{type: :aggregate, url: "http://example.com"} = Federation.aggregate(
                struct(
                  SmeeFeds.get(:ukamf),
                  %{
@@ -119,7 +119,7 @@ defmodule SmeeFedsFederationTest do
   describe "policy_url/1" do
 
     test "returns the policy url as a string if one is present" do
-      assert "mailto:service@ukfederation.org.uk" = Federation.policy_url(SmeeFeds.get(:ukamf))
+      assert "http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf" = Federation.policy_url(SmeeFeds.get(:ukamf))
     end
 
     test "if no policy url is present, returns a nil" do

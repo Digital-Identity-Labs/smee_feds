@@ -104,6 +104,7 @@ defmodule SmeeFedsTest do
 
   describe "publisher?/2" do
 
+    @tag timeout: 180_000
     test "returns true if the provided federation definitely published the metadata provided" do
       metadata = Source.new("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
                  |> Smee.fetch!()
@@ -111,6 +112,7 @@ defmodule SmeeFedsTest do
       assert SmeeFeds.publisher?(ukamf, metadata)
     end
 
+    @tag timeout: 180_000
     test "returns true if the provided federation definitely published the entity provided" do
       entity = Source.new("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
                |> Smee.fetch!()
@@ -119,12 +121,14 @@ defmodule SmeeFedsTest do
       assert SmeeFeds.publisher?(ukamf, entity)
     end
 
+    @tag timeout: 180_000
     test "returns true if the provided federation definitely published the source provided" do
       source = Source.new("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
       ukamf = SmeeFeds.get("ukamf")
       assert SmeeFeds.publisher?(ukamf, source)
     end
 
+    @tag timeout: 180_000
     test "returns false if no matching federation can be found" do
       source = Source.new("http://metadata.example.org.uk/example-metadata.xml")
       ukamf = SmeeFeds.get("ukamf")
@@ -135,6 +139,7 @@ defmodule SmeeFedsTest do
 
   describe "publisher/2" do
 
+    @tag timeout: 180_000
     test "returns the first federation (from the default collection) that could have provided the supplied metadata or entity" do
 
       source = Source.new("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
@@ -151,6 +156,7 @@ defmodule SmeeFedsTest do
 
     end
 
+    @tag timeout: 180_000
     test "returns the first federation (from the passed collection) that could have provided the supplied metadata or entity" do
 
       federations = SmeeFeds.federations([:ukamf, :incommon])
@@ -169,6 +175,7 @@ defmodule SmeeFedsTest do
 
     end
 
+    @tag timeout: 180_000
     test "returns nil if no publisher can be found" do
       federations = SmeeFeds.federations([:incommon, :wayf])
 

@@ -24,7 +24,7 @@ defmodule SmeeFedsExportTest do
                  "Australian Access Federation (AAF)",
                  "http://www.aaf.edu.au/",
                  "AU",
-                 "mailto:support@aaf.edu.au",
+                 "https://aaf.edu.au/about/federation-rules.html",
                  "mailto:support@aaf.edu.au",
                  "https://md.aaf.edu.au/aaf-metadata.xml",
                  ""
@@ -34,7 +34,7 @@ defmodule SmeeFedsExportTest do
                  "AAI@EduHr",
                  "http://www.aaiedu.hr/",
                  "HR",
-                 "mailto:team@aaiedu.hr",
+                 "http://www.aaiedu.hr/docs/AAI@EduHr-pravilnik-ver1.3.1.pdf",
                  "mailto:team@aaiedu.hr",
                  "https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml",
                  ""
@@ -42,6 +42,8 @@ defmodule SmeeFedsExportTest do
              ] = CSV.decode!(IO.binstream(csv_stream, :line))
                  |> Enum.sort()
                  |> Enum.take(2)
+
+
 
     end
 
@@ -57,11 +59,9 @@ defmodule SmeeFedsExportTest do
       markdown = Export.markdown(SmeeFeds.federations([:ukamf, :incommon]))
 
       expected_markdown = """
-      | ID | Name | URL | Countries | Policy URL | Contact | Aggregate URL | MDQ URL |
-      |----|-----|-----|-----------|--------|---------|-----------|-----|
-      | ukamf| UK Access Management Federation| http://www.ukfederation.org.uk/| gb| mailto:service@ukfederation.org.uk| mailto:service@ukfederation.org.uk| http://metadata.ukfederation.org.uk/ukfederation-metadata.xml| http://mdq.ukfederation.org.uk/|\s
-      | incommon| InCommon| http://incommon.org/| us| mailto:help@incommon.org| mailto:help@incommon.org| https://md.incommon.org/InCommon/InCommon-metadata.xml| https://mdq.incommon.org|\s
-      """ |> String.trim()
+                          | ID | Name | URL | Countries | Policy URL | Contact | Aggregate URL | MDQ URL |\n|----|-----|-----|-----------|--------|---------|-----------|-----|\n| ukamf| UK Access Management Federation| http://www.ukfederation.org.uk/| gb| http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf| mailto:service@ukfederation.org.uk| http://metadata.ukfederation.org.uk/ukfederation-metadata.xml| http://mdq.ukfederation.org.uk/| \n| incommon| InCommon| http://incommon.org/| us| https://incommon.org/about/policies/| mailto:help@incommon.org| https://md.incommon.org/InCommon/InCommon-metadata.xml| https://mdq.incommon.org|
+                          """
+                          |> String.trim()
       assert ^expected_markdown = String.trim(markdown)
     end
 
@@ -76,9 +76,9 @@ defmodule SmeeFedsExportTest do
     test "exports the specified federations as a JSON formatted string if passed a list of federations" do
       assert is_binary(Export.json(SmeeFeds.federations([:ukamf, :incommon])))
 
-      expected_json = "{\"incommon\":{\"contact\":\"mailto:help@incommon.org\",\"countries\":[\"US\"],\"name\":\"InCommon\",\"policy\":\"mailto:help@incommon.org\",\"sources\":{\"default\":{\"type\":\"aggregate\",\"url\":\"https://md.incommon.org/InCommon/InCommon-metadata.xml\"},\"mdq\":{\"cert_fp\":\"F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36\",\"cert_url\":\"http://md.incommon.org/certs/inc-md-cert-mdq.pem\",\"type\":\"aggregate\",\"url\":\"https://mdq.incommon.org\"}},\"url\":\"http://incommon.org/\"},\"ukamf\":{\"contact\":\"mailto:service@ukfederation.org.uk\",\"countries\":[\"GB\"],\"name\":\"UK Access Management Federation\",\"policy\":\"mailto:service@ukfederation.org.uk\",\"sources\":{\"default\":{\"cert_fp\":\"AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66\",\"cert_url\":\"http://metadata.ukfederation.org.uk/ukfederation.pem\",\"type\":\"aggregate\",\"url\":\"http://metadata.ukfederation.org.uk/ukfederation-metadata.xml\"},\"mdq\":{\"cert_fp\":\"3F:6B:F4:AF:E0:1B:3C:D7:C1:F2:3D:F6:EA:C5:60:AE:B1:5A:E8:26\",\"cert_url\":\"http://mdq.ukfederation.org.uk/ukfederation-mdq.pem\",\"type\":\"mdq\",\"url\":\"http://mdq.ukfederation.org.uk/\"}},\"url\":\"http://www.ukfederation.org.uk/\"}}"
+      expected_json = "{\"ukamf\":{\"name\":\"UK Access Management Federation\",\"sources\":{\"default\":{\"type\":\"aggregate\",\"url\":\"http://metadata.ukfederation.org.uk/ukfederation-metadata.xml\",\"cert_url\":\"http://metadata.ukfederation.org.uk/ukfederation.pem\",\"cert_fp\":\"AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66\"},\"mdq\":{\"type\":\"mdq\",\"url\":\"http://mdq.ukfederation.org.uk/\",\"cert_url\":\"http://mdq.ukfederation.org.uk/ukfederation-mdq.pem\",\"cert_fp\":\"3F:6B:F4:AF:E0:1B:3C:D7:C1:F2:3D:F6:EA:C5:60:AE:B1:5A:E8:26\"}},\"countries\":[\"GB\"],\"url\":\"http://www.ukfederation.org.uk/\",\"policy\":\"http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf\",\"contact\":\"mailto:service@ukfederation.org.uk\"},\"incommon\":{\"name\":\"InCommon\",\"sources\":{\"default\":{\"type\":\"aggregate\",\"url\":\"https://md.incommon.org/InCommon/InCommon-metadata.xml\"},\"mdq\":{\"type\":\"mdq\",\"url\":\"https://mdq.incommon.org\",\"cert_url\":\"http://md.incommon.org/certs/inc-md-cert-mdq.pem\",\"cert_fp\":\"F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36\"}},\"countries\":[\"US\"],\"url\":\"http://incommon.org/\",\"policy\":\"https://incommon.org/about/policies/\",\"contact\":\"mailto:help@incommon.org\"}}"
 
-      assert ^expected_json = Export.json(SmeeFeds.federations([:ukamf, :incommon]))
+      assert ^expected_json = Export.json(SmeeFeds.federations([:incommon, :ukamf]))
     end
 
   end

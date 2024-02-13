@@ -41,7 +41,7 @@ defmodule SmeeFeds do
   """
 
   alias SmeeFeds.Federation
-  alias SmeeFeds.Data
+  alias SmeeFeds.DefaultData
   alias Smee.Metadata
   alias Smee.Entity
   alias Smee.Source
@@ -55,7 +55,7 @@ defmodule SmeeFeds do
   """
   @spec ids(federations :: list() | nil) :: list(atom())
   def ids() do
-    Data.federations()
+    DefaultData.federations()
     |> Map.keys()
   end
 
@@ -102,7 +102,7 @@ defmodule SmeeFeds do
   """
   @spec federations() :: list(Federation.t())
   def federations() do
-    Data.federations()
+    DefaultData.federations()
     |> Map.values()
   end
 
@@ -135,7 +135,7 @@ defmodule SmeeFeds do
   end
 
   def get(id) do
-    Data.federations()
+    DefaultData.federations()
     |> Map.get(id)
   end
 

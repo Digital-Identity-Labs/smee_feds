@@ -24,3 +24,6 @@ smee_feds-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+/api\?action=list_fed_codes&opt=1&format=print_r
+/api\?action=edugain_status&fed_id=PIONIER-ID
+/api\?action=edugain_status
