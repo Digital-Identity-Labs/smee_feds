@@ -9,8 +9,8 @@ defmodule SmeeFeds.Import do
 
   alias SmeeFeds.Federation
 
-  @spec load!(filename :: binary, options :: keyword()) :: map()
-  def load!(filename, options \\ []) do
+  @spec json!(filename :: binary, options :: keyword()) :: map()
+  def json!(filename, options \\ []) do
     filename
     |> File.read!()
     |> Jason.decode!(keys: :atoms)
