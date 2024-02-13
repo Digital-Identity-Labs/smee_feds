@@ -46,8 +46,10 @@ defmodule SmeeFeds.MixProject do
       {:smee, "~> 0.4"},
       {:jason, "~> 1.4"},
       {:csv, "~> 3.2"},
-      {:rambo, "~> 0.3.4"},     # temporary fix
+      {:rambo, "~> 0.3.4"},
+      # temporary fix
       {:ex_json_schema, "~> 0.9.2"},
+      {:nimble_options, "~> 1.1"},
 
       {:apex, "~> 1.2", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},

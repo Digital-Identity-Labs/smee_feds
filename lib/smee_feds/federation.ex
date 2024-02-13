@@ -10,48 +10,152 @@ defmodule SmeeFeds.Federation do
 
   @type t :: %__MODULE__{
                id: atom(),
+               rid: nil | atom(),
                contact: nil | binary(),
                name: nil | binary(),
+               descriptions: map(),
+               displaynames: map(),
                url: nil | binary(),
                uri: nil | binary(),
                policy: nil | binary(),
+               logo: nil | binary(),
                countries: list(),
-               sources: map()
+               sources: map(),
+               type: nil | atom(),
+               structure: nil | atom(),
+               interfederates: list(),
+               tags: list(),
+               autotag: boolean()
              }
 
   defstruct [
     :id,
+    :rid,
     :contact,
     :name,
     :url,
     :uri,
     countries: [],
+    descriptions: %{},
+    displaynames: %{},
     policy: nil,
-    sources: %{}
+    logo: nil,
+    sources: %{},
+    interfederates: [],
+    tags: [],
+    structure: :mesh,
+    type: :local,
+    autotag: false
   ]
+
+  @option_defs NimbleOptions.new!(
+                 [
+                   rid: [
+                     type: {:or, [:string, :atom]},
+                   ],
+                   type: [
+                     type: {:or, [:string, :atom]},
+                     default: :local
+                   ],
+                   structure: [
+                     type: {:or, [:string, :atom]},
+                     default: :mesh
+                   ],
+                   descriptions: [
+                     type: {:map, :atom, :string},
+                     default: %{}
+                   ],
+                   displaynames: [
+                     type: {:map, :atom, :string},
+                     default: %{}
+                   ],
+                   logo: [
+                     type: :string,
+                   ],
+                   autotag: [
+                     type: :boolean,
+                     default: false
+                   ],
+                   interfederates: [
+                     type: {:list, {:or, [:string, :atom]}},
+                     default: []
+                   ],
+                   tags: [
+                     type: {:list, {:or, [:string, :atom]}},
+                     default: []
+                   ],
+                   contact: [
+                     type: :string,
+                   ],
+                   name: [
+                     type: :string,
+                   ],
+                   url: [
+                     type: :string,
+                   ],
+                   uri: [
+                     type: :string,
+                   ],
+                   countries: [
+                     type: {:list, {:or, [:string, :atom]}},
+                   ],
+                   policy: [
+                     type: :string,
+                   ],
+                   sources: [
+                     type: {:map, :atom, :map},
+                     default: %{}
+                   ]
+                 ]
+               )
 
   @doc """
   Creates a new Federation struct. The only requirement is a unique ID, passed as the first parameter.
 
+  The ID should be a single unique word, as an atom.
+
   Other information can be passed as an option:
 
+  default MDQ service.
+  * `autotag`: Boolean, indicates that various explicit tags and inferred tags will be added to sources. Defaults to false.
   * `contact`: general contact address for the federation, as a URL.
-  * `name`: The full, official name of the federation
-  * `url`: The URL of the federation's homepage
-  * `uri`: The publisher URI of the federation
   * `countries`: A list of 2-letter country codes for countries the federation officially provides services for.
+  * `descriptions`: Map of language codes to descriptions for the federation
+  * `displaynames`: Map of language codes to displaynames for the federation
+  * `interfederates`: List of IDs of other federations this federation pushes data to
+  * `logo`: URL to the logo for the federation
+  * `name`: The full, official, international name of the federation
   * `policy`: URL for the federation's metadata policy documentation
+  * `rid`: A REFEDS ID, if different to the default ID. Can be left as nil, you almost certainly won't need this.
   * `sources`: Map of atom IDs and `Smee.Source` structs. Use `default:` for the default aggregate, and `mdq:` for the
-    default MDQ service.
+  * `structure`: Technical structure of the federation. Values are :mesh, :has, :hybrid. :Defaults to :mesh.
+  * `tags`: List of tags which can be passed down to Sources, Metadata and Entities.
+  * `type`: The *federation's* type. Possible values are :nren, :research, :inter, :misc, :mil, :com, :local. Defaults to :local
+  * `uri`: The publisher URI of the federation
+  * `url`: The URL of the federation's homepage
+
+  Supported options: #{NimbleOptions.docs(@option_defs)}
 
   SmeeFeds comes with a list of built-in federations - use `SmeeFeds.federations/0` to view them.
 
   """
-  @spec new(id :: atom() | binary(), options :: keyword() ) :: Federation.t()
+  @spec new(id :: atom() | binary(), options :: keyword()) :: Federation.t()
   def new(id, options \\ []) do
+
+    options = options
+              |> Enum.reject(fn {_k, v} -> is_nil(v) end)
+              |> NimbleOptions.validate!(@option_defs)
 
     federation = %Federation{
       id: String.to_atom("#{id}"),
+      rid: (if options[:rid], do: String.to_atom("#{options[:rid]}"), else: String.to_atom("#{id}")),
+      type: String.to_atom("#{options[:type]}"),
+      structure: String.to_atom("#{options[:structure]}"),
+      descriptions: options[:descriptions] || %{},
+      displaynames: options[:displaynames] || %{},
+      logo: options[:logo],
+      interfederates: options[:interfederates] || [],
+      tags: options[:tags] || [],
       contact: options[:contact],
       name: options[:name],
       url: options[:url],
@@ -63,7 +167,7 @@ defmodule SmeeFeds.Federation do
 
     sources = (options[:sources] || %{})
               |> Enum.map(
-                   fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(federation, data))} end
+                   fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(federation, id, data))} end
                  )
               |> Enum.into(%{})
 
@@ -180,13 +284,14 @@ defmodule SmeeFeds.Federation do
 
   #############################################################################
 
-  @spec normalize_source_options(federation ::  Federation.t(), data :: map() ) :: keyword()
-  defp normalize_source_options(federation, data) do
+  @spec normalize_source_options(federation :: Federation.t(), id :: atom(), data :: map()) :: keyword()
+  defp normalize_source_options(federation, id, data) do
     [
+      id: id,
       type: normalize_source_type(data[:type]),
       cert_url: data[:cert_url],
       cert_fingerprint: data[:cert_fp],
-      label: "#{federation.name}: #{data[:type]}"
+      label: "#{federation.name}: #{id} #{normalize_source_type(data[:type])}"
     ]
   end
 
