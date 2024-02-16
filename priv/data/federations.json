@@ -1,7 +1,7 @@
 {
   "aaf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "AAF",
       "met": "X"
     },
     "contact": "support@aaf.edu.au",
@@ -31,7 +31,7 @@
   },
   "aaieduhr": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "AAI-EDUHR",
       "met": "X"
     },
     "contact": "team@aaiedu.hr",
@@ -86,7 +86,7 @@
   "aconet": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "ACONET",
       "met": "X"
     },
     "comment": "Keeps timing out, not sure why",
@@ -115,7 +115,7 @@
   },
   "afire": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "AFIRE",
       "met": "X"
     },
     "countries": [
@@ -142,7 +142,7 @@
   "arnaai": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "ARNAAI",
       "met": "X"
     },
     "contact": "opaai@arn.dz",
@@ -170,7 +170,7 @@
   },
   "arnesaai": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "ARNESAAI",
       "met": "X"
     },
     "contact": "aaa-podpora@arnes.si",
@@ -229,7 +229,7 @@
   "azscinet": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "AZSCINET",
       "met": "X"
     },
     "contact": "edugain@science.az",
@@ -257,7 +257,7 @@
   },
   "belnet": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "BELNET",
       "met": "X"
     },
     "contact": "federation@belnet.be",
@@ -285,7 +285,7 @@
   },
   "caf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "CAF",
       "met": "X"
     },
     "countries": [
@@ -313,7 +313,7 @@
   },
   "cafe": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "CAFE",
       "met": "X"
     },
     "contact": "jean.carlo@rnp.br",
@@ -342,7 +342,7 @@
   "cafmoz": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "CAFMOZ",
       "met": "X"
     },
     "contact": "MoRENet.Info@morenet.ac.mz",
@@ -370,7 +370,7 @@
   },
   "carsi": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "CARSI",
       "met": "X"
     },
     "contact": "carsi@pku.edu.cn",
@@ -397,7 +397,7 @@
   },
   "cofre": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "COFRE",
       "met": "X"
     },
     "contact": "cofre@reuna.cl",
@@ -426,7 +426,7 @@
   "colfire": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "COLFIRE",
       "met": "X"
     },
     "contact": "tecnico@renata.edu.co",
@@ -453,7 +453,7 @@
   },
   "cst": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "CST-CF",
       "met": "X"
     },
     "contact": "http://cstcloud.net/contact.html",
@@ -481,7 +481,7 @@
   },
   "dfnaai": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "DFN-AAI",
       "met": "X"
     },
     "contact": "hotline@aai.dfn.de",
@@ -516,7 +516,7 @@
   },
   "edugain": {
     "alt_ids": {
-      "edugain": "edugain",
+      "edugain": "EDUGAIN",
       "met": "X"
     },
     "contact": "support@edugain.org",
@@ -542,7 +542,7 @@
   },
   "edugate": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "EDUGATE",
       "met": "X"
     },
     "contact": "noc@heanet.ie",
@@ -572,7 +572,7 @@
   },
   "eduidcz": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "EDUID-CZ",
       "met": "X"
     },
     "contact": "eduid-admin@eduid.cz",
@@ -600,7 +600,7 @@
   },
   "eduidhu": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "EDUID-HU",
       "met": "X"
     },
     "contact": "aai@niif.hu",
@@ -629,7 +629,7 @@
   "eduidlu": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "EDUID-LU",
       "met": "X"
     },
     "contact": "admin@restena.lu",
@@ -657,7 +657,7 @@
   },
   "eduidmma": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "EDUIDM-MA",
       "met": "X"
     },
     "contact": "team@eduidm.ma",
@@ -675,7 +675,7 @@
   },
   "eduidng": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "EDUID-NG",
       "met": "X"
     },
     "contact": "support@eduid.ng",
@@ -728,7 +728,7 @@
   },
   "febas": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "FEBAS",
       "met": "X"
     },
     "contact": "support@basnet.by",
@@ -755,7 +755,7 @@
   },
   "federasi": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "FEDERASI",
       "met": "X"
     },
     "contact": "andri.setiawan@uii.ac.id",
@@ -784,7 +784,7 @@
   "feide": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "FEIDE",
       "met": "X"
     },
     "comment": "Keeps timing out, not sure why",
@@ -813,7 +813,7 @@
   },
   "fenix": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "FENIX",
       "met": "X"
     },
     "contact": "soporte@fenix.org.mx",
@@ -841,7 +841,7 @@
   },
   "fer": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "FER",
       "met": "X"
     },
     "contact": "fed-contact@listes.renater.fr",
@@ -870,7 +870,7 @@
   "fidern": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "FIDERN",
       "met": "X"
     },
     "contact": "info@fidern.ac.zm",
@@ -898,7 +898,7 @@
   },
   "gakunin": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "GAKUNIN",
       "met": "X"
     },
     "contact": "gakunin-office@nii.ac.jp",
@@ -926,7 +926,7 @@
   },
   "gif": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "GIF",
       "met": "X"
     },
     "contact": "gif-support@grena.ge",
@@ -954,7 +954,7 @@
   },
   "grnet": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "GRNET",
       "met": "X"
     },
     "contact": "support@grnet.gr",
@@ -982,7 +982,7 @@
   },
   "haka": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "HAKA",
       "met": "X"
     },
     "contact": "haka@csc.fi",
@@ -1010,7 +1010,7 @@
   },
   "hkaf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "HKAF",
       "met": "X"
     },
     "contact": "hkaf-admin@jucc.edu.hk",
@@ -1039,7 +1039,7 @@
   },
   "idem": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "IDEM",
       "met": "X"
     },
     "contact": "idem@garr.it",
@@ -1067,7 +1067,7 @@
   },
   "incommon": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "InCommon",
       "met": "X"
     },
     "contact": "help@incommon.org",
@@ -1101,7 +1101,7 @@
   },
   "infed": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "INFED",
       "met": "X"
     },
     "contact": "director@inflibnet.ac.in",
@@ -1129,7 +1129,7 @@
   },
   "irfed": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "IRFED",
       "met": "X"
     },
     "contact": "irfed@ipm.ir",
@@ -1157,7 +1157,7 @@
   },
   "iuccif": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "IUCCIF",
       "met": "X"
     },
     "contact": "info@iif.iucc.ac.il",
@@ -1185,7 +1185,7 @@
   },
   "kafe": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "KAFE",
       "met": "X"
     },
     "contact": "coreen@kreonet.net",
@@ -1213,7 +1213,7 @@
   },
   "krena": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "KRENA",
       "met": "X"
     },
     "contact": "support@kif.kg",
@@ -1241,7 +1241,7 @@
   },
   "laife": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "LAIFE",
       "met": "X"
     },
     "contact": "laife-admin@lanet.lv",
@@ -1270,7 +1270,7 @@
   "leaf": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "LEAF",
       "met": "X"
     },
     "contact": "leaf@renam.md",
@@ -1327,7 +1327,7 @@
   "life": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "LIFE",
       "met": "X"
     },
     "contact": "LIFE@aub.edu.lb",
@@ -1355,7 +1355,7 @@
   },
   "litnet": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "LITNET-FEDI",
       "met": "X"
     },
     "countries": [
@@ -1382,7 +1382,7 @@
   },
   "mate": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "MATE",
       "met": "X"
     },
     "countries": [
@@ -1409,7 +1409,7 @@
   },
   "minga": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "MINGA",
       "met": "X"
     },
     "contact": "neg@cedia.org.ec",
@@ -1437,7 +1437,7 @@
   "omankid": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "OMAN-KID",
       "met": "X"
     },
     "contact": "webadmin@trc.gov.om",
@@ -1466,7 +1466,7 @@
   "omren": {
     "active": false,
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "OMREN",
       "met": "X"
     },
     "contact": "info@omren.om",
@@ -1493,7 +1493,7 @@
   },
   "peano": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "PEANO",
       "met": "X"
     },
     "countries": [
@@ -1519,7 +1519,7 @@
   },
   "pionier": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "PIONIER-ID",
       "met": "X"
     },
     "contact": "Kontakt@aai.pionier.net.pl",
@@ -1546,7 +1546,7 @@
   },
   "pkifed": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "PKIFED",
       "met": "X"
     },
     "contact": "edugain-ot@hec.gov.pk",
@@ -1574,7 +1574,7 @@
   },
   "rafiki": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "RAFIKI",
       "met": "X"
     },
     "countries": [
@@ -1628,7 +1628,7 @@
   },
   "ricerka": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "RICERKA-NET",
       "met": "X"
     },
     "contact": "mailtoitservices@um.edu.mt",
@@ -1656,7 +1656,7 @@
   },
   "rif": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "RIF",
       "met": "X"
     },
     "contact": "technical@renu.ac.ug",
@@ -1684,7 +1684,7 @@
   },
   "roedunetid": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "ROEDUNETID",
       "met": "X"
     },
     "contact": "eduid@roedu.net",
@@ -1740,7 +1740,7 @@
   },
   "safeid": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SAFEID",
       "met": "X"
     },
     "contact": "admin@safeid.sk",
@@ -1768,7 +1768,7 @@
   },
   "safire": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SAFIRE",
       "met": "X"
     },
     "contact": "safire@tenet.ac.za ",
@@ -1796,7 +1796,7 @@
   },
   "sgaf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SGAF",
       "met": "X"
     },
     "contact": "admin@singaren.net.sg",
@@ -1824,7 +1824,7 @@
   },
   "sifulan": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SIFULAN",
       "met": "X"
     },
     "contact": "support@sifulan.my",
@@ -1852,7 +1852,7 @@
   },
   "sir": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SIR",
       "met": "X"
     },
     "contact": "sir@rediris.es",
@@ -1880,7 +1880,7 @@
   },
   "surfconext": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SURFCONEXT",
       "met": "X"
     },
     "contact": "support@surfconext.nl",
@@ -1908,7 +1908,7 @@
   },
   "swamid": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SWAMID",
       "met": "X"
     },
     "contact": "operations@swamid.se",
@@ -1936,7 +1936,7 @@
   },
   "switch": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "SWITCHAAI",
       "met": "X"
     },
     "contact": "aai@switch.ch",
@@ -1964,7 +1964,7 @@
   },
   "taat": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "TAAT",
       "met": "X"
     },
     "contact": "eenet@eenet.ee",
@@ -1992,7 +1992,7 @@
   },
   "thaildf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "THAILDF",
       "met": "X"
     },
     "contact": "idf@thairen.net.th",
@@ -2020,7 +2020,7 @@
   },
   "tidf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "TIDF",
       "met": "X"
     },
     "contact": "info@tarena.tj",
@@ -2048,7 +2048,7 @@
   },
   "tigerfed": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "TIGERFED",
       "met": "X"
     },
     "contact": "noc@bdren.net.bd",
@@ -2076,7 +2076,7 @@
   },
   "tuakiri": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "TUAKIRI",
       "met": "X"
     },
     "contact": "tuakiri@reannz.co.nz",
@@ -2104,7 +2104,7 @@
   },
   "ukamf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "UK-FEDERATION",
       "met": "X"
     },
     "contact": "service@ukfederation.org.uk",
@@ -2140,7 +2140,7 @@
   },
   "wayf": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "WAYF",
       "met": "X"
     },
     "contact": "sekretariat@wayf.dk",
@@ -2167,7 +2167,7 @@
   },
   "yetkim": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "YETKIM",
       "met": "X"
     },
     "contact": "yetkim@ulakbim.gov.tr",
