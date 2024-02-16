@@ -10,9 +10,9 @@ defmodule SmeeFeds.Federation do
 
   @type t :: %__MODULE__{
                id: atom(),
-               rid: nil | atom(),
                contact: nil | binary(),
                name: nil | binary(),
+               alt_ids: map(),
                descriptions: map(),
                displaynames: map(),
                url: nil | binary(),
@@ -30,12 +30,12 @@ defmodule SmeeFeds.Federation do
 
   defstruct [
     :id,
-    :rid,
     :contact,
     :name,
     :url,
     :uri,
     countries: [],
+    alt_ids: %{},
     descriptions: %{},
     displaynames: %{},
     policy: nil,
@@ -50,9 +50,6 @@ defmodule SmeeFeds.Federation do
 
   @option_defs NimbleOptions.new!(
                  [
-                   rid: [
-                     type: {:or, [:string, :atom]},
-                   ],
                    type: [
                      type: {:or, [:string, :atom]},
                      default: :local
@@ -60,6 +57,10 @@ defmodule SmeeFeds.Federation do
                    structure: [
                      type: {:or, [:string, :atom]},
                      default: :mesh
+                   ],
+                   alt_ids: [
+                     type: {:map, :atom, :string},
+                     default: %{}
                    ],
                    descriptions: [
                      type: {:map, :atom, :string},
@@ -126,7 +127,7 @@ defmodule SmeeFeds.Federation do
   * `logo`: URL to the logo for the federation
   * `name`: The full, official, international name of the federation
   * `policy`: URL for the federation's metadata policy documentation
-  * `rid`: A REFEDS ID, if different to the default ID. Can be left as nil, you almost certainly won't need this.
+  * `alt_ids`: A map of alternative IDs, as used by other services, organisations and lists
   * `sources`: Map of atom IDs and `Smee.Source` structs. Use `default:` for the default aggregate, and `mdq:` for the
   * `structure`: Technical structure of the federation. Values are :mesh, :has, :hybrid. :Defaults to :mesh.
   * `tags`: List of tags which can be passed down to Sources, Metadata and Entities.
@@ -148,7 +149,7 @@ defmodule SmeeFeds.Federation do
 
     federation = %Federation{
       id: String.to_atom("#{id}"),
-      rid: (if options[:rid], do: String.to_atom("#{options[:rid]}"), else: String.to_atom("#{id}")),
+      alt_ids: options[:alt_ids] || %{},
       type: String.to_atom("#{options[:type]}"),
       structure: String.to_atom("#{options[:structure]}"),
       descriptions: options[:descriptions] || %{},
@@ -167,7 +168,8 @@ defmodule SmeeFeds.Federation do
 
     sources = (options[:sources] || %{})
               |> Enum.map(
-                   fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(federation, id, data))} end
+                   fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(federation, id, data))}
+                   end
                  )
               |> Enum.into(%{})
 
@@ -280,6 +282,31 @@ defmodule SmeeFeds.Federation do
     Map.get(federation, :countries, [])
     |> Enum.map(fn code -> Countries.get(code) end)
     |> ugh_brexit!()
+  end
+
+  @doc """
+  Returns an ID for the federation, of the specified type. Defaults to the main (`:smee`) ID
+
+  * `:smee` - returns the main ID
+  * `:uri` - returns the publishing/registration URI
+  * `:uri_hash` - returns sha1 hash of the federation's URI
+
+  If other keys are available in the data they can also be specified. The example data has `:edugain` and `:met` IDs.
+
+  """
+  @spec id(federation :: Federation.t(), id_type :: atom()) :: atom() | binary()
+  def id(federation, id_type \\ :smee) do
+    case id_type do
+      :smee ->
+        Map.get(federation, :id)
+      :uri ->
+        Map.get(federation, :uri)
+      :uri_hash ->
+        Smee.Utils.sha1(Map.get(federation, :uri, nil))
+      other_id ->
+        Map.get(federation, :alt_ids, %{})
+        |> Map.get(other_id, nil)
+    end
   end
 
   #############################################################################
