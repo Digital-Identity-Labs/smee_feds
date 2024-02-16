@@ -27,3 +27,5 @@ smee_feds-*.tar
 /api\?action=list_fed_codes&opt=1&format=print_r
 /api\?action=edugain_status&fed_id=PIONIER-ID
 /api\?action=edugain_status
+
+/scratch/*
