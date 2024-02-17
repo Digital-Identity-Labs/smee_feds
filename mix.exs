@@ -50,6 +50,7 @@ defmodule SmeeFeds.MixProject do
       # temporary fix
       {:ex_json_schema, "~> 0.9.2"},
       {:nimble_options, "~> 1.1"},
+      {:req, "~> 0.4"},
 
       {:apex, "~> 1.2", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
