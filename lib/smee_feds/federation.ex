@@ -20,6 +20,7 @@ defmodule SmeeFeds.Federation do
                policy: nil | binary(),
                logo: nil | binary(),
                countries: list(),
+               protocols: list(),
                sources: map(),
                type: nil | atom(),
                structure: nil | atom(),
@@ -35,6 +36,7 @@ defmodule SmeeFeds.Federation do
     :url,
     :uri,
     countries: [],
+    protocols: [],
     alt_ids: %{},
     descriptions: %{},
     displaynames: %{},
@@ -100,6 +102,9 @@ defmodule SmeeFeds.Federation do
                    countries: [
                      type: {:list, {:or, [:string, :atom]}},
                    ],
+                   protocols: [
+                     type: {:list, {:or, [:string, :atom]}},
+                   ],
                    policy: [
                      type: :string,
                    ],
@@ -124,6 +129,7 @@ defmodule SmeeFeds.Federation do
   * `descriptions`: Map of language codes to descriptions for the federation
   * `displaynames`: Map of language codes to displaynames for the federation
   * `interfederates`: List of IDs of other federations this federation pushes data to
+  * `protocols`: List of protocols supported by the federation - defaults to :saml2
   * `logo`: URL to the logo for the federation
   * `name`: The full, official, international name of the federation
   * `policy`: URL for the federation's metadata policy documentation
@@ -157,6 +163,7 @@ defmodule SmeeFeds.Federation do
       logo: options[:logo],
       interfederates: options[:interfederates] || [],
       tags: options[:tags] || [],
+      protocols: options[:protocols] || [:saml2],
       contact: options[:contact],
       name: options[:name],
       url: options[:url],
