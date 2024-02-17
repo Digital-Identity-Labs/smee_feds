@@ -26,7 +26,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://aaf.edu.au",
     "url": "http://www.aaf.edu.au/"
   },
   "aaieduhr": {
@@ -54,7 +54,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.srce.hr",
     "url": "http://www.aaiedu.hr/"
   },
   "aaiedumk": {
@@ -80,7 +80,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://rr.aaiedu.mk",
     "url": "http://aaiedu.mk/?lang=en"
   },
   "aconet": {
@@ -110,7 +110,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://eduid.at",
     "url": "http://www.aco.net/federation.html"
   },
   "afire": {
@@ -136,7 +136,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://aai.asnet.am",
     "url": "http://afire.asnet.am/"
   },
   "arnaai": {
@@ -165,7 +165,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.aai.arn.dz/",
     "url": "https://www.aai.arn.dz/"
   },
   "arnesaai": {
@@ -195,7 +195,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://aai.arnes.si",
     "url": "https://aai.arnes.si/"
   },
   "athens": {
@@ -252,7 +252,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://edugain.azsciencenet.az",
     "url": "http://edugain.azsciencenet.az/"
   },
   "belnet": {
@@ -280,7 +280,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://federation.belnet.be/",
     "url": "http://federation.belnet.be/"
   },
   "caf": {
@@ -308,7 +308,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.canarie.ca",
     "url": "https://www.canarie.ca/identity/caf/"
   },
   "cafe": {
@@ -336,7 +336,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://cafe.rnp.br",
     "url": "https://www.rnp.br/servicos/cafe"
   },
   "cafmoz": {
@@ -365,7 +365,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://cafmoz.morenet.ac.mz",
     "url": "http://cafmoz.morenet.ac.mz/"
   },
   "carsi": {
@@ -392,7 +392,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.carsi.edu.cn",
     "url": "http://www.carsi.edu.cn/"
   },
   "cofre": {
@@ -420,7 +420,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://cofre.reuna.cl",
     "url": "http://cofre.reuna.cl/index.php/en/"
   },
   "colfire": {
@@ -448,7 +448,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://colfire.co",
     "url": "https://www.renata.edu.co/colfire/"
   },
   "cst": {
@@ -476,7 +476,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.cstcloud.net/",
     "url": "http://cstcloud.net/"
   },
   "dfnaai": {
@@ -511,7 +511,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.aai.dfn.de",
     "url": "https://www.aai.dfn.de/"
   },
   "edugain": {
@@ -567,7 +567,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.heanet.ie",
     "url": "https://edugate.heanet.ie/"
   },
   "eduidcz": {
@@ -595,7 +595,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.eduid.cz/",
     "url": "http://eduid.cz/"
   },
   "eduidhu": {
@@ -623,7 +623,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://eduid.hu",
     "url": "http://www.eduid.hu/"
   },
   "eduidlu": {
@@ -652,7 +652,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://eduid.lu",
     "url": "https://www.eduid.lu/"
   },
   "eduidmma": {
@@ -671,7 +671,8 @@
         "url": "https://www.eduidm.ma/metadata/eduidm.xml"
       }
     },
-    "url": "http://www.eduidm.ma/"
+    "url": "http://www.eduidm.ma/",
+    "uri": "https://eduidm.ma"
   },
   "eduidng": {
     "alt_ids": {
@@ -808,7 +809,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://feide.no/",
     "url": "https://www.feide.no/"
   },
   "fenix": {
@@ -836,7 +837,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.fenix.org.mx",
     "url": "www.fenix.org.mx"
   },
   "fer": {
@@ -864,7 +865,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://federation.renater.fr/",
     "url": "https://services.renater.fr/federation/index"
   },
   "fidern": {
@@ -893,7 +894,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://fidern.ac.zm",
     "url": "http://www.fidern.ac.zm/"
   },
   "gakunin": {
@@ -921,7 +922,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.gakunin.jp",
     "url": "https://www.gakunin.jp/en"
   },
   "gif": {
@@ -949,7 +950,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://mtd.gif.grena.ge",
     "url": "http://gif.grena.ge/"
   },
   "grnet": {
@@ -977,7 +978,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://aai.grnet.gr/",
     "url": "http://aai.grnet.gr/"
   },
   "haka": {
@@ -1005,7 +1006,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.csc.fi/haka",
     "url": "https://www.csc.fi/haka-kayttajatunnistusjarjestelma"
   },
   "hkaf": {
@@ -1034,7 +1035,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://hkaf.edu.hk",
     "url": "https://www.hkaf.edu.hk"
   },
   "idem": {
@@ -1062,7 +1063,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.idem.garr.it/",
     "url": "https://www.idem.garr.it/"
   },
   "incommon": {
@@ -1096,7 +1097,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://incommon.org",
     "url": "http://incommon.org/"
   },
   "infed": {
@@ -1124,7 +1125,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://inflibnet.ac.in",
     "url": "http://parichay.inflibnet.ac.in/"
   },
   "irfed": {
@@ -1152,7 +1153,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://irfed.ir/",
     "url": "http://www.irfed.ir/"
   },
   "iuccif": {
@@ -1180,7 +1181,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://iif.iucc.ac.il",
     "url": "https://iif.iucc.ac.il/"
   },
   "kafe": {
@@ -1208,7 +1209,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://kafe.kreonet.net",
     "url": "https://coreen.kreonet.net/kafe"
   },
   "krena": {
@@ -1236,7 +1237,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.kif.kg",
     "url": "https://www.kif.kg"
   },
   "laife": {
@@ -1264,7 +1265,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://idp.laife.lv/",
     "url": "https://laife.lanet.lv/wiki/doku.php"
   },
   "leaf": {
@@ -1293,7 +1294,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://federations.renam.md/",
     "url": "http://federations.renam.md/"
   },
   "liaf": {
@@ -1377,7 +1378,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://fedi.litnet.lt",
     "url": "http://www.litnet.lt/"
   },
   "mate": {
@@ -1404,7 +1405,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.federacionmate.gob.ar",
     "url": "http://www.federacionmate.gob.ar/"
   },
   "minga": {
@@ -1431,7 +1432,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://minga.cedia.org.ec",
     "url": "http://www.cedia.org.ec/index.php/minga"
   },
   "omankid": {
@@ -1460,7 +1461,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.trc.gov.om/trcweb/",
     "url": "http://home.trc.gov.om/tabid/601/language/en-US/Default.aspx"
   },
   "omren": {
@@ -1488,7 +1489,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.omren.om",
     "url": "https://fed.omren.om"
   },
   "peano": {
@@ -1514,7 +1515,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://peano.uran.ua",
     "url": "http://peano.uran.ua/"
   },
   "pionier": {
@@ -1541,7 +1542,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://aai.pionier.net.pl",
     "url": "http://aai.pionier.net.pl/"
   },
   "pkifed": {
@@ -1569,7 +1570,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://pkifed.pk",
     "url": "https://pkifed.pk/"
   },
   "rafiki": {
@@ -1596,7 +1597,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://rafiki.ke",
     "url": "https://rafiki.ke/"
   },
   "rctsaai": {
@@ -1651,7 +1652,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.fccn.pt",
     "url": "https://id.ricerka.net.mt/"
   },
   "rif": {
@@ -1679,7 +1680,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.renu.ac.ug",
     "url": "https://rif.renu.ac.ug/"
   },
   "roedunetid": {
@@ -1707,7 +1708,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://eduid.roedu.net",
     "url": "http://www.roedu.net/"
   },
   "runnet": {
@@ -1763,7 +1764,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://safeid.sk",
     "url": "https://www.safeid.sk/"
   },
   "safire": {
@@ -1791,7 +1792,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://safire.ac.za",
     "url": "https://safire.ac.za/"
   },
   "sgaf": {
@@ -1819,7 +1820,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.singaren.net.sg",
     "url": "http://www.singaren.net.sg/SGAF"
   },
   "sifulan": {
@@ -1847,7 +1848,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://sifulan.my",
     "url": "https://sifulan.my/"
   },
   "sir": {
@@ -1875,7 +1876,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.rediris.es/",
     "url": "https://www.rediris.es/sir2/"
   },
   "surfconext": {
@@ -1903,7 +1904,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.surfconext.nl/",
     "url": "http://www.surfconext.nl"
   },
   "swamid": {
@@ -1931,7 +1932,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://www.swamid.se/",
     "url": "https://www.sunet.se/swamid/"
   },
   "switch": {
@@ -1959,7 +1960,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://rr.aai.switch.ch/",
     "url": "http://www.switch.ch/aai/index.html"
   },
   "taat": {
@@ -1987,7 +1988,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://taat.edu.ee",
     "url": "http://taat.edu.ee/main/about/"
   },
   "thaildf": {
@@ -2015,7 +2016,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://idf.thairen.net.th",
     "url": "http://idf.thairen.net.th/"
   },
   "tidf": {
@@ -2043,7 +2044,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://tidf.tj/",
     "url": "https://tidf.tj/"
   },
   "tigerfed": {
@@ -2071,7 +2072,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://tigerfed.net.bd",
     "url": "http://tigerfed.net.bd/"
   },
   "tuakiri": {
@@ -2099,7 +2100,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://tuakiri.ac.nz/",
     "url": "https://tuakiri.ac.nz/confluence/display/Tuakiri/Home"
   },
   "ukamf": {
@@ -2135,7 +2136,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://ukfederation.org.uk",
     "url": "http://www.ukfederation.org.uk/"
   },
   "wayf": {
@@ -2162,7 +2163,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.wayf.dk",
     "url": "http://wayf.dk/"
   },
   "yetkim": {
@@ -2192,7 +2193,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://yetkim.org.tr/",
     "url": "https://yetkim.org.tr/en/"
   }
 }
