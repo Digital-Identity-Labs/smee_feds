@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.0] 
 
 ### Breaking Changes
+- You have to explicitly pass a list of federations to most functions now, they will *not* default to the built-in set.
+  This is to make it clearer which list of federations is being used, to avoid the default set being used by mistake.
+- `SmeeFeds.federations/2` is now `SmeeFeds.take/2`, a list version of `SmeeFeds.get/2`.
 
 ### New Features
 - `Import.json/2` will load a list of federations from a JSON file, as produced by `Export.json/1`

@@ -42,58 +42,13 @@ defmodule SmeeFeds do
 
   alias SmeeFeds.Federation
   alias SmeeFeds.DefaultData
+  alias SmeeFeds.Utils
   alias Smee.Metadata
   alias Smee.Entity
   alias Smee.Source
 
   @doc """
-  Returns the ids of all federations in the default collection as a list of atoms.
-
-  ## Example
-
-      iex> ids = SmeeFeds.ids()
-  """
-  @spec ids(federations :: list() | nil) :: list(atom())
-  def ids() do
-    DefaultData.federations()
-    |> Map.keys()
-  end
-
-  @doc """
-  Returns the ids of all federations in the provided list of federations as a list of atoms.
-
-  ## Example
-
-       iex> federations = SmeeFeds.federations([:ukamf, :ref])
-       iex> ids = SmeeFeds.ids(federations)
-  """
-  def ids(federations) do
-    federations
-    |> Enum.map(fn f -> f.id end)
-  end
-
-  @doc """
-  Returns a list of `SmeeFeds.Federation` structs when passed a list of
-   federation IDs (as atoms).
-
-  ## Example
-
-      iex> federations = SmeeFeds.federations([:ukamf, :ref])
-  """
-  @spec federations(federations :: list()) :: list(Federation.t())
-  def federations(federations) when is_list(federations) do
-    federations
-    |> Enum.map(
-         fn
-           %Federation{} = f -> f
-           id -> get(id)
-         end
-       )
-    |> Enum.reject(fn v -> is_nil(v) end)
-  end
-
-  @doc """
-  Returns a list of `SmeeFeds.Federation` structs.
+  Returns a list of `SmeeFeds.Federation` structs from the default collection.
 
   Returns all known federations from the default collection.
 
@@ -118,25 +73,40 @@ defmodule SmeeFeds do
   end
 
   @doc """
+  Returns the ids of all federations in the provided list of federations as a list of atoms.
+
+  ## Example
+       iex> ids = SmeeFeds.ids(federations)
+  """
+  def ids(federations) do
+    federations
+    |> Enum.map(fn f -> f.id end)
+  end
+
+  @doc """
+  Returns a list of `SmeeFeds.Federation` structs when passed a list of
+   federations and federation IDs (as atoms).
+
+  ## Example
+
+      iex> my_federations = SmeeFeds.take(federations, [:ukamf, :ref])
+  """
+  @spec take(federations :: list(), federation_ids :: list(atom())) :: list(Federation.t())
+  def take(federations, federation_ids) when is_list(federations) do
+    federations
+    |> SmeeFeds.Filter.ids(federation_ids)
+  end
+
+  @doc """
   Finds a federation in the default database by ID and returns the full federation record.
 
   ## Example
       iex> incommon = SmeeFeds.get(:incommon)
   """
   @spec get(federation :: atom() | binary()) :: Federation.t() | nil
-  def get(id) when is_binary(id) do
-    try do
-      String.to_existing_atom(id)
-      |> get()
-    rescue
-      _ -> nil
-    end
-
-  end
-
   def get(id) do
     DefaultData.federations()
-    |> Map.get(id)
+    |> Map.get(Utils.to_safe_atom(id))
   end
 
   @doc """
@@ -203,7 +173,7 @@ defmodule SmeeFeds do
 
   """
   @spec countries(list(Federation.t())) :: list(struct())
-  def countries(federations \\ federations()) do
+  def countries(federations) do
     federations
     |> List.wrap()
     |> Enum.flat_map(fn f -> Map.get(f, :countries, []) end)
@@ -222,7 +192,7 @@ defmodule SmeeFeds do
       ["Americas", "Europe"]
   """
   @spec regions(list(Federation.t())) :: list(struct())
-  def regions(federations \\ federations()) do
+  def regions(federations) do
     federations
     |> countries()
     |> Enum.map(fn c -> c.region end)
@@ -240,7 +210,7 @@ defmodule SmeeFeds do
       ["Northern America", "Northern Europe"]
   """
   @spec sub_regions(list(Federation.t())) :: list(struct())
-  def sub_regions(federations \\ federations()) do
+  def sub_regions(federations) do
     federations
     |> countries()
     |> Enum.map(fn c -> c.subregion end)
@@ -258,7 +228,7 @@ defmodule SmeeFeds do
       ["AMER", "EMEA"]
   """
   @spec super_regions(list(Federation.t())) :: list(struct())
-  def super_regions(federations \\ federations()) do
+  def super_regions(federations) do
     federations
     |> countries()
     |> Enum.map(fn c -> c.world_region end)
@@ -267,5 +237,6 @@ defmodule SmeeFeds do
   end
 
   #############################################################################
+
 
 end
