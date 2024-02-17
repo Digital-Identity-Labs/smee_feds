@@ -5,14 +5,14 @@ defmodule SmeeFeds.DefaultData do
 
   @default_data_file Path.join(Application.app_dir(:smee_feds, "priv"), "data/federations.json")
   @external_resource @default_data_file
-  @federations Import.json!(@default_data_file, active: true)
+  @federations Import.json!(Application.get_env(:smee_feds, :data_file, @default_data_file), active: true)
 
   @spec federations() :: map()
   def federations do
     if (production_environment?() && using_bundled_data?()) do
       IO.warn "Please do not use the default SmeeFeds database in production"
     end
-    @federations
+    Application.get_env(:smee_feds, :federations, @federations)
   end
 
   @spec file() :: binary()
