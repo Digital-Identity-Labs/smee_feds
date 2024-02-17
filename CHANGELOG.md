@@ -11,10 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### New Features
 - `Import.json/2` will load a list of federations from a JSON file, as produced by `Export.json/1`
 - `Federation.id/2` can retrieve alternative IDs for a federation
+- `Filter.id_type/3` will filter federations by ID type - can be used to select records in other organization's lists
 - Federation records now have many more attributes, including multilingual descriptions and names, logos, interfederation
   and tags.
 
 ### Improvements
+- Example federation data has been expanded with more fields and more data
 
 ### Fixes
 - Policies are now actually policy URLs and not contact email addresses

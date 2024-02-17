@@ -107,6 +107,19 @@ defmodule SmeeFeds.Filter do
        )
   end
 
+  @doc """
+  Filter a list of stream of federations so that only those with an ID of the specified type remain.
+
+  The filter is positive by default but can be inverted by specifying `false`
+  """
+  @spec id_type(enum :: Enumerable.t(), id_type :: atom(), bool :: boolean) :: Enumerable.t()
+  def id_type(enum, id_type,  bool \\ true) do
+    enum
+    |> Enum.filter(
+         fn f -> !is_nil(Federation.id(f, id_type)) == bool end
+       )
+  end
+
   #############################################################################
 
 end
