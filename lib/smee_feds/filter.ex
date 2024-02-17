@@ -10,6 +10,20 @@ defmodule SmeeFeds.Filter do
   """
 
   alias SmeeFeds.Federation
+  alias SmeeFeds.Utils
+
+  @doc """
+  Filter a list of stream of federations so that only those with matching IDs remain
+
+  The filter is positive by default but can be inverted by specifying `false`
+  """
+  @spec ids(enum :: Enumerable.t(), id_list :: list(atom()), bool :: boolean) :: Enumerable.t()
+  def ids(enum, id_list, bool \\ true) do
+    enum
+    |> Enum.filter(
+         fn f -> (Federation.id(f) in Utils.to_safe_atoms(id_list)) == bool end
+       )
+  end
 
   @doc """
   Filter a list of stream of federations so that only those in the EU remain.
@@ -113,7 +127,7 @@ defmodule SmeeFeds.Filter do
   The filter is positive by default but can be inverted by specifying `false`
   """
   @spec id_type(enum :: Enumerable.t(), id_type :: atom(), bool :: boolean) :: Enumerable.t()
-  def id_type(enum, id_type,  bool \\ true) do
+  def id_type(enum, id_type, bool \\ true) do
     enum
     |> Enum.filter(
          fn f -> !is_nil(Federation.id(f, id_type)) == bool end
