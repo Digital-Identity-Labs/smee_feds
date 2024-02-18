@@ -509,7 +509,7 @@
   },
   "cynet": {
     "alt_ids": {
-      "edugain": "CYNET-IF",
+      "edugain": "CYNET-IF"
     },
     "contact": "cif@cynet.ac.cy",
     "countries": [
@@ -628,7 +628,7 @@
   },
   "eduidafrica": {
     "alt_ids": {
-      "edugain": "EDUID-AFRICA",
+      "edugain": "EDUID-AFRICA"
     },
     "contact": "eduid-operations@ren.africa",
     "countries": [
@@ -769,7 +769,7 @@
   },
   "eduidme": {
     "alt_ids": {
-      "edugain": "EDUID-ME",
+      "edugain": "EDUID-ME"
     },
     "contact": "eduID@ac.me",
     "countries": [
@@ -818,7 +818,7 @@
   },
   "eduidng": {
     "alt_ids": {
-      "edugain": "EDUID-NG",
+      "edugain": "EDUID-NG"
     },
     "contact": "support@eduid.ng",
     "countries": [
@@ -2114,7 +2114,7 @@
   },
   "samif": {
     "alt_ids": {
-      "edugain": "SA-MIF",
+      "edugain": "SA-MIF"
     },
     "contact": "helpdesk@maeen.sa",
     "countries": [
