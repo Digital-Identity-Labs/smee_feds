@@ -1,6 +1,5 @@
 {
   "aaf": {
-    "comment": "example comment",
     "alt_ids": {
       "edugain": "AAF",
       "met": "X"
@@ -1603,7 +1602,7 @@
   },
   "rctsaai": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "RCTSAAI",
       "met": "rctsaai-federation"
     },
     "contact": "rctsaai@fccn.pt",
@@ -1625,7 +1624,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://www.fccn.pt",
     "url": "https://www.fccn.pt/seguranca/rcts-aai/"
   },
   "ricerka": {
