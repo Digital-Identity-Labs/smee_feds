@@ -873,10 +873,10 @@
     "uri": null,
     "url": "https://www.eduid.tg/"
   },
-  "edurus": {
+  "fedurus": {
+    "active": false,
     "alt_ids": {
-      "edugain": "X",
-      "met": "X"
+      "met": "fedurus-identity-federation"
     },
     "countries": [
       "ru"
@@ -888,7 +888,9 @@
     "name": "φEDUrus AAI",
     "sources": {
       "default": {
-        "url": "http://www.fedurus.ru/metadata/metadata.fedurus.xml"
+        "cert_url": "http://metadata.fedurus.ru/arlicon-fedurus.pem",
+        "cert_fp": "1A:BF:7D:3B:04:F7:6E:14:54:13:0C:D0:08:B5:25:07:6C:5F:8E:64",
+        "url": "http://metadata.fedurus.ru/metadata.fedurus.xml"
       }
     },
     "structure": "mesh",
@@ -939,16 +941,18 @@
     ],
     "logo": null,
     "name": "Federasi.ID",
-    "policy": " https://federasi.id/federation-policy/",
+    "policy": "https://federasi.id/federation-policy/",
     "sources": {
       "default": {
+        "cert_url": "https://federasi.id/metadata/fedsigner.pem",
+        "cert_fp": "11:43:2E:95:F5:E7:03:41:EE:C1:09:50:00:62:58:83:3F:BD:53:C1",
         "url": "https://jagger.federasi.id/signedmetadata/federation/IndonesiaAccessFederation/metadata.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "https://federasi.id",
     "url": "https://federasi.id/"
   },
   "feide": {
@@ -1641,6 +1645,8 @@
     "url": "http://www.litnet.lt/"
   },
   "maren": {
+    "active": false,
+    "comment": "Does not seem to be publishing any metadata yet",
     "alt_ids": {
       "edugain": "MAREN"
     },
@@ -1656,16 +1662,10 @@
     "logo": "https://mif.maren.ac.mw/wp-content/themes/maren_mif/images/maren-logo.png",
     "name": "MAREN",
     "policy": "https://mif.maren.ac.mw/wp-content/uploads/2024/02/MAREN-Id-Fed-Policy-v1.0.pdf",
-    "sources": {
-      "default": {
-        "cert_url": "x",
-        "url": "x"
-      }
-    },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
+    "uri": null,
     "url": "https://mif.maren.ac.mw"
   },
   "mate": {
@@ -2028,6 +2028,7 @@
     "url": "http://www.roedu.net/"
   },
   "runnet": {
+    "active": false,
     "alt_ids": {
       "met": "runnet-aai"
     },
@@ -2049,7 +2050,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://runnet.ru/",
     "url": "http://www.runnet.ru/en/services-en/runnetaai-en"
   },
   "safeid": {
