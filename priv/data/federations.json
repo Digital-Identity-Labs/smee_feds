@@ -593,7 +593,7 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": null,
+    "uri": "http://mds.edugain.org/",
     "url": "https://edugain.org/"
   },
   "edugate": {
@@ -656,6 +656,7 @@
     "url": "https://www.eduid.africa/"
   },
   "eduidbf": {
+    "active": false,
     "alt_ids": {
       "edugain": "EDUID-BF"
     },
@@ -768,6 +769,7 @@
     "url": "https://www.eduid.lu/"
   },
   "eduidme": {
+    "active": false,
     "alt_ids": {
       "edugain": "EDUID-ME"
     },
@@ -784,13 +786,7 @@
     ],
     "logo": "http://mren.ac.me/images/mren-logo_01.jpg",
     "name": "eduID.me",
-    "policy": "x",
-    "sources": {
-      "default": {
-        "cert_url": "x",
-        "url": "x"
-      }
-    },
+    "policy": null,
     "structure": "mesh",
     "tags": [],
     "type": "nren",
@@ -846,6 +842,7 @@
     "url": "https://www.eduid.ng/"
   },
   "eduidtg": {
+    "active": false,
     "alt_ids": {
       "edugain": "EDUID-TG"
     },
@@ -861,12 +858,6 @@
     "logo": null,
     "name": "eduID.tg",
     "policy": "https://www.eduid.tg/docs/Togo_Identity_Federation_Policy_Document-en.pdf",
-    "sources": {
-      "default": {
-        "cert_url": "x",
-        "url": "x"
-      }
-    },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
