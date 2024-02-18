@@ -30,7 +30,12 @@ defmodule SmeeFeds.Import do
            }
          end
        )
+    |> Enum.sort()
     |> Enum.into(%{})
+  end
+
+  def list(federations) do
+
   end
 
   @spec validate(json :: map(), filename :: binary) :: map()

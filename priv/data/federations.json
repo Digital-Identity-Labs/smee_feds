@@ -2,7 +2,7 @@
   "aaf": {
     "alt_ids": {
       "edugain": "AAF",
-      "met": "X"
+      "met": "australian-access-federation"
     },
     "contact": "support@aaf.edu.au",
     "countries": [
@@ -59,7 +59,7 @@
   },
   "aaiedumk": {
     "alt_ids": {
-      "edugain": "X",
+      "edugain": "AAIEDUMK",
       "met": "aaiedumk"
     },
     "countries": [
@@ -200,7 +200,6 @@
   },
   "athens": {
     "alt_ids": {
-      "edugain": "X",
       "met": "openathens"
     },
     "contact": "contact@openathens.net ",
@@ -285,8 +284,7 @@
   },
   "bif": {
     "alt_ids": {
-      "edugain": "BIF",
-      "met": "x"
+      "edugain": "BIF"
     },
     "contact": "bif@bren.bg",
     "countries": [
@@ -512,7 +510,6 @@
   "cynet": {
     "alt_ids": {
       "edugain": "CYNET-IF",
-      "met": "x"
     },
     "contact": "cif@cynet.ac.cy",
     "countries": [
@@ -632,7 +629,6 @@
   "eduidafrica": {
     "alt_ids": {
       "edugain": "EDUID-AFRICA",
-      "met": "x"
     },
     "contact": "eduid-operations@ren.africa",
     "countries": [
@@ -661,8 +657,7 @@
   },
   "eduidbf": {
     "alt_ids": {
-      "edugain": "EDUID-BF",
-      "met": "x"
+      "edugain": "EDUID-BF"
     },
     "contact": "jeandelacroix.ki@uts.bf",
     "countries": [
@@ -747,8 +742,7 @@
   "eduidlu": {
     "active": false,
     "alt_ids": {
-      "edugain": "EDUID-LU",
-      "met": "X"
+      "edugain": "EDUID-LU"
     },
     "contact": "admin@restena.lu",
     "countries": [
@@ -776,7 +770,6 @@
   "eduidme": {
     "alt_ids": {
       "edugain": "EDUID-ME",
-      "met": "x"
     },
     "contact": "eduID@ac.me",
     "countries": [
@@ -826,7 +819,6 @@
   "eduidng": {
     "alt_ids": {
       "edugain": "EDUID-NG",
-      "met": "x"
     },
     "contact": "support@eduid.ng",
     "countries": [
@@ -855,8 +847,7 @@
   },
   "eduidtg": {
     "alt_ids": {
-      "edugain": "EDUID-TG",
-      "met": "x"
+      "edugain": "EDUID-TG"
     },
     "contact": "support@eduid.tg",
     "countries": [
@@ -937,8 +928,7 @@
   },
   "federasi": {
     "alt_ids": {
-      "edugain": "FEDERASI",
-      "met": "X"
+      "edugain": "FEDERASI"
     },
     "contact": "andri.setiawan@uii.ac.id",
     "countries": [
@@ -964,7 +954,6 @@
     "url": "https://federasi.id/"
   },
   "feide": {
-    "active": false,
     "alt_ids": {
       "edugain": "FEIDE",
       "met": "feide-federation"
@@ -1024,7 +1013,7 @@
   "fer": {
     "alt_ids": {
       "edugain": "FER",
-      "met": "X"
+      "met": "federation-education-recherche"
     },
     "contact": "fed-contact@listes.renater.fr",
     "countries": [
@@ -1080,8 +1069,7 @@
   },
   "fiel": {
     "alt_ids": {
-      "edugain": "FIEL",
-      "met": "x"
+      "edugain": "FIEL"
     },
     "contact": "fiel@redclara.net",
     "countries": [
@@ -1167,7 +1155,7 @@
   "gip": {
     "alt_ids": {
       "edugain": "GIP",
-      "met": "x"
+      "met": "grid-identity-pool-federation"
     },
     "contact": "credentials-admin@ct.infn.it",
     "countries": [
@@ -1281,8 +1269,7 @@
   },
   "iamres": {
     "alt_ids": {
-      "edugain": "IAMRES",
-      "met": "x"
+      "edugain": "IAMRES"
     },
     "contact": "iamres-ot@amres.ac.rs",
     "countries": [
@@ -1312,7 +1299,7 @@
   "idem": {
     "alt_ids": {
       "edugain": "IDEM",
-      "met": "x"
+      "met": "idem-federation"
     },
     "contact": "idem-help@garr.it",
     "countries": [
@@ -1544,7 +1531,7 @@
     "active": false,
     "alt_ids": {
       "edugain": "LEAF",
-      "met": "X"
+      "met": "moldova-leaf"
     },
     "contact": "leaf@renam.md",
     "countries": [
@@ -1572,7 +1559,7 @@
   "liaf": {
     "alt_ids": {
       "edugain": "LK-LIAF",
-      "met": "x"
+      "met": "liaf"
     },
     "contact": "learn@ac.lk",
     "countries": [
@@ -1603,7 +1590,7 @@
     "active": false,
     "alt_ids": {
       "edugain": "LIFE",
-      "met": "X"
+      "met": "lebanese-identity-federation-ecosystem"
     },
     "contact": "LIFE@aub.edu.lb",
     "countries": [
@@ -1614,7 +1601,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://sites.aub.edu.lb/life/files/2017/01/lifelogo.jpg",
     "name": "LIFE",
     "policy": "http://life.aub.edu.lb/wp-content/uploads/2016/12/Identity-Federation-Policy-AUB.pdf",
     "sources": {
@@ -1657,8 +1644,7 @@
   },
   "maren": {
     "alt_ids": {
-      "edugain": "MAREN",
-      "met": "x"
+      "edugain": "MAREN"
     },
     "contact": "systems@maren.ac.mw",
     "countries": [
@@ -1905,8 +1891,7 @@
   },
   "rash": {
     "alt_ids": {
-      "edugain": "RASH",
-      "met": "x"
+      "edugain": "RASH"
     },
     "contact": "it@rash.al",
     "countries": [
@@ -2046,7 +2031,6 @@
   },
   "runnet": {
     "alt_ids": {
-      "edugain": "X",
       "met": "runnet-aai"
     },
     "contact": "aai@runnet.ru",
@@ -2131,7 +2115,6 @@
   "samif": {
     "alt_ids": {
       "edugain": "SA-MIF",
-      "met": "x"
     },
     "contact": "helpdesk@maeen.sa",
     "countries": [
@@ -2356,8 +2339,7 @@
   },
   "thaildf": {
     "alt_ids": {
-      "edugain": "THAILDF",
-      "met": "X"
+      "edugain": "THAILDF"
     },
     "contact": "idf@thairen.net.th",
     "countries": [
@@ -2385,7 +2367,7 @@
   "tidf": {
     "alt_ids": {
       "edugain": "TIDF",
-      "met": "X"
+      "met": "tarena-identity-federation"
     },
     "contact": "info@tarena.tj",
     "countries": [
@@ -2412,8 +2394,7 @@
   },
   "tigerfed": {
     "alt_ids": {
-      "edugain": "TIGERFED",
-      "met": "X"
+      "edugain": "TIGERFED"
     },
     "contact": "noc@bdren.net.bd",
     "countries": [
