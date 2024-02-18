@@ -883,9 +883,7 @@
     ],
     "descriptions": {},
     "displaynames": {},
-    "interfederates": [
-      "edugain"
-    ],
+    "interfederates": [],
     "logo": null,
     "name": "φEDUrus AAI",
     "sources": {
@@ -2039,9 +2037,7 @@
     ],
     "descriptions": {},
     "displaynames": {},
-    "interfederates": [
-      "edugain"
-    ],
+    "interfederates": [],
     "logo": null,
     "name": "RUNNET AAI",
     "policy": "http://www.runnet.ru/en/services-en/runnetaai-en",
