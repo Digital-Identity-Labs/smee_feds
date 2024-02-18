@@ -2198,12 +2198,12 @@
   },
   "bif": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "BIF",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "bif@bren.bg",
     "countries": [
-      "x"
+      "bg"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2211,29 +2211,29 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "BIF",
+    "policy": "http://bif.bren.bg/?page_id=16&lang=en",
     "sources": {
       "default": {
-        "cert_fp": "x",
+        "cert_fp": "2562F5B474239D3B4DB1C0457250F3F8F6E7FCC2",
         "cert_url": "x",
-        "url": "x"
+        "url": "http://metadata.cc.bas.bg/rr3/signedmetadata/federation/BIF-BREN/metadata.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://bif.bren.bg",
+    "url": "http://bif.bren.bg/"
   },
   "cynet": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "CYNET-IF",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "cif@cynet.ac.cy",
     "countries": [
-      "x"
+      "cy"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2241,27 +2241,26 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "CyNet Identity Federation",
+    "policy": "https://cynet.ac.cy/wp-content/uploads/2021/05/Cynet-Identity-Federation-Policy_en.pdf",
     "sources": {
-      "default": {
-        "cert_fp": "x",
-        "cert_url": "x",
-        "url": "x"
+      "edugain": {
+        "cert_fp": "B64B43755E1D24DF80D1BF9AA737CDD3404494B1",
+        "url": "https://cif.cynet.ac.cy/md/edugain-upstream.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://cif.cynet.ac.cy",
+    "url": "https://cif.cynet.ac.cy"
   },
   "eduidafrica": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "EDUID-AFRICA",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "eduid-operations@ren.africa",
     "countries": [
       "x"
     ],
@@ -2271,29 +2270,29 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "eduID.africa",
+    "policy": "https://www.eduid.africa/policy-v0.1.pdf",
     "sources": {
       "default": {
-        "cert_fp": "x",
+        "cert_fp": "F1EE713ADBE1A240D7EE9DDE11737E218CB6B15F",
         "cert_url": "x",
-        "url": "x"
+        "url": "https://registry.eduid.africa/signedmetadata/federation/eduid_africa/metadata.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://www.eduid.africa/",
+    "url": "https://www.eduid.africa/"
   },
-  "eduidgf": {
+  "eduidbf": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "EDUID-BF",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "jeandelacroix.ki@uts.bf",
     "countries": [
-      "x"
+      "bf"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2301,41 +2300,39 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "Burkina Faso Identity Federation",
+    "policy": "https://www.eduid.bf/docs/Burkina-Faso-Identity-Federation-Policy-Document-v1.1.pdf",
     "sources": {
       "default": {
-        "cert_fp": "x",
         "cert_url": "x",
-        "url": "x"
+        "url": "https://registry.eduid.africa/metadata/federation/FASOREN/metadata.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": null,
+    "url": "https://www.eduid.bf/"
   },
   "eduidme": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "EDUID-ME",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "eduID@ac.me",
     "countries": [
-      "x"
+      "me"
     ],
     "descriptions": {},
-    "displaynames": {},
+    "displaynames": {"en":  "Montenegrin Research and Education Network "},
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
-    "name": "x",
+    "logo": "http://mren.ac.me/images/mren-logo_01.jpg",
+    "name": "eduID.me",
     "policy": "x",
     "sources": {
       "default": {
-        "cert_fp": "x",
         "cert_url": "x",
         "url": "x"
       }
@@ -2343,47 +2340,47 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": null,
+    "url": "http://mren.ac.me/"
   },
   "eduidng": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "EDUID-NG",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "support@eduid.ng",
     "countries": [
-      "x"
+      "ng"
     ],
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
-    "name": "x",
-    "policy": "x",
+    "logo": "https://www.eduid.ng/img/eduid.png",
+    "name": "eduID.ng",
+    "policy": "https://www.eduid.ng/Nigeria-Identity-Federation-Policy-Document-v1.0.docx.pdf",
     "sources": {
       "default": {
-        "cert_fp": "x",
+        "cert_fp": "372B5CE2CF6AC0C0B87C2724F2012C39E25DFC32",
         "cert_url": "x",
-        "url": "x"
+        "url": "https://registry.eduid.ng/rr3/signedmetadata/federation/eduid_ng/metadata.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://www.eduid.ng",
+    "url": "https://www.eduid.ng/"
   },
-  "eduidgftg": {
+  "eduidtg": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "EDUID-TG",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "support@eduid.tg",
     "countries": [
-      "x"
+      "tg"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2391,11 +2388,10 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "eduID.tg",
+    "policy": "https://www.eduid.tg/docs/Togo_Identity_Federation_Policy_Document-en.pdf",
     "sources": {
       "default": {
-        "cert_fp": "x",
         "cert_url": "x",
         "url": "x"
       }
@@ -2403,47 +2399,47 @@
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": null,
+    "url": "https://www.eduid.tg/"
   },
   "fiel": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "FIEL",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "fiel@redclara.net",
     "countries": [
-      "x"
+      "mx"
     ],
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
-    "name": "x",
+    "logo": "https://www.redclara.net/images/SITE_2023/Logo_RedClara_2023.png",
+    "name": "FIEL (RedCLARA)",
     "policy": "x",
     "sources": {
-      "default": {
-        "cert_fp": "x",
-        "cert_url": "x",
-        "url": "x"
+      "edugain": {
+        "cert_fp": "7BD7BE92218201361CB2F8BE97D3573EE7118C9C",
+        "cert_url": "https://mds.redclara.net/signed/default.crt",
+        "url": "https://mds.redclara.net/metadata/fiel-edugain.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://mds.redclara.net/",
+    "url": "https://www.redclara.net/index.php/en/servicios-rc/federaciones-de-identidad"
   },
   "gip": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "GIP",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "credentials-admin@ct.infn.it",
     "countries": [
-      "x"
+      "it"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2451,29 +2447,29 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "Grid Identity Pool",
+    "policy": "http://gridp.garr.it/documents/GrIDP_FederationRules_v2.6.pdf",
     "sources": {
-      "default": {
-        "cert_fp": "x",
+      "edugain": {
+        "cert_fp": "6ED6148E14A069912CB45C3F5B17F74947699D78",
         "cert_url": "x",
-        "url": "x"
+        "url": "https://gridp.garr.it/metadata/edugain/gridp.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "http://gridp.garr.it",
+    "url": "http://gridp.garr.it/"
   },
   "iamres": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "IAMRES",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "iamres-ot@amres.ac.rs",
     "countries": [
-      "x"
+      "rs"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2481,101 +2477,99 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "iAMRES",
+    "policy": "https://www.amres.ac.rs/dokumenti/institucije/iamres-federacija-identiteta/terms_for_provision_of_iamres_identity_federation_services.pdf",
     "sources": {
-      "default": {
-        "cert_fp": "x",
+      "edugain": {
+        "cert_fp": "3AD7FD9F12195C6CD5628C03D8242EBC7AB7E3CD",
         "cert_url": "x",
-        "url": "x"
+        "url": "http://md.iamres.ac.rs/iamres_fed/iamres-edugain-metadata.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://federacija.iamres.ac.rs/",
+    "url": "https://www.amres.ac.rs/en/institutions/iamres-identity-federation"
   },
   "idem": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "IDEM",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "idem-help@garr.it",
     "countries": [
-      "x"
+      "it"
     ],
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
-    "name": "x",
-    "policy": "x",
+    "logo": "https://www.idem.garr.it/images/logoIDEM_colore.svg",
+    "name": "IDEM",
+    "policy": "https://www.idem.garr.it/documenti/regolamento",
     "sources": {
       "default": {
-        "cert_fp": "x",
         "cert_url": "x",
-        "url": "x"
+        "url": "http://md.idem.garr.it/metadata/idem2edugain-metadata-sha256.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "http://www.idem.garr.it/",
+    "url": "https://www.idem.garr.it/index.php/en"
   },
   "liaf": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "LK-LIAF",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "learn@ac.lk",
     "countries": [
-      "x"
+      "lk"
     ],
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
-    "name": "x",
-    "policy": "x",
+    "logo": "https://liaf.ac.lk/images/pic01.png",
+    "name": "LIAF",
+    "policy": "https://liaf.ac.lk/docs/IdentityFederationPolicy-LIAFv1.1.pdf",
     "sources": {
       "default": {
-        "cert_fp": "x",
+        "cert_fp": "8667714D08BC043AF325446C47CA63862B4D4025",
         "cert_url": "x",
-        "url": "x"
+        "url": "https://fr.ac.lk/signedmetadata/LIAF_to_edugain.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://liaf.ac.lk",
+    "url": "https://liaf.ac.lk/"
   },
   "maren": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "MAREN",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "systems@maren.ac.mw",
     "countries": [
-      "x"
+      "mw"
     ],
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
-    "name": "x",
-    "policy": "x",
+    "logo": "https://mif.maren.ac.mw/wp-content/themes/maren_mif/images/maren-logo.png",
+    "name": "MAREN",
+    "policy": "https://mif.maren.ac.mw/wp-content/uploads/2024/02/MAREN-Id-Fed-Policy-v1.0.pdf",
     "sources": {
       "default": {
-        "cert_fp": "x",
         "cert_url": "x",
         "url": "x"
       }
@@ -2584,16 +2578,16 @@
     "tags": [],
     "type": "nren",
     "uri": "x",
-    "url": "x"
+    "url": "https://mif.maren.ac.mw"
   },
   "rash": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "RASH",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "it@rash.al",
     "countries": [
-      "x"
+      "al"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2601,29 +2595,29 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "RASH",
+    "policy": "https://eduid.rash.al/documents/",
     "sources": {
       "default": {
-        "cert_fp": "x",
+        "cert_fp": "2C0FC44C67ED5883FD3E94A776833D747CD4FC13",
         "cert_url": "x",
-        "url": "x"
+        "url": "https://eduid.rash.al/rash-metadata-agregator.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://eduid.rash.al",
+    "url": "https://eduid.rash.al/"
   },
   "samif": {
     "alt_ids": {
-      "edugain": "x",
+      "edugain": "SA-MIF",
       "met": "x"
     },
-    "contact": "x",
+    "contact": "helpdesk@maeen.sa",
     "countries": [
-      "x"
+      "sa"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -2631,20 +2625,20 @@
       "edugain"
     ],
     "logo": null,
-    "name": "x",
-    "policy": "x",
+    "name": "Maeen Identity Federation",
+    "policy":  "https://www.maeen.sa/wp-content/uploads/2019/05/Maeen_Federation_Policy_en-v1.0.pdf",
     "sources": {
       "default": {
-        "cert_fp": "x",
+        "cert_fp": "3F4C43BF577EFB2C616E88AD6D445B150D2A44E5",
         "cert_url": "x",
-        "url": "x"
+        "url": "https://md.maeen.sa/metadata/maeen-edugain-metadata.xml"
       }
     },
     "structure": "mesh",
     "tags": [],
     "type": "nren",
-    "uri": "x",
-    "url": "x"
+    "uri": "https://www.maeen.sa",
+    "url": "https://www.maeen.sa/services/identity/"
   }
 
 }
