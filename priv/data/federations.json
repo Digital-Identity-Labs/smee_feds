@@ -2195,5 +2195,456 @@
     "type": "nren",
     "uri": "https://yetkim.org.tr/",
     "url": "https://yetkim.org.tr/en/"
+  },
+  "bif": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "cynet": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "eduidafrica": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "eduidgf": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "eduidme": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "eduidng": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "eduidgftg": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "fiel": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "gip": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "iamres": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "idem": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "liaf": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "maren": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "rash": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
+  },
+  "samif": {
+    "alt_ids": {
+      "edugain": "x",
+      "met": "x"
+    },
+    "contact": "x",
+    "countries": [
+      "x"
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [
+      "edugain"
+    ],
+    "logo": null,
+    "name": "x",
+    "policy": "x",
+    "sources": {
+      "default": {
+        "cert_fp": "x",
+        "cert_url": "x",
+        "url": "x"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
+    "uri": "x",
+    "url": "x"
   }
+
 }
