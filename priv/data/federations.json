@@ -47,11 +47,11 @@
     "name": "AAI@EduHr",
     "policy": "http://www.aaiedu.hr/docs/AAI@EduHr-pravilnik-ver1.3.1.pdf",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "http://www.srce.hr",
@@ -129,7 +129,7 @@
     "logo": null,
     "name": "AFIRE",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://aai.asnet.am/metadata/edugain-upstream.xml"
       }
     },
@@ -301,7 +301,7 @@
     "sources": {
       "default": {
         "cert_fp": "2562F5B474239D3B4DB1C0457250F3F8F6E7FCC2",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "http://metadata.cc.bas.bg/rr3/signedmetadata/federation/BIF-BREN/metadata.xml"
       }
     },
@@ -524,7 +524,7 @@
     "name": "CyNet Identity Federation",
     "policy": "https://cynet.ac.cy/wp-content/uploads/2021/05/Cynet-Identity-Federation-Policy_en.pdf",
     "sources": {
-      "edugain": {
+      "upstream_edugain": {
         "cert_fp": "B64B43755E1D24DF80D1BF9AA737CDD3404494B1",
         "url": "https://cif.cynet.ac.cy/md/edugain-upstream.xml"
       }
@@ -645,7 +645,7 @@
     "sources": {
       "default": {
         "cert_fp": "F1EE713ADBE1A240D7EE9DDE11737E218CB6B15F",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "https://registry.eduid.africa/signedmetadata/federation/eduid_africa/metadata.xml"
       }
     },
@@ -674,7 +674,7 @@
     "policy": "https://www.eduid.bf/docs/Burkina-Faso-Identity-Federation-Policy-Document-v1.1.pdf",
     "sources": {
       "default": {
-        "cert_url": "x",
+        "cert_url": null,
         "url": "https://registry.eduid.africa/metadata/federation/FASOREN/metadata.xml"
       }
     },
@@ -831,7 +831,7 @@
     "sources": {
       "default": {
         "cert_fp": "372B5CE2CF6AC0C0B87C2724F2012C39E25DFC32",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "https://registry.eduid.ng/rr3/signedmetadata/federation/eduid_ng/metadata.xml"
       }
     },
@@ -965,7 +965,7 @@
     "name": "FEIDE",
     "policy": "https://www.feide.no/sites/feide.no/files/documents/feide_system_architecture.pdf",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://metadata.feide.no/edugain-metadata.xml"
       }
     },
@@ -1077,7 +1077,7 @@
     "name": "FIEL (RedCLARA)",
     "policy": "x",
     "sources": {
-      "edugain": {
+      "upstream_edugain": {
         "cert_fp": "7BD7BE92218201361CB2F8BE97D3573EE7118C9C",
         "cert_url": "https://mds.redclara.net/signed/default.crt",
         "url": "https://mds.redclara.net/metadata/fiel-edugain.xml"
@@ -1135,7 +1135,7 @@
     "name": "GIF",
     "policy": "https://technical.edugain.org/Declarations/eduGAIN_Declaration_GE_2.pdf",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://mtd.gif.grena.ge/md/edugain-upstream.xml"
       }
     },
@@ -1163,9 +1163,9 @@
     "name": "Grid Identity Pool",
     "policy": "http://gridp.garr.it/documents/GrIDP_FederationRules_v2.6.pdf",
     "sources": {
-      "edugain": {
+      "upstream_edugain": {
         "cert_fp": "6ED6148E14A069912CB45C3F5B17F74947699D78",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "https://gridp.garr.it/metadata/edugain/gridp.xml"
       }
     },
@@ -1277,9 +1277,9 @@
     "name": "iAMRES",
     "policy": "https://www.amres.ac.rs/dokumenti/institucije/iamres-federacija-identiteta/terms_for_provision_of_iamres_identity_federation_services.pdf",
     "sources": {
-      "edugain": {
+      "upstream_edugain": {
         "cert_fp": "3AD7FD9F12195C6CD5628C03D8242EBC7AB7E3CD",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "http://md.iamres.ac.rs/iamres_fed/iamres-edugain-metadata.xml"
       }
     },
@@ -1307,8 +1307,8 @@
     "name": "IDEM",
     "policy": "https://www.idem.garr.it/documenti/regolamento",
     "sources": {
-      "default": {
-        "cert_url": "x",
+      "upstream_edugain": {
+        "cert_url": null,
         "url": "http://md.idem.garr.it/metadata/idem2edugain-metadata-sha256.xml"
       }
     },
@@ -1510,7 +1510,7 @@
     "name": "LAIFE",
     "policy": "https://laife.lanet.lv/wiki/Latvian-Academic-Identity-Federation-Policy.pdf",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://laife.lanet.lv/metadata/laife-edugain-metadata.xml"
       }
     },
@@ -1567,9 +1567,9 @@
     "name": "LIAF",
     "policy": "https://liaf.ac.lk/docs/IdentityFederationPolicy-LIAFv1.1.pdf",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "cert_fp": "8667714D08BC043AF325446C47CA63862B4D4025",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "https://fr.ac.lk/signedmetadata/LIAF_to_edugain.xml"
       }
     },
@@ -1703,7 +1703,7 @@
     "logo": null,
     "name": "MINGA",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://minga.cedia.org.ec/metadata/minga-metadata-edugain.xml"
       }
     },
@@ -1897,7 +1897,7 @@
     "sources": {
       "default": {
         "cert_fp": "2C0FC44C67ED5883FD3E94A776833D747CD4FC13",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "https://eduid.rash.al/rash-metadata-agregator.xml"
       }
     },
@@ -1952,7 +1952,7 @@
     "name": "RiċerkaNet Identity Federation",
     "policy": "https://id.ricerka.net.mt/docs/",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://id.ricerka.net.mt/metadata/edugain-upstream.xml"
       }
     },
@@ -2117,9 +2117,9 @@
     "name": "Maeen Identity Federation",
     "policy": "https://www.maeen.sa/wp-content/uploads/2019/05/Maeen_Federation_Policy_en-v1.0.pdf",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "cert_fp": "3F4C43BF577EFB2C616E88AD6D445B150D2A44E5",
-        "cert_url": "x",
+        "cert_url": null,
         "url": "https://md.maeen.sa/metadata/maeen-edugain-metadata.xml"
       }
     },
@@ -2231,7 +2231,7 @@
     "name": "SURFconext",
     "policy": "https://wiki.surfnet.nl/display/eduGAIN/eduGAIN",
     "sources": {
-      "default": {
+      "upstream_edugain": {
         "url": "https://metadata.surfconext.nl/edugain-upstream.xml"
       }
     },
