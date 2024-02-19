@@ -73,7 +73,8 @@ defmodule SmeeFeds.Federation do
                      default: %{}
                    ],
                    logo: [
-                     type: :string,
+                     type: {:or, [:string, :nil]},
+                     default: nil
                    ],
                    autotag: [
                      type: :boolean,
