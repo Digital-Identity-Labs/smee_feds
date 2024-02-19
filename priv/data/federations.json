@@ -806,9 +806,13 @@
     "policy": "https://www.eduidm.ma/files/policy-eduIDM-en.pdf",
     "sources": {
       "default": {
-        "url": "https://www.eduidm.ma/metadata/eduidm.xml"
+        "url": "https://www.eduidm.ma/metadata/eduidm.xml",
+        "cert_url": null
       }
     },
+    "structure": "mesh",
+    "tags": [],
+    "type": "nren",
     "uri": "https://eduidm.ma",
     "url": "http://www.eduidm.ma/"
   },
@@ -1137,7 +1141,7 @@
     "sources": {
       "default": {
         "url": "https://mtd.gif.grena.ge/md/federation-downstream.xml",
-        "cert_url": "https://gif.grena.ge/admin/editor/uploads/files/cert.pem",
+        "cert_url": "https://gif.grena.ge/admin/editor/uploads/files/cert.pem"
       }
     },
     "structure": "mesh",
