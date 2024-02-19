@@ -219,7 +219,7 @@
         "url": "https://fed.openathens.net/oafed/metadata"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": null,
@@ -969,7 +969,7 @@
         "url": "https://metadata.feide.no/edugain-metadata.xml"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "http://feide.no/",
@@ -1135,8 +1135,9 @@
     "name": "GIF",
     "policy": "https://technical.edugain.org/Declarations/eduGAIN_Declaration_GE_2.pdf",
     "sources": {
-      "upstream_edugain": {
-        "url": "https://mtd.gif.grena.ge/md/edugain-upstream.xml"
+      "default": {
+        "url": "https://mtd.gif.grena.ge/md/federation-downstream.xml",
+        "cert_url": "https://gif.grena.ge/admin/editor/uploads/files/cert.pem",
       }
     },
     "structure": "mesh",
@@ -1430,7 +1431,7 @@
         "url": "https://iif-ng.iucc.ac.il/md/iif-ng.xml"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "http://iif.iucc.ac.il",
@@ -2012,7 +2013,7 @@
         "url": "https://sp.roedu.net/roedunetid-metadata-idp-signed.xml"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "http://eduid.roedu.net",
@@ -2094,7 +2095,7 @@
         "url": "https://safire.ac.za/technical/metadata"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "https://safire.ac.za",
@@ -2207,7 +2208,7 @@
         "url": "http://www.rediris.es/sir/metadata.html.en"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "http://www.rediris.es/",
@@ -2235,7 +2236,7 @@
         "url": "https://metadata.surfconext.nl/edugain-upstream.xml"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "http://www.surfconext.nl/",
@@ -2319,7 +2320,7 @@
         "url": "https://met.refeds.org/media/metadata/taat-federation-metadata.xml"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "http://taat.edu.ee",
@@ -2492,7 +2493,7 @@
         "url": "https://metadata.wayf.dk/wayf-metadata.xml"
       }
     },
-    "structure": "mesh",
+    "structure": "has",
     "tags": [],
     "type": "nren",
     "uri": "https://www.wayf.dk",
