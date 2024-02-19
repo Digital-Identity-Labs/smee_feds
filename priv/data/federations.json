@@ -580,7 +580,7 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [],
-    "logo": null,
+    "logo": "https://febas.basnet.by/assets/images/EduGAIN-logo.png",
     "name": "Edugain",
     "policy": "https://technical.edugain.org/documents",
     "sources": {
@@ -592,7 +592,7 @@
     },
     "structure": "mesh",
     "tags": [],
-    "type": "nren",
+    "type": "inter",
     "uri": "http://mds.edugain.org/",
     "url": "https://edugain.org/"
   },
@@ -632,7 +632,6 @@
     },
     "contact": "eduid-operations@ren.africa",
     "countries": [
-      "x"
     ],
     "descriptions": {},
     "displaynames": {},
@@ -811,6 +810,7 @@
       }
     },
     "structure": "mesh",
+    "logo": "https://www.eduidm.ma/logo.png",
     "tags": [],
     "type": "nren",
     "uri": "https://eduidm.ma",
@@ -934,7 +934,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://federasi.id/wp-content/uploads/2020/09/cropped-Logo-Federasi-Small.png",
     "name": "Federasi.ID",
     "policy": "https://federasi.id/federation-policy/",
     "sources": {
@@ -980,6 +980,8 @@
     "url": "https://www.feide.no/"
   },
   "fenix": {
+    "active": false,
+    "comment": "Site TLS certs expired for 50+ days",
     "alt_ids": {
       "edugain": "FENIX",
       "met": "fenix"
@@ -1005,7 +1007,7 @@
     "tags": [],
     "type": "nren",
     "uri": "http://www.fenix.org.mx",
-    "url": "www.fenix.org.mx"
+    "url": "https://www.fenix.org.mx"
   },
   "fer": {
     "alt_ids": {
@@ -1079,7 +1081,7 @@
     ],
     "logo": "https://www.redclara.net/images/SITE_2023/Logo_RedClara_2023.png",
     "name": "FIEL (RedCLARA)",
-    "policy": "x",
+    "policy": null,
     "sources": {
       "upstream_edugain": {
         "cert_fp": "7BD7BE92218201361CB2F8BE97D3573EE7118C9C",
@@ -1107,7 +1109,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.gakunin.jp/themes/custom/gakunin/logo.svg",
     "name": "GakuNin",
     "policy": "https://www.gakunin.jp/en/join/production",
     "sources": {
@@ -1164,7 +1166,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://gif.grena.ge/images/logo_eng.png",
     "name": "Grid Identity Pool",
     "policy": "http://gridp.garr.it/documents/GrIDP_FederationRules_v2.6.pdf",
     "sources": {
@@ -1194,7 +1196,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "http://aai.grnet.gr/static/images/delos_logo.png",
     "name": "GRNET",
     "policy": "https://aai.grnet.gr/static/policy/policy-en.pdf",
     "sources": {
@@ -1222,7 +1224,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://wiki.eduuni.fi/download/attachments/27297844/Haka_rgb.jpg?version=1&modificationDate=1499256083673&api=v2",
     "name": "Haka",
     "policy": "https://wiki.eduuni.fi/display/CSCHAKA/Joining+and+registrations",
     "sources": {
@@ -1251,7 +1253,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.hkaf.edu.hk/images/logos/hkaf-logo-w4.png",
     "name": "Hong Kong Access Federation",
     "policy": "https://www.hkaf.edu.hk/federation-policy",
     "sources": {
@@ -1278,7 +1280,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.amres.ac.rs/dokumenti/institucije/iamres-federacija-identiteta/iAMRES_logo_srednji.png",
     "name": "iAMRES",
     "policy": "https://www.amres.ac.rs/dokumenti/institucije/iamres-federacija-identiteta/terms_for_provision_of_iamres_identity_federation_services.pdf",
     "sources": {
@@ -1337,7 +1339,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://incommon.org/wp-content/uploads/2019/08/Incommon2x.png",
     "name": "InCommon",
     "policy": "https://incommon.org/about/policies/",
     "sources": {
@@ -1371,7 +1373,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "http://parichay.inflibnet.ac.in/img/infed.png",
     "name": "INFED",
     "policy": "https://parichay.inflibnet.ac.in/documents/",
     "sources": {
@@ -1399,7 +1401,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.irfed.ir/title2.jpg",
     "name": "IRFED",
     "policy": "http://www.irfed.ir/IR%20FED%20Policy%20-%20English.pdf",
     "sources": {
@@ -1427,7 +1429,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.iucc.ac.il/wp-content/uploads/2018/11/logo.svg",
     "name": "IUCC Identity Federation",
     "policy": "https://iif.iucc.ac.il/wordpress/wp-content/uploads/2014/06/IIF-Policy.pdf",
     "sources": {
@@ -1455,7 +1457,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.kafe.or.kr/images/kor/layout/logo.gif",
     "name": "KAFE",
     "policy": "https://coreen.kreonet.net/e_join",
     "sources": {
@@ -1511,7 +1513,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://laife.lanet.lv/fileadmin/_processed_/6/3/csm_laifelogo2_86a2318ac7.png",
     "name": "LAIFE",
     "policy": "https://laife.lanet.lv/wiki/Latvian-Academic-Identity-Federation-Policy.pdf",
     "sources": {
@@ -1626,7 +1628,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://litnet.lt/wp-content/uploads/2021/07/LITNET_tik_zenklas_100px.png",
     "name": "Litnet Federation",
     "policy": "https://fedi.litnet.lt/en/policy",
     "sources": {
@@ -1788,7 +1790,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://peano.uran.ua/images/peano-logo-980.gif",
     "name": "PEANO",
     "sources": {
       "default": {
@@ -1815,7 +1817,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://pionier.net.pl/pionierid/wp-content/uploads/2022/02/pionierid-logo.svg",
     "name": "Polish Identity Federation PIONIER.Id",
     "sources": {
       "default": {
@@ -1869,7 +1871,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://rafiki.ke/sites/default/files/Rafiki10_0.png",
     "name": "RAFIKI",
     "policy": "https://rafiki.ke/sites/default/files/2022-01/RAFIKI_Identity_Federation_Policy.pdf",
     "sources": {
@@ -1926,7 +1928,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.fccn.pt/media/2020/12/rctsaai-fccn.svg",
     "name": "RCTSaai",
     "sources": {
       "default": {
@@ -1981,7 +1983,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://rif.renu.ac.ug/wp-content/uploads/2023/06/small-renu-logo-1-1.png",
     "name": "RIF",
     "policy": "https://rif.renu.ac.ug/docs/rifp.pdf",
     "sources": {
@@ -2063,7 +2065,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.safeid.sk/_media/wiki:logo.png",
     "name": "SafeID",
     "policy": "https://www.safeid.sk/doku.php?id=en:policy",
     "sources": {
@@ -2091,7 +2093,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://safire.ac.za/wp-content/uploads/2016/09/SAFIRE_P_Colour.svg",
     "name": "South African Identity Federation (SAFIRE)",
     "policy": "https://safire.ac.za/safire/policy/participation/",
     "sources": {
@@ -2148,7 +2150,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.singaren.net.sg/wp-content/uploads/2019/12/SingAREN-Logo.png",
     "name": "Singapore Access Federation (SGAF)",
     "policy": "https://www.singaren.net.sg/document/SGAF-Federation-Rules.pdf",
     "sources": {
@@ -2176,7 +2178,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://sifulan.my/wp-content/uploads/2018/07/cropped-sifulan-logo-small-white-4.png",
     "name": "SIFULAN",
     "policy": "https://sifulan.my/download/SIFULAN-Federation-Policy-v1.1.pdf",
     "sources": {
@@ -2204,7 +2206,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.rediris.es/template/w4/mm/lgRedIRIS01.png",
     "name": "SIR",
     "policy": "http://www.rediris.es/sir/docs/idp_conditions_use_1.0_20080220.pdf",
     "sources": {
@@ -2232,7 +2234,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.surf.nl/themes/surf/logo.svg",
     "name": "SURFconext",
     "policy": "https://wiki.surfnet.nl/display/eduGAIN/eduGAIN",
     "sources": {
@@ -2260,7 +2262,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://wiki.sunet.se/download/thumbnails/17138090/swamid-logo-2-893x1024.png?version=1&modificationDate=1507228577000&api=v2",
     "name": "SWAMID",
     "policy": "https://www.sunet.se/swamid/policy/",
     "sources": {
@@ -2288,7 +2290,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://help.switch.ch/export/system/modules/ch.SWITCH.ocms.www/resources/images/logoHi.png",
     "name": "SWITCHaai",
     "policy": "https://www.switch.ch/edu-id/terms/",
     "sources": {
@@ -2316,7 +2318,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://taat.edu.ee/main/wp-content/uploads/Taat_logo_lai_RGB.png",
     "name": "TAAT",
     "policy": "http://taat.edu.ee/main/wp-content/uploads/Federation_Policy_1.3.pdf",
     "sources": {
@@ -2343,7 +2345,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://idf.thairen.net.th/1897693b4488213557dedb2195150328.jpg",
     "name": "ThaiIDF",
     "policy": "http://idf.thairen.net.th/pdf/ThaiREN-Identity-Federation-Policy-v0.1.pdf",
     "sources": {
@@ -2398,7 +2400,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://tigerfed.net.bd/images/logo1.png",
     "name": "TIGERfed",
     "policy": "http://tigerfed.net.bd/assets/upload/IdentityFederationPolicy-v1.0.pdf",
     "sources": {
@@ -2426,12 +2428,13 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://virtualhome.tuakiri.ac.nz/static/sFdQMYjuNr0tjyMpuJ9SoOcJlxxd02j3UAaCs2zU39J.jpg",
     "name": "Tuakiri New Zealand Access Federation",
     "policy": "https://tuakiri.ac.nz/documents/",
     "sources": {
       "default": {
-        "url": "https://directory.tuakiri.ac.nz/metadata/tuakiri-metadata-signed.xml"
+        "url": "https://directory.tuakiri.ac.nz/metadata/tuakiri-metadata-signed.xml",
+        "cert_url": "https://directory.tuakiri.ac.nz/metadata/tuakiri-metadata-cert.pem"
       }
     },
     "structure": "mesh",
@@ -2454,7 +2457,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.ukfederation.org.uk/library/uploads/Documents/Logo2.jpg",
     "name": "UK Access Management Federation",
     "policy": "http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf",
     "sources": {
@@ -2490,7 +2493,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://wayf.dk/sites/default/files/uploads/WAYF%20Logo%20RGB%20FINAL.svg",
     "name": "WAYF",
     "sources": {
       "default": {
