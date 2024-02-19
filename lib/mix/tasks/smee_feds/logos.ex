@@ -1,6 +1,6 @@
-defmodule Mix.Tasks.SmeeFeds.Technical do
-  @moduledoc "List technical details of default federations"
-  @shortdoc "List technical details of default federations"
+defmodule Mix.Tasks.SmeeFeds.Logos do
+  @moduledoc "List logos of default federations"
+  @shortdoc "List logos of default federations"
 
   use Mix.Task
 
@@ -17,22 +17,14 @@ defmodule Mix.Tasks.SmeeFeds.Technical do
                 fn {f, s} ->
                   [
                     Federation.id(f),
-                    f.type,
-                    f.structure,
-                    f.protocols,
-                    Enum.join(
-                      [
-                        if(Federation.aggregate(f), do: "aggregate", else: ""),
-                        (if Federation.mdq(f), do: "mdq", else: "")
-                      ],
-                      " "
-                    )
+                    f.logo,
+                  "?"
                   ]
                 end
               )
 
     title = "SmeeFeds Default Federation Technical details"
-    header = ["SmeeFedsID", "Type", "Structure", "Protocols", "Services"]
+    header = ["SmeeFedsID", "Logo URL", "Present?"]
 
 
     TableRex.quick_render!(rows, header, title)
