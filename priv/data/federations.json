@@ -13,7 +13,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://aaf.edu.au/wp-content/uploads/AAF_LGO_lge-website.png",
     "name": "Australian Access Federation (AAF)",
     "policy": "https://aaf.edu.au/about/federation-rules.html",
     "sources": {
@@ -43,7 +43,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.aaiedu.hr/sites/default/files/styles/logo-aai_breakpoints_theme_aai_eduhr_wide_1x/public/aai-70.png",
     "name": "AAI@EduHr",
     "policy": "http://www.aaiedu.hr/docs/AAI@EduHr-pravilnik-ver1.3.1.pdf",
     "sources": {
@@ -70,7 +70,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "http://aaiedu.mk/wp-content/uploads/2015/11/aaiedumk-new-copy.png",
     "name": "AAIEduMK",
     "sources": {
       "default": {
@@ -99,7 +99,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.aco.net/index.php?eID=tx_securedownloads&u=0&g=0&t=1708466932&hash=66d6abe283955de958d5fd9d6f843f3fb0868f55&file=fileadmin/_processed_/csm_header_aconet_logo_2022_70px-hoch_f1b58cf0f0.png",
     "name": "ACOnet Identity Federation",
     "policy": "https://wiki.univie.ac.at/display/federation/Policies",
     "sources": {
@@ -126,7 +126,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://afire.asnet.am/images/logo.png",
     "name": "AFIRE",
     "sources": {
       "upstream_edugain": {
@@ -182,7 +182,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://aai.arnes.si/static/images/logos/arnesaai.png",
     "name": "ArnesAAI",
     "policy": "https://aai.arnes.si/static/doc/ArnesAAI_general.pdf",
     "sources": {
@@ -211,7 +211,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.openathens.net/app/uploads/2022/08/OA_PRIMARY-LOGO_RGB_-BLUE.png",
     "name": "OpenAthens",
     "policy": "https://docs.openathens.net/providers/OpenAthens-Federation.11960724.html",
     "sources": {
@@ -268,7 +268,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://idp-customer-mfa.belnet.be/idp/images/logo_belnet_fed_and_base.png",
     "name": "Belnet Research and Education Federation",
     "policy": "http://federation.belnet.be/files/federation-policy-EN.pdf",
     "sources": {
@@ -324,7 +324,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.canarie.ca/wp-content/uploads/2021/02/CAF_block.png",
     "name": "Canadian Access Federation (CAF)",
     "sources": {
       "default": {
@@ -353,7 +353,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.rnp.br/arquivos/2023-09/CAFe_Logo_Horizontal_Branca_1.png?VersionId=1xo5uCqHrAsyU2J7I.4hMOXiAbblk58u",
     "name": "CAFe",
     "policy": "https://svn.cafe.rnp.br/repos/CAFe/termos_politicas_CAFe/Politica%20da%20Federacao%20CAFe.pdf",
     "sources": {
@@ -410,7 +410,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.carsi.edu.cn/image/logo.png",
     "name": "CARSI",
     "sources": {
       "default": {
@@ -466,7 +466,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.renata.edu.co/wp-content/uploads/servicios_conectividad_avanzada_colfire.png",
     "name": "COLFIRE",
     "sources": {
       "default": {
@@ -493,7 +493,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.cstcloud.net/r/cms/cstclouden/default/images/logo.png",
     "name": "CST Cloud Federation",
     "policy": "http://cstcloud.net/doc/Identity-Federation-Policy-China-CSTCloud-Federation.pdf",
     "sources": {
@@ -520,7 +520,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://cif.cynet.ac.cy/images/cynet-logo.png",
     "name": "CyNet Identity Federation",
     "policy": "https://cynet.ac.cy/wp-content/uploads/2021/05/Cynet-Identity-Federation-Policy_en.pdf",
     "sources": {
@@ -549,7 +549,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.aai.dfn.de/static/img/dfn_aai_logo.png",
     "name": "DFN-AAI",
     "policy": "https://doku.tid.dfn.de/en:join",
     "sources": {
@@ -580,7 +580,7 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [],
-    "logo": "https://febas.basnet.by/assets/images/EduGAIN-logo.png",
+    "logo": "https://edugain.org/wp-content/uploads/2017/06/header_logo_small-1.gif",
     "name": "Edugain",
     "policy": "https://technical.edugain.org/documents",
     "sources": {
@@ -610,7 +610,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.heanet.ie/wp-content/uploads/2019/11/edugate-logo.jpg",
     "name": "Edugate",
     "policy": "http://www.heanet.ie/services/identity-access/edugate#join",
     "sources": {
@@ -965,7 +965,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.feide.no/themes/custom/feide_theme/resources/Horisontal_Feide.svg",
     "name": "FEIDE",
     "policy": "https://www.feide.no/sites/feide.no/files/documents/feide_system_architecture.pdf",
     "sources": {
@@ -1137,7 +1137,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://gif.grena.ge/images/logo_eng.png",
     "name": "GIF",
     "policy": "https://technical.edugain.org/Declarations/eduGAIN_Declaration_GE_2.pdf",
     "sources": {
@@ -1166,7 +1166,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": "https://gif.grena.ge/images/logo_eng.png",
+    "logo": null,
     "name": "Grid Identity Pool",
     "policy": "http://gridp.garr.it/documents/GrIDP_FederationRules_v2.6.pdf",
     "sources": {
