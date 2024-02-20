@@ -5,16 +5,13 @@ defmodule Mix.Tasks.SmeeFeds.Data.Names do
   use Mix.Task
 
   alias SmeeFeds.Federation
-  alias Smee.Source
 
   @impl Mix.Task
   def run(_args) do
 
     rows = SmeeFeds.federations()
-           |> Enum.map(fn f -> {f, Federation.aggregate(f)} end)
-           |> Enum.reject(fn {f, s} -> is_nil(s) end)
            |> Enum.map(
-                fn {f, s} ->
+                fn f ->
                   [
                     Federation.id(f),
                     f.name,

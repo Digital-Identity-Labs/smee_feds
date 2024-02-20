@@ -7,11 +7,11 @@ defmodule SmeeFeds.Audit do
   Returns true if present, false if any error or unexpected status is returned
   """
   @spec resource_present?(url :: binary()) :: boolean()
-  def resource_present?(url, options \\ []) do
+  def resource_present?(url, _options \\ []) do
     if Smee.Utils.file_url?(url) do
       {:error, "URL #{url} is not a remote file!"}
     else
-      case Req.head(url, http_options(cache: false)) do
+      case Req.head(url, http_options()) do
         {
           :ok,
           %{

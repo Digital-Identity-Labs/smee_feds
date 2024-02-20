@@ -4,13 +4,6 @@ defmodule Mix.Tasks.SmeeFeds.Gen.DataTests do
 
   use Mix.Task
 
-  alias SmeeFeds.Federation
-  alias Smee.Source
-
-  #####
-
-
-
   @impl Mix.Task
   def run(_args) do
 
@@ -24,8 +17,8 @@ defmodule Mix.Tasks.SmeeFeds.Gen.DataTests do
            module_name = "Data#{String.capitalize(fed_id)}Test"
            filename = "test/data/data_#{fed_id}_test.exs"
 
-           dam = SmeeFeds.Federation.aggregate(federation)
-           mdq = SmeeFeds.Federation.mdq(federation)
+           # dam = SmeeFeds.Federation.aggregate(federation)
+           # mdq = SmeeFeds.Federation.mdq(federation)
 
            contents = """
              defmodule #{module_name} do

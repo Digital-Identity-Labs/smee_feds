@@ -7,10 +7,6 @@ defmodule Mix.Tasks.SmeeFeds.Data.Ids do
   #alias Mix.Shell.IO
   alias SmeeFeds.Federation
 
-  @manual_text """
-  This task will produce a table of identifiers for all default federation records
-  """
-
   @impl Mix.Task
   def run(_args) do
 
