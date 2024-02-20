@@ -1,5 +1,5 @@
   defmodule DataSirTest do
-    use ExUnit.Case
+    use ExUnit.Case, async: false
 
     @moduletag :data
 
@@ -12,9 +12,10 @@
 
     describe "default aggregate metadata url" do
 
+      @tag timeout: 360_000
       test "can download the metadata from sir" do
 
-       url = SmeeFeds.get(:sir)
+       url = SmeeFeds.federation(:sir)
               |> Federation.aggregate()
               |> Map.get(:url)
 

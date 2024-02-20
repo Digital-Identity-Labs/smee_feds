@@ -1,4 +1,4 @@
-  defmodule DataTuakiriTest do
+  defmodule DataBifTest do
     use ExUnit.Case, async: false
 
     @moduletag :data
@@ -13,9 +13,9 @@
     describe "default aggregate metadata url" do
 
       @tag timeout: 360_000
-      test "can download the metadata from tuakiri" do
+      test "can download the metadata from bif" do
 
-       url = SmeeFeds.federation(:tuakiri)
+       url = SmeeFeds.federation(:bif)
               |> Federation.aggregate()
               |> Map.get(:url)
 

@@ -1,5 +1,5 @@
   defmodule DataDfnaaiTest do
-    use ExUnit.Case
+    use ExUnit.Case, async: false
 
     @moduletag :data
 
@@ -12,9 +12,10 @@
 
     describe "default aggregate metadata url" do
 
+      @tag timeout: 360_000
       test "can download the metadata from dfnaai" do
 
-       url = SmeeFeds.get(:dfnaai)
+       url = SmeeFeds.federation(:dfnaai)
               |> Federation.aggregate()
               |> Map.get(:url)
 

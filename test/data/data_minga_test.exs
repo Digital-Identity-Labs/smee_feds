@@ -1,5 +1,5 @@
   defmodule DataMingaTest do
-    use ExUnit.Case
+    use ExUnit.Case, async: false
 
     @moduletag :data
 
@@ -12,9 +12,10 @@
 
     describe "default aggregate metadata url" do
 
+      @tag timeout: 360_000
       test "can download the metadata from minga" do
 
-       url = SmeeFeds.get(:minga)
+       url = SmeeFeds.federation(:minga)
               |> Federation.aggregate()
               |> Map.get(:url)
 

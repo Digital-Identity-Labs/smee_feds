@@ -1,5 +1,5 @@
   defmodule DataLiafTest do
-    use ExUnit.Case
+    use ExUnit.Case, async: false
 
     @moduletag :data
 
@@ -12,9 +12,10 @@
 
     describe "default aggregate metadata url" do
 
+      @tag timeout: 360_000
       test "can download the metadata from liaf" do
 
-       url = SmeeFeds.get(:liaf)
+       url = SmeeFeds.federation(:liaf)
               |> Federation.aggregate()
               |> Map.get(:url)
 
