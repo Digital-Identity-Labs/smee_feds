@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.SmeeFeds.Names do
+defmodule Mix.Tasks.SmeeFeds.Data.Names do
   @moduledoc "List general info for default federations"
   @shortdoc "List general info for default federations"
 

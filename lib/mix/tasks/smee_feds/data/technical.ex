@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.SmeeFeds.Technical do
+defmodule Mix.Tasks.SmeeFeds.Data.Technical do
   @moduledoc "List technical details of default federations"
   @shortdoc "List technical details of default federations"
 

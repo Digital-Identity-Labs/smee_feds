@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.SmeeFeds.Mdq do
+defmodule Mix.Tasks.SmeeFeds.Data.Mdq do
   @moduledoc "List MDQ service sources used by default federations"
   @shortdoc "List MDQ services used by default federations"
 

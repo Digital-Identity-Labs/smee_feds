@@ -1,6 +1,6 @@
-defmodule Mix.Tasks.SmeeFeds.Info do
-  @moduledoc "List general info for default federations"
-  @shortdoc "List general info for default federations"
+defmodule Mix.Tasks.SmeeFeds.Data.Logos do
+  @moduledoc "List logos of default federations"
+  @shortdoc "List logos of default federations"
 
   use Mix.Task
 
@@ -17,15 +17,14 @@ defmodule Mix.Tasks.SmeeFeds.Info do
                 fn {f, s} ->
                   [
                     Federation.id(f),
-                    f.contact,
-                    f.url,
-                    f.policy,
+                    f.logo,
+                  "?"
                   ]
                 end
               )
 
-    title = "SmeeFeds Default Federation General Info"
-    header = ["SmeeFedsID", "Contact", "Homepage", "Policy"]
+    title = "SmeeFeds Default Federation Technical details"
+    header = ["SmeeFedsID", "Logo URL", "Present?"]
 
 
     TableRex.quick_render!(rows, header, title)

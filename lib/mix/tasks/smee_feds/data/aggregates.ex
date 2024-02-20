@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.SmeeFeds.Aggregates do
+defmodule Mix.Tasks.SmeeFeds.Data.Aggregates do
   @moduledoc "List metadata sources used by default federations"
   @shortdoc "List metadata used by default federations"
 
