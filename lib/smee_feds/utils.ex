@@ -1,6 +1,7 @@
 defmodule SmeeFeds.Utils do
   @moduledoc false
 
+  @spec to_safe_atoms(input :: atom() | binary() | list()) :: list(atom())
   def to_safe_atoms(input) do
     input
     |> List.wrap()
@@ -8,6 +9,7 @@ defmodule SmeeFeds.Utils do
     |> Enum.reject(fn x -> is_nil(x) end)
   end
 
+  @spec to_safe_atom(input :: atom() | binary()) :: atom() | nil
   def to_safe_atom(input) when is_binary(input) do
     try do
       input
