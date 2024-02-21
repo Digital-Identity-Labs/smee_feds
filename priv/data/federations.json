@@ -255,6 +255,8 @@
     "url": "http://edugain.azsciencenet.az/"
   },
   "belnet": {
+    "active": false,
+    "comment": "Certificate error - Erlang/Mint seems to be too strict with CRL parsing, need option for this",
     "alt_ids": {
       "edugain": "BELNET",
       "met": "belnet-federation"
@@ -1153,6 +1155,8 @@
     "url": "http://gif.grena.ge/"
   },
   "gip": {
+    "active": false,
+    "comment": "Need to review, connections hang",
     "alt_ids": {
       "edugain": "GIP",
       "met": "grid-identity-pool-federation"
@@ -1915,6 +1919,8 @@
     "url": "https://eduid.rash.al/"
   },
   "rctsaai": {
+    "active": false,
+    "comment": "Certificate error of some sort, may need options",
     "alt_ids": {
       "edugain": "RCTSAAI",
       "met": "rctsaai-federation"
@@ -1970,6 +1976,8 @@
     "url": "https://id.ricerka.net.mt/"
   },
   "rif": {
+    "active": false,
+    "comment": "Bad TLS, missing CR data somehow",
     "alt_ids": {
       "edugain": "RIF",
       "met": "ricerkanet-identity-federation"
@@ -2108,6 +2116,8 @@
     "url": "https://safire.ac.za/"
   },
   "samif": {
+    "active": false,
+    "comment": "Connection hangs, can't test",
     "alt_ids": {
       "edugain": "SA-MIF"
     },
@@ -2249,6 +2259,8 @@
     "url": "http://www.surfconext.nl"
   },
   "swamid": {
+    "active": true,
+    "comment": "There seems to be an active download timeout that prevents testing on slow connections",
     "alt_ids": {
       "edugain": "SWAMID",
       "met": "swamid-federation"
@@ -2350,7 +2362,8 @@
     "policy": "http://idf.thairen.net.th/pdf/ThaiREN-Identity-Federation-Policy-v0.1.pdf",
     "sources": {
       "default": {
-        "url": "http://idf.thairen.net.th/Metadata.html"
+        "url": "https://fr.thairen.net.th/signedmetadata/federation/Thai-Research-Education-Network/metadata.xml",
+        "cert_url": "https://fr.thairen.net.th/certs/federation-cert.crt"
       }
     },
     "structure": "mesh",
@@ -2388,6 +2401,8 @@
     "url": "https://tidf.tj/"
   },
   "tigerfed": {
+    "active": false,
+    "comment": "Certificate expired",
     "alt_ids": {
       "edugain": "TIGERFED"
     },
@@ -2405,6 +2420,7 @@
     "policy": "http://tigerfed.net.bd/assets/upload/IdentityFederationPolicy-v1.0.pdf",
     "sources": {
       "default": {
+        "cert_url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/tigerfed-metadata-certificate.pem",
         "url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/federation/tiger-fed/metadata.xml"
       }
     },
