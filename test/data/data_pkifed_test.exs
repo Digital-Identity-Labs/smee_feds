@@ -5,6 +5,7 @@
 
     alias SmeeFeds
     alias SmeeFeds.Federation
+    alias SmeeFeds.Audit
     #alias Smee.Metadata
     #alias Smee.Security
     #alias Smee.MDQ
@@ -12,7 +13,16 @@
 
     describe "default aggregate metadata url" do
 
-      @tag timeout: 360_000
+     @tag timeout: 60_000
+     test "URL for pkifed aggregate responds to requests" do
+       url = SmeeFeds.federation(:pkifed)
+              |> Federation.aggregate()
+              |> Map.get(:url)
+
+        assert Audit.resource_present?(url)
+      end
+
+      @tag timeout: 60_000
       test "can download the metadata from pkifed" do
 
        url = SmeeFeds.federation(:pkifed)
