@@ -28,6 +28,7 @@ defmodule Mix.Tasks.SmeeFeds.Gen.DataTests do
 
                alias SmeeFeds
                alias SmeeFeds.Federation
+               alias SmeeFeds.Audit
                #alias Smee.Metadata
                #alias Smee.Security
                #alias Smee.MDQ
@@ -35,7 +36,16 @@ defmodule Mix.Tasks.SmeeFeds.Gen.DataTests do
 
                describe "default aggregate metadata url" do
 
-                 @tag timeout: 360_000
+                @tag timeout: 60_000
+                test "URL for #{fed_id} aggregate responds to requests" do
+                  url = SmeeFeds.federation(:#{fed_id})
+                         |> Federation.aggregate()
+                         |> Map.get(:url)
+
+                   assert Audit.resource_present?(url)
+                 end
+
+                 @tag timeout: 60_000
                  test "can download the metadata from #{fed_id}" do
 
                   url = SmeeFeds.federation(:#{fed_id})
