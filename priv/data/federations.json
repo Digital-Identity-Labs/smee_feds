@@ -18,7 +18,7 @@
     "policy": "https://aaf.edu.au/about/federation-rules.html",
     "sources": {
       "default": {
-        "cert_fp": "E2:FC:CC:CB:0E:0F:3B:32:FA:55:87:29:08:DE:E0:34:DA:A2:15:5A",
+        "cert_fingerprint": "E2:FC:CC:CB:0E:0F:3B:32:FA:55:87:29:08:DE:E0:34:DA:A2:15:5A",
         "cert_url": "https://md.aaf.edu.au/aaf-metadata-certificate.pem",
         "url": "https://md.aaf.edu.au/aaf-metadata.xml"
       }
@@ -187,7 +187,7 @@
     "policy": "https://aai.arnes.si/static/doc/ArnesAAI_general.pdf",
     "sources": {
       "default": {
-        "cert_fp": "28:7B:9A:AA:FF:5A:6E:F1:02:AD:7D:BA:E3:3C:40:59:17:4F:1E:89",
+        "cert_fingerprint": "28:7B:9A:AA:FF:5A:6E:F1:02:AD:7D:BA:E3:3C:40:59:17:4F:1E:89",
         "cert_url": "http://ds.aai.arnes.si/metadata/arnesaai-metadata-signing.crt",
         "url": "http://ds.aai.arnes.si/metadata/aai.arnes.si.sha256.xml"
       }
@@ -302,7 +302,7 @@
     "policy": "http://bif.bren.bg/?page_id=16&lang=en",
     "sources": {
       "default": {
-        "cert_fp": "2562F5B474239D3B4DB1C0457250F3F8F6E7FCC2",
+        "cert_fingerprint": "2562F5B474239D3B4DB1C0457250F3F8F6E7FCC2",
         "cert_url": null,
         "url": "http://metadata.cc.bas.bg/rr3/signedmetadata/federation/BIF-BREN/metadata.xml"
       }
@@ -330,7 +330,7 @@
     "name": "Canadian Access Federation (CAF)",
     "sources": {
       "default": {
-        "cert_fp": "B0:94:65:5C:38:9D:4D:2A:12:0B:1B:25:5D:92:97:38:DE:71:2B:CD",
+        "cert_fingerprint": "B0:94:65:5C:38:9D:4D:2A:12:0B:1B:25:5D:92:97:38:DE:71:2B:CD",
         "cert_url": "https://caf-shib2ops.ca/CoreServices/caf_metadata_verify.crt",
         "url": "https://caf-shib2ops.ca/CoreServices/caf_metadata_signed_sha256.xml"
       }
@@ -527,7 +527,7 @@
     "policy": "https://cynet.ac.cy/wp-content/uploads/2021/05/Cynet-Identity-Federation-Policy_en.pdf",
     "sources": {
       "upstream_edugain": {
-        "cert_fp": "B64B43755E1D24DF80D1BF9AA737CDD3404494B1",
+        "cert_fingerprint": "B64B43755E1D24DF80D1BF9AA737CDD3404494B1",
         "url": "https://cif.cynet.ac.cy/md/edugain-upstream.xml"
       }
     },
@@ -556,12 +556,12 @@
     "policy": "https://doku.tid.dfn.de/en:join",
     "sources": {
       "default": {
-        "cert_fp": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
+        "cert_fingerprint": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
         "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai.pem",
         "url": "https://doku.tid.dfn.de/en:metadata"
       },
       "mdq": {
-        "cert_fp": "76:E6:8C:F1:AD:18:01:B2:4F:B3:66:5A:B2:BC:99:E2:14:B2:4F:05",
+        "cert_fingerprint": "76:E6:8C:F1:AD:18:01:B2:4F:B3:66:5A:B2:BC:99:E2:14:B2:4F:05",
         "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai-mdq.pem",
         "url": "https://mdq.aai.dfn.de"
       }
@@ -587,7 +587,7 @@
     "policy": "https://technical.edugain.org/documents",
     "sources": {
       "default": {
-        "cert_fp": "5A:D7:3F:8A:C1:0C:74:56:41:77:45:45:EB:92:76:1F:3D:0D:E6:7C",
+        "cert_fingerprint": "5A:D7:3F:8A:C1:0C:74:56:41:77:45:45:EB:92:76:1F:3D:0D:E6:7C",
         "cert_url": "https://technical.edugain.org/mds-v2.cer",
         "url": "https://mds.edugain.org/edugain-v2.xml"
       }
@@ -617,7 +617,7 @@
     "policy": "http://www.heanet.ie/services/identity-access/edugate#join",
     "sources": {
       "default": {
-        "cert_fp": "44:6B:91:4D:9D:C7:C4:B4:09:DA:EE:91:38:82:2F:31:C1:F8:31:1E",
+        "cert_fingerprint": "44:6B:91:4D:9D:C7:C4:B4:09:DA:EE:91:38:82:2F:31:C1:F8:31:1E",
         "cert_url": "https://edugate.heanet.ie/metadata-signer-2012.crt",
         "url": "https://edugate.heanet.ie/edugate-federation-metadata-signed.xml"
       }
@@ -645,7 +645,7 @@
     "policy": "https://www.eduid.africa/policy-v0.1.pdf",
     "sources": {
       "default": {
-        "cert_fp": "F1EE713ADBE1A240D7EE9DDE11737E218CB6B15F",
+        "cert_fingerprint": "F1EE713ADBE1A240D7EE9DDE11737E218CB6B15F",
         "cert_url": null,
         "url": "https://registry.eduid.africa/signedmetadata/federation/eduid_africa/metadata.xml"
       }
@@ -836,7 +836,7 @@
     "policy": "https://www.eduid.ng/Nigeria-Identity-Federation-Policy-Document-v1.0.docx.pdf",
     "sources": {
       "default": {
-        "cert_fp": "372B5CE2CF6AC0C0B87C2724F2012C39E25DFC32",
+        "cert_fingerprint": "372B5CE2CF6AC0C0B87C2724F2012C39E25DFC32",
         "cert_url": null,
         "url": "https://registry.eduid.ng/rr3/signedmetadata/federation/eduid_ng/metadata.xml"
       }
@@ -886,7 +886,7 @@
     "sources": {
       "default": {
         "cert_url": "http://metadata.fedurus.ru/arlicon-fedurus.pem",
-        "cert_fp": "1A:BF:7D:3B:04:F7:6E:14:54:13:0C:D0:08:B5:25:07:6C:5F:8E:64",
+        "cert_fingerprint": "1A:BF:7D:3B:04:F7:6E:14:54:13:0C:D0:08:B5:25:07:6C:5F:8E:64",
         "url": "http://metadata.fedurus.ru/metadata.fedurus.xml"
       }
     },
@@ -942,7 +942,7 @@
     "sources": {
       "default": {
         "cert_url": "https://federasi.id/metadata/fedsigner.pem",
-        "cert_fp": "11:43:2E:95:F5:E7:03:41:EE:C1:09:50:00:62:58:83:3F:BD:53:C1",
+        "cert_fingerprint": "11:43:2E:95:F5:E7:03:41:EE:C1:09:50:00:62:58:83:3F:BD:53:C1",
         "url": "https://jagger.federasi.id/signedmetadata/federation/IndonesiaAccessFederation/metadata.xml"
       }
     },
@@ -1086,7 +1086,7 @@
     "policy": null,
     "sources": {
       "upstream_edugain": {
-        "cert_fp": "7BD7BE92218201361CB2F8BE97D3573EE7118C9C",
+        "cert_fingerprint": "7BD7BE92218201361CB2F8BE97D3573EE7118C9C",
         "cert_url": "https://mds.redclara.net/signed/default.crt",
         "url": "https://mds.redclara.net/metadata/fiel-edugain.xml"
       }
@@ -1175,7 +1175,7 @@
     "policy": "http://gridp.garr.it/documents/GrIDP_FederationRules_v2.6.pdf",
     "sources": {
       "upstream_edugain": {
-        "cert_fp": "6ED6148E14A069912CB45C3F5B17F74947699D78",
+        "cert_fingerprint": "6ED6148E14A069912CB45C3F5B17F74947699D78",
         "cert_url": null,
         "url": "https://gridp.garr.it/metadata/edugain/gridp.xml"
       }
@@ -1289,7 +1289,7 @@
     "policy": "https://www.amres.ac.rs/dokumenti/institucije/iamres-federacija-identiteta/terms_for_provision_of_iamres_identity_federation_services.pdf",
     "sources": {
       "upstream_edugain": {
-        "cert_fp": "3AD7FD9F12195C6CD5628C03D8242EBC7AB7E3CD",
+        "cert_fingerprint": "3AD7FD9F12195C6CD5628C03D8242EBC7AB7E3CD",
         "cert_url": null,
         "url": "http://md.iamres.ac.rs/iamres_fed/iamres-edugain-metadata.xml"
       }
@@ -1351,7 +1351,7 @@
         "url": "https://md.incommon.org/InCommon/InCommon-metadata.xml"
       },
       "mdq": {
-        "cert_fp": "F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36",
+        "cert_fingerprint": "F8:4E:F8:47:EF:BB:EE:47:86:32:DB:94:17:8A:31:A6:94:73:19:36",
         "cert_url": "http://md.incommon.org/certs/inc-md-cert-mdq.pem",
         "type": "mdq",
         "url": "https://mdq.incommon.org"
@@ -1579,7 +1579,7 @@
     "policy": "https://liaf.ac.lk/docs/IdentityFederationPolicy-LIAFv1.1.pdf",
     "sources": {
       "upstream_edugain": {
-        "cert_fp": "8667714D08BC043AF325446C47CA63862B4D4025",
+        "cert_fingerprint": "8667714D08BC043AF325446C47CA63862B4D4025",
         "cert_url": null,
         "url": "https://fr.ac.lk/signedmetadata/LIAF_to_edugain.xml"
       }
@@ -1907,7 +1907,7 @@
     "policy": "https://eduid.rash.al/documents/",
     "sources": {
       "default": {
-        "cert_fp": "2C0FC44C67ED5883FD3E94A776833D747CD4FC13",
+        "cert_fingerprint": "2C0FC44C67ED5883FD3E94A776833D747CD4FC13",
         "cert_url": null,
         "url": "https://eduid.rash.al/rash-metadata-agregator.xml"
       }
@@ -2135,7 +2135,7 @@
     "policy": "https://www.maeen.sa/wp-content/uploads/2019/05/Maeen_Federation_Policy_en-v1.0.pdf",
     "sources": {
       "upstream_edugain": {
-        "cert_fp": "3F4C43BF577EFB2C616E88AD6D445B150D2A44E5",
+        "cert_fingerprint": "3F4C43BF577EFB2C616E88AD6D445B150D2A44E5",
         "cert_url": null,
         "url": "https://md.maeen.sa/metadata/maeen-edugain-metadata.xml"
       }
@@ -2478,12 +2478,12 @@
     "policy": "http://www.ukfederation.org.uk/library/uploads/Documents/rules-of-membership.pdf",
     "sources": {
       "default": {
-        "cert_fp": "AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66",
+        "cert_fingerprint": "AD:80:7A:6D:26:8C:59:01:55:47:8D:F1:BA:61:68:10:DA:81:86:66",
         "cert_url": "http://metadata.ukfederation.org.uk/ukfederation.pem",
         "url": "http://metadata.ukfederation.org.uk/ukfederation-metadata.xml"
       },
       "mdq": {
-        "cert_fp": "3F:6B:F4:AF:E0:1B:3C:D7:C1:F2:3D:F6:EA:C5:60:AE:B1:5A:E8:26",
+        "cert_fingerprint": "3F:6B:F4:AF:E0:1B:3C:D7:C1:F2:3D:F6:EA:C5:60:AE:B1:5A:E8:26",
         "cert_url": "http://mdq.ukfederation.org.uk/ukfederation-mdq.pem",
         "type": "mdq",
         "url": "http://mdq.ukfederation.org.uk/"
@@ -2541,7 +2541,7 @@
     "policy": "https://yetkim.org.tr/en/join/",
     "sources": {
       "default": {
-        "cert_fp": "AD:12:24:89:62:B9:1E:26:F2:FC:62:7B:61:46:E6:CC:E0:FD:30:F3",
+        "cert_fingerprint": "AD:12:24:89:62:B9:1E:26:F2:FC:62:7B:61:46:E6:CC:E0:FD:30:F3",
         "cert_url": "https://yetkim.org.tr/yetkim.cer",
         "url": "http://md.yetkim.org.tr/yetkim-metadata.xml"
       }
