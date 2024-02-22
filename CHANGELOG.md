@@ -10,13 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - You have to explicitly pass a list of federations to most functions now, they will *not* default to the built-in set.
   This is to make it clearer which list of federations is being used, to avoid the default set being used by mistake.
 - `SmeeFeds.federations/2` is now `SmeeFeds.take/2`, a list version of `SmeeFeds.get/2`.
+- The parameters for `SmeeFeds.publisher/2` have been reversed, so that the federation list if the first, as for other
+  functions in the module.
 
 ### New Features
 - `Import.json/2` will load a list of federations from a JSON file, as produced by `Export.json/1`
 - `Federation.id/2` can retrieve alternative IDs for a federation
 - `Filter.id_type/3` will filter federations by ID type - can be used to select records in other organization's lists
+- Default data can now be specified at runtime, using config `:smee_feds, :federations`
 - Federation records now have many more attributes, including multilingual descriptions and names, logos, interfederation
   and tags.
+- Federation structs can be encoded to JSON using `Jason`, and printed as strings in the same format as `Smee`
+  structs.
 
 ### Improvements
 - Example federation data has been expanded with more fields and more data
@@ -26,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Other Changes
 - Should now work with OTP 26 and Elixir 1.16
+- New Mix scripts for displaying different aspect of the default federations, to make review easier 
 
 ## [0.2.0]
 

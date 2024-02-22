@@ -29,6 +29,7 @@ defmodule SmeeFeds.Federation do
                autotag: boolean()
              }
 
+  @derive Jason.Encoder
   defstruct [
     :id,
     :contact,
@@ -108,6 +109,9 @@ defmodule SmeeFeds.Federation do
                    ],
                    policy: [
                      type: :string,
+                   ],
+                   id: [
+                     type: {:or, [:string, :atom]}
                    ],
                    sources: [
                      type: {:map, :atom, :map},
