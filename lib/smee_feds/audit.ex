@@ -8,23 +8,25 @@ defmodule SmeeFeds.Audit do
   """
   @spec resource_present?(url :: binary()) :: boolean()
   def resource_present?(url, _options \\ []) do
-    if Smee.Utils.file_url?(url) do
-      {:error, "URL #{url} is not a remote file!"}
-    else
-      case Req.head(url, http_options()) do
-        {
-          :ok,
-          %{
-            status: 200
-          }
-        } -> true
-        {:ok, %{status: status}} ->
-          IO.warn("#{url} returned status code #{status}, is not OK")
-          false
-        {:error, _} ->
-          IO.warn("#{url} error resulted, is not OK")
-           false
+    try do
+      if Smee.Utils.file_url?(url) do
+        false
+      else
+        case Req.head(url, http_options()) do
+          {
+            :ok,
+            %{
+              status: 200
+            }
+          } -> true
+          {:ok, %{status: _}} ->
+            false
+          {:error, _} ->
+            false
+        end
       end
+    rescue
+      _ -> false
     end
   end
 
@@ -38,7 +40,7 @@ defmodule SmeeFeds.Audit do
         cache: false,
         user_agent: "SmeeFeds #{Application.spec(:smee_feds, :vsn)}",
         # http_errors: :raise,
-        max_retries: 2,
+        max_retries: 0,
         retry_delay: &retry_jitter/1
       ],
       extra_options
