@@ -28,7 +28,9 @@ defmodule SmeeFeds.MixProject do
       ],
       deps: deps(),
       compilers: Mix.compilers() ++ [:rambo], # Needed until issue fixed in Rambo
-      elixirc_paths: elixirc_paths(Mix.env)
+      elixirc_paths: elixirc_paths(Mix.env),
+      aliases: aliases(),
+      cli: cli()
     ]
   end
 
@@ -71,6 +73,16 @@ defmodule SmeeFeds.MixProject do
         "GitHub" => "https://github.com/Digital-Identity-Labs/smee_feds"
       }
     ]
+  end
+
+  defp aliases() do
+      [
+        "test.data": ["test --trace --include data test/data/"]
+      ]
+  end
+
+  def cli do
+    [preferred_envs:  ["test.data": :test]]
   end
 
   # Specifies which paths to compile per environment.
