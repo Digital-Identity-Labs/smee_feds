@@ -1,4 +1,4 @@
-defmodule SmeeFedsUtilsTest do
+defmodule SmeeFedsAuditTest do
   use ExUnit.Case
 
   alias SmeeFeds.Audit
