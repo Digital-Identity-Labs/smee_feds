@@ -114,7 +114,7 @@ defmodule SmeeFeds.Federation do
                      type: {:or, [:string, :atom]}
                    ],
                    sources: [
-                     type: {:map, :atom, :map},
+                     type: {:or, [{:map, :atom, :map}, {:map, :atom, :keyword_list}, {:list, :any}]},
                      default: %{}
                    ]
                  ]
@@ -139,7 +139,8 @@ defmodule SmeeFeds.Federation do
   * `name`: The full, official, international name of the federation
   * `policy`: URL for the federation's metadata policy documentation
   * `alt_ids`: A map of alternative IDs, as used by other services, organisations and lists
-  * `sources`: Map of atom IDs and `Smee.Source` structs. Use `default:` for the default aggregate, and `mdq:` for the
+  * `sources`: Map of atom IDs and `Smee.Source` structs or maps. Use `default:` for the default aggregate, and `mdq:` for the
+    main MDQ service.
   * `structure`: Technical structure of the federation. Values are :mesh, :has, :hybrid. :Defaults to :mesh.
   * `tags`: List of tags which can be passed down to Sources, Metadata and Entities.
   * `type`: The *federation's* type. Possible values are :nren, :research, :inter, :misc, :mil, :com, :local. Defaults to :local
@@ -158,7 +159,7 @@ defmodule SmeeFeds.Federation do
               |> Enum.reject(fn {_k, v} -> is_nil(v) end)
               |> NimbleOptions.validate!(@option_defs)
 
-    federation = %Federation{
+    %Federation{
       id: String.to_atom("#{id}"),
       alt_ids: options[:alt_ids] || %{},
       type: String.to_atom("#{options[:type]}"),
@@ -169,23 +170,14 @@ defmodule SmeeFeds.Federation do
       interfederates: options[:interfederates] || [],
       tags: options[:tags] || [],
       protocols: options[:protocols] || [:saml2],
-      contact: options[:contact],
+      contact: normalize_contact(options[:contact]),
       name: options[:name],
       url: options[:url],
       uri: options[:uri],
       countries: normalize_country_codes(options[:countries]),
       policy: options[:policy],
-      sources: %{}
+      sources: process_sources(options[:sources])
     }
-
-    sources = (options[:sources] || %{})
-              |> Enum.map(
-                   fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(federation, id, data))}
-                   end
-                 )
-              |> Enum.into(%{})
-
-    struct(federation, %{sources: sources})
 
   end
 
@@ -195,17 +187,6 @@ defmodule SmeeFeds.Federation do
   @spec contact(federation :: Federation.t()) :: binary()
   def contact(federation) do
     federation.contact
-  end
-
-  @doc """
-  Lists all sources for the federation (it does not return their keys/labels)
-
-  If no sources have been defined it will return an empty list.
-  """
-  @spec sources(federation :: Federation.t()) :: list(Source.t())
-  def sources(federation) do
-    Map.get(federation, :sources, %{})
-    |> Map.values()
   end
 
   @doc """
@@ -321,17 +302,68 @@ defmodule SmeeFeds.Federation do
     end
   end
 
+  @doc """
+  Returns the sources of the federation struct, as a list of Source structs
+
+  If no sources have been defined it will return an empty list.
+  """
+  @spec sources(federation :: Federation.t()) :: list(Source.t())
+  def sources(federation) do
+    Map.get(federation, :sources, %{})
+    |> Map.values()
+  end
+
+  @doc """
+  Returns the federation with the specified Smee Source structs set as the list of sources, replacing previous sources.
+
+  Only proper Source structs will be added, everything else will be silently ignored.
+
+  Sources with IDs will be added with those IDs. Sources without IDs will be added with IDs like "source0", "source1", etc.
+    Sources with conflicting IDs will be overwritten by the last one in the list.
+  """
+  @spec sources(federation :: Federation.t(), sources :: Smee.Source.t() | list(Smee.Source.t())) :: Federation.t()
+  def sources(federation, sources) do
+
+    %{
+      federation |
+      sources: process_sources(sources)
+    }
+
+  end
+
+  @doc """
+  Returns the tags of the federation struct, a list of binary strings
+
+  Tags are arbitrary strings, which may be initially inherited from source records, and will be passed on to entities.
+  """
+  @spec tags(federation :: Federation.t()) :: list(binary())
+  def tags(federation) do
+    federation.tags || []
+  end
+
+  @doc """
+  Tags a federation record with one or more tags, replacing existing tags.
+
+  Tags are arbitrary classifiers, initially inherited from sources
+  """
+  @spec tag(federation :: Federation.t(), tags :: list() | nil | binary()) :: Federation.t()
+  def tag(federation, tags) do
+    struct(federation, %{tags: Smee.Utils.tidy_tags(tags)})
+  end
+
   #############################################################################
 
-  @spec normalize_source_options(federation :: Federation.t(), id :: atom(), data :: map()) :: keyword()
-  defp normalize_source_options(federation, id, data) do
-    [
-      id: id,
-      type: normalize_source_type(data[:type]),
-      cert_url: data[:cert_url],
-      cert_fingerprint: data[:cert_fp],
-      label: "#{federation.name}: #{id} #{normalize_source_type(data[:type])}"
-    ]
+  @spec normalize_source_options(id :: atom(), data :: map()) :: keyword()
+  defp normalize_source_options(id, data) do
+    type = normalize_source_type(data[:type])
+    Keyword.merge(
+      Keyword.new(data),
+      [
+        id: id,
+        type: type,
+        label: "#{id} #{type}"
+      ]
+    )
   end
 
   @spec normalize_source_type(type :: nil | atom() | binary()) :: atom()
@@ -374,6 +406,40 @@ defmodule SmeeFeds.Federation do
                                       else: country
          end
        )
+  end
+
+
+  @spec process_sources(sources :: list() | map() | Smee.Source.t()) :: map()
+  defp process_sources(nil) do
+    %{}
+  end
+
+  defp process_sources(sources) when is_map(sources) do
+    sources
+    |> Enum.map(
+         fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(id, data))}
+         end
+       )
+    |> Enum.into(%{})
+  end
+
+  defp process_sources(sources) when is_list(sources) do
+    sources
+    |> List.wrap()
+    |> Enum.filter(fn x -> is_struct(x, Smee.Source) end)
+    |> Enum.with_index()
+    |> Enum.map(fn {source, i} -> {(source.id || :"source#{i}"), source} end)
+    |> Enum.map(fn {id, source} -> {id, %{source | id: id}} end)
+    |> Enum.into(%{})
+  end
+
+  @spec normalize_contact(contact :: binary() | nil ) :: binary()
+  defp normalize_contact(nil) do
+    nil
+  end
+
+  defp normalize_contact(contact) do
+    String.replace_leading(contact, "mailto:", "")
   end
 
 end
