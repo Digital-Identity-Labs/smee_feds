@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `SmeeFeds.federations/2` is now `SmeeFeds.take/2`, a list version of `SmeeFeds.get/2`.
 - The parameters for `SmeeFeds.publisher/2` have been reversed, so that the federation list if the first, as for other
   functions in the module.
+- "mailto:" scheme is removed from contact email addresses
 
 ### New Features
 - `Import.json/2` will load a list of federations from a JSON file, as produced by `Export.json/1`
@@ -22,6 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   and tags.
 - Federation structs can be encoded to JSON using `Jason`, and printed as strings in the same format as `Smee`
   structs.
+- Federations and Sources can now have tags added automatically, using `autotag: true` option or by passing the 
+  Federation struct though `Federation.autotag!/2`
+- Federation sources now contain their federation's ID.
+- Multilingual `Federation.displayname/2` and `Federation.description/2` getter functions
 
 ### Improvements
 - Example federation data has been expanded with more fields and more data

@@ -140,11 +140,13 @@ defmodule SmeeFedsFederationTest do
                sources: %{
                  a: %Source{
                    id: :a,
-                   url: "http://example.com/a"
+                   url: "http://example.com/a",
+                   fedid: :test
                  },
                  b: %Source{
                    id: :b,
-                   url: "http://example.com/b"
+                   url: "http://example.com/b",
+                   fedid: :test
                  }
                }
              } = Federation.new(
@@ -165,11 +167,13 @@ defmodule SmeeFedsFederationTest do
                sources: %{
                  a: %Source{
                    id: :a,
-                   url: "http://example.com/a"
+                   url: "http://example.com/a",
+                   fedid: :test
                  },
                  b: %Source{
                    id: :b,
-                   url: "http://example.com/b"
+                   url: "http://example.com/b",
+                   fedid: :test
                  }
                }
              } = Federation.new(
@@ -219,6 +223,25 @@ defmodule SmeeFedsFederationTest do
                  Source.new("https://example.com/foo", id: :default),
                  Source.new("https://example.com/bar", id: :mdq)
                ]
+             )
+    end
+
+    test "if autotag option is set to true, tags are added to the federation" do
+      assert %Federation{tags: ["boop", "local", "mesh", "test"]} = Federation.new(:test, autotag: true, tags: ["boop"])
+    end
+
+    test "if autotag option is set to true, tags are added to the federation's sources too" do
+      assert %Federation{
+               sources: %{
+                 default: %Source{
+                   tags: ["aggregate", "local", "mesh", "test"]
+                 }
+               }
+             } = Federation.new(
+               :test,
+               autotag: true,
+               sources: [
+                 Source.new("https://example.com/foo", id: :default)]
              )
     end
 
@@ -411,6 +434,195 @@ defmodule SmeeFedsFederationTest do
                }
              } = SmeeFeds.federation(:ukamf)
                  |> SmeeFeds.Federation.sources(sources)
+    end
+
+    test "The federation's ID is stored in the source" do
+      sources = [Source.new("https://example.com/foo", id: :default), Source.new("https://example.com/bar", id: :beta)]
+      assert %Federation{
+               sources: %{
+                 default: %Source{
+                   fedid: :ukamf
+                 },
+                 beta: %Source{
+                   fedid: :ukamf
+                 }
+               }
+             } = SmeeFeds.federation(:ukamf)
+                 |> SmeeFeds.Federation.sources(sources)
+    end
+
+  end
+
+  describe "autotag/2" do
+
+    test "tags are added to the returned federation" do
+      assert %Federation{tags: ["GB", "example", "mesh", "nren", "testing", "ukamf"]} = %{
+                                                                                          SmeeFeds.federation(:ukamf) |
+                                                                                          tags: ["testing", "example"]
+                                                                                        }
+                                                                                        |> Federation.autotag!()
+    end
+
+    test "tags are added to the returned federation's sources too" do
+      assert %Federation{
+               sources: %{
+                 default: %Source{
+                   tags: ["GB", "aggregate", "example", "mesh", "nren", "testing", "ukamf"]
+                 }
+               }
+             } = %{SmeeFeds.federation(:ukamf) | tags: ["testing", "example"]}
+                 |> Federation.autotag!()
+    end
+
+    test "Tags are added based on the countries the federation is based in " do
+      assert "GB" in (
+        SmeeFeds.federation(:ukamf)
+        |> Federation.autotag!()
+        |> Map.get(:tags))
+    end
+
+    test "A tag is added based on the ID of the federation" do
+      assert "ukamf" in (
+        SmeeFeds.federation(:ukamf)
+        |> Federation.autotag!()
+        |> Map.get(:tags))
+    end
+
+    test "A tag is added based on the structure of the federation" do
+      assert "mesh" in (
+        SmeeFeds.federation(:ukamf)
+        |> Federation.autotag!()
+        |> Map.get(:tags))
+    end
+
+    test "A tag is added based on the type of the federation" do
+      assert "nren" in (
+        SmeeFeds.federation(:ukamf)
+        |> Federation.autotag!()
+        |> Map.get(:tags))
+    end
+
+    test "Existing tags remain" do
+      assert ["GB", "hello", "mesh", "nren", "ukamf"] = (
+               %{SmeeFeds.federation(:ukamf) | tags: ["hello"]}
+               |> Federation.autotag!()
+               |> Map.get(:tags))
+    end
+
+    test "duplicate tags are removed" do
+      assert ["GB", "hello", "mesh", "nren", "ukamf"] = (
+               %{SmeeFeds.federation(:ukamf) | tags: ["hello", "hello", "nren"]}
+               |> Federation.autotag!()
+               |> Map.get(:tags))
+    end
+
+    test "all tags remain as strings" do
+      tags = (
+        %{SmeeFeds.federation(:ukamf) | tags: ["hello", "hello", "nren"]}
+        |> Federation.autotag!()
+        |> Map.get(:tags))
+      assert Enum.all?(tags, fn tag -> is_binary(tag) end)
+    end
+
+    test "mixed case is possible (for accessibility)" do
+      assert ["GB", "SoIsThis", "mesh", "nren", "thisIsMixed", "ukamf"] = (
+               %{SmeeFeds.federation(:ukamf) | tags: ["thisIsMixed", "SoIsThis"]}
+               |> Federation.autotag!()
+               |> Map.get(:tags))
+    end
+
+    test "sources get their type added as a tag" do
+      assert "aggregate" in (
+        SmeeFeds.federation(:ukamf)
+        |> Federation.autotag!()
+        |> Federation.sources()
+        |> List.first()
+        |> Map.get(:tags))
+    end
+
+    #    test "sources get their id added as a tag" do
+    #      assert "default" in (
+    #        SmeeFeds.federation(:ukamf)
+    #        |> Federation.autotag!()
+    #        |> Federation.sources()
+    #        |> List.first()
+    #        |> Map.get(:tags))
+    #    end
+
+  end
+
+  describe "displayname/2" do
+
+    test "returns federation name when no specified or English display name is available" do
+      assert "UK Access Management Federation" = Federation.displayname(SmeeFeds.federation(:ukamf), :es)
+    end
+
+    test "returns the appropriate name if language is available" do
+      fed = %{
+        SmeeFeds.federation(:ukamf) |
+        displaynames: %{
+          es: "Spanish Version"
+        }
+      }
+      assert "Spanish Version" = Federation.displayname(fed, :es)
+    end
+
+    test "returns the English name if specified language is not available but English is" do
+      fed = %{
+        SmeeFeds.federation(:ukamf) |
+        displaynames: %{
+          en: "English Version"
+        }
+      }
+      assert "English Version" = Federation.displayname(fed, :es)
+    end
+
+    test "defaults to English if no language is specified" do
+      fed = %{
+        SmeeFeds.federation(:ukamf) |
+        displaynames: %{
+          en: "English Version"
+        }
+      }
+      assert "English Version" = Federation.displayname(fed)
+    end
+
+  end
+
+  describe "description/2" do
+
+    test "returns nil when no description is available" do
+      assert is_nil(Federation.description(SmeeFeds.federation(:ukamf), :se))
+    end
+
+    test "returns the appropriate description if language is available" do
+      fed = %{
+        SmeeFeds.federation(:ukamf) |
+        descriptions: %{
+          es: "Spanish Version"
+        }
+      }
+      assert "Spanish Version" = Federation.description(fed, :es)
+    end
+
+    test "returns the English description if specified language is not available but English is" do
+      fed = %{
+        SmeeFeds.federation(:ukamf) |
+        descriptions: %{
+          en: "English Version"
+        }
+      }
+      assert "English Version" = Federation.description(fed, :es)
+    end
+
+    test "defaults to English if no language is specified" do
+      fed = %{
+        SmeeFeds.federation(:ukamf) |
+        descriptions: %{
+          en: "English Version"
+        }
+      }
+      assert "English Version" = Federation.description(fed)
     end
 
   end

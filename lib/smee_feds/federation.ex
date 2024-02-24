@@ -176,8 +176,9 @@ defmodule SmeeFeds.Federation do
       uri: options[:uri],
       countries: normalize_country_codes(options[:countries]),
       policy: options[:policy],
-      sources: process_sources(options[:sources])
-    }
+      sources: process_sources(options[:sources], id),
+      autotag: options[:autotag]
+    } |> init_autotagger()
 
   end
 
@@ -326,7 +327,7 @@ defmodule SmeeFeds.Federation do
 
     %{
       federation |
-      sources: process_sources(sources)
+      sources: process_sources(sources, federation.id)
     }
 
   end
@@ -334,7 +335,7 @@ defmodule SmeeFeds.Federation do
   @doc """
   Returns the tags of the federation struct, a list of binary strings
 
-  Tags are arbitrary strings, which may be initially inherited from source records, and will be passed on to entities.
+  Tags are arbitrary strings.
   """
   @spec tags(federation :: Federation.t()) :: list(binary())
   def tags(federation) do
@@ -344,24 +345,71 @@ defmodule SmeeFeds.Federation do
   @doc """
   Tags a federation record with one or more tags, replacing existing tags.
 
-  Tags are arbitrary classifiers, initially inherited from sources
+  Tags are arbitrary strings.
   """
   @spec tag(federation :: Federation.t(), tags :: list() | nil | binary()) :: Federation.t()
   def tag(federation, tags) do
     struct(federation, %{tags: Smee.Utils.tidy_tags(tags)})
   end
 
+  @doc """
+  Tags a federation record with one or more tags generated automatically from the federation's other
+    details, returning an updated Federation struct.
+
+  Tags will include the federation ID, type, structure, countries, source type, and so on.
+
+  Sources in the Federation will also be tagged, and these tags will be inherited by Metadata and Entity structs
+    derived from the Source.
+  """
+  @spec autotag!(federation :: Federation.t(), _options :: keyword()) :: Federation.t()
+  def autotag!(federation, _options \\ []) do
+    original_tags = tags(federation)
+    attr_tags = [federation.structure, federation.type, federation.id]
+    c_tags = federation.countries
+    f_tags = (original_tags ++ attr_tags ++ c_tags) |> Smee.Utils.tidy_tags() |> Enum.uniq() # TODO: Bug in Smee?
+
+    sources = federation.sources
+    |> Enum.map(fn {k, s} ->
+        s_tags = (s.tags ++ [s.type] ++ f_tags) |> Smee.Utils.tidy_tags() |> Enum.uniq() # TODO: Bug in Smee?
+        {k, %{s | tags: s_tags }}
+    end)
+    |> Enum.into(%{})
+
+    %{federation | tags: f_tags, sources: sources}
+  end
+
+  @doc """
+  Returns a displayname for the federation struct, attempting to use the specified language, but returning
+    the English displayname or name for the Federation if that isn't available.
+  """
+  @spec displayname(federation :: Federation.t(), lang :: atom()) :: binary()
+  def displayname(federation, lang \\ :en) do
+    texts = Map.get(federation, :displaynames, %{})
+    Map.get(texts, lang, nil) || Map.get(texts, :en, nil) || federation.name
+  end
+
+  @doc """
+  Returns a description for the federation struct, attempting to use the specified language, but returning
+    the English description if that isn't available. Nil will be returned if no suitable language can be found.
+  """
+  @spec description(federation :: Federation.t(), lang :: atom()) :: binary()
+  def description(federation, lang \\ :en) do
+    texts = Map.get(federation, :descriptions, %{})
+    Map.get(texts, lang, nil) || Map.get(texts, :en, nil)
+  end
+
   #############################################################################
 
-  @spec normalize_source_options(id :: atom(), data :: map()) :: keyword()
-  defp normalize_source_options(id, data) do
+  @spec normalize_source_options(id :: atom(), fedid :: atom(), data :: map()) :: keyword()
+  defp normalize_source_options(id, fedid, data) do
     type = normalize_source_type(data[:type])
     Keyword.merge(
       Keyword.new(data),
       [
         id: id,
         type: type,
-        label: "#{id} #{type}"
+        label: "#{id} #{type}",
+        fedid: fedid
       ]
     )
   end
@@ -409,27 +457,27 @@ defmodule SmeeFeds.Federation do
   end
 
 
-  @spec process_sources(sources :: list() | map() | Smee.Source.t()) :: map()
-  defp process_sources(nil) do
+  @spec process_sources(sources :: list() | map() | Smee.Source.t(), fedid :: atom()) :: map()
+  defp process_sources(nil, _) do
     %{}
   end
 
-  defp process_sources(sources) when is_map(sources) do
+  defp process_sources(sources, fedid) when is_map(sources) do
     sources
     |> Enum.map(
-         fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(id, data))}
+         fn {id, data} -> {id, Smee.Source.new(data[:url], normalize_source_options(id, fedid, data))}
          end
        )
     |> Enum.into(%{})
   end
 
-  defp process_sources(sources) when is_list(sources) do
+  defp process_sources(sources, fedid) when is_list(sources) do
     sources
     |> List.wrap()
     |> Enum.filter(fn x -> is_struct(x, Smee.Source) end)
     |> Enum.with_index()
     |> Enum.map(fn {source, i} -> {(source.id || :"source#{i}"), source} end)
-    |> Enum.map(fn {id, source} -> {id, %{source | id: id}} end)
+    |> Enum.map(fn {id, source} -> {id, %{source | id: id, fedid: fedid}} end)
     |> Enum.into(%{})
   end
 
@@ -440,6 +488,16 @@ defmodule SmeeFeds.Federation do
 
   defp normalize_contact(contact) do
     String.replace_leading(contact, "mailto:", "")
+  end
+
+  @spec init_autotagger(federation :: Federation.t(), options :: keyword()) :: Federation.t()
+  defp init_autotagger(federation, options \\ [])
+  defp init_autotagger(%{autotag: true} = federation, options) do
+    autotag!(federation, options)
+  end
+
+  defp init_autotagger(federation, _options) do
+    federation
   end
 
 end
