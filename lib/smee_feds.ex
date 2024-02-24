@@ -54,10 +54,28 @@ defmodule SmeeFeds do
 
   ## Example
       iex> federations = SmeeFeds.federations()
+      iex> Enum.count(federations)
+      66
   """
   @spec federations() :: list(Federation.t())
   def federations() do
     DefaultData.federations()
+    |> Map.values()
+    |> Enum.sort_by(& &1.id)
+  end
+
+  @doc """
+  Returns a list of the specified `SmeeFeds.Federation` structs from the default collection.
+
+  ## Example
+      iex> federations = SmeeFeds.federations([:ukamf, :wayf])
+      iex> Enum.count(federations)
+      2
+  """
+  @spec federations(ids :: atom() | list(atom() | binary())) :: list(Federation.t())
+  def federations(ids) do
+    DefaultData.federations()
+    |> Map.take(Utils.to_safe_atoms(ids))
     |> Map.values()
   end
 
@@ -66,17 +84,22 @@ defmodule SmeeFeds do
 
   ## Example
       iex> incommon = SmeeFeds.federation(:incommon)
+      iex> incommon.policy
+      "https://incommon.org/about/policies/"
   """
   @spec federation(federation :: atom() | binary()) :: Federation.t() | nil
   def federation(id) do
-    get(id)
+    DefaultData.federations()
+    |> Map.get(Utils.to_safe_atom(id))
   end
 
   @doc """
   Returns the ids of all federations in the provided list of federations as a list of atoms.
 
   ## Example
-       iex> ids = SmeeFeds.ids(federations)
+       iex> ids = SmeeFeds.ids(SmeeFeds.federations())
+       iex> Enum.slice(ids, 0..3)
+       [:aaf, :aaieduhr, :aaiedumk, :afire]
   """
   def ids(federations) do
     federations
@@ -84,12 +107,15 @@ defmodule SmeeFeds do
   end
 
   @doc """
-  Returns a list of `SmeeFeds.Federation` structs when passed a list of
-   federations and federation IDs (as atoms).
+  Returns a filtered list of `SmeeFeds.Federation` structs when passed a list of
+   federations and federation IDs (as atoms) to select.
 
   ## Example
 
-      iex> my_federations = SmeeFeds.take(federations, [:ukamf, :ref])
+      iex> all_federations = SmeeFeds.federations()
+      iex> my_federations = SmeeFeds.take(all_federations, [:ukamf, :switch])
+      iex> Enum.map(my_federations, fn f -> f.name end)
+      ["SWITCHaai", "UK Access Management Federation"]
   """
   @spec take(federations :: list(), federation_ids :: list(atom())) :: list(Federation.t())
   def take(federations, federation_ids) when is_list(federations) do
@@ -98,15 +124,18 @@ defmodule SmeeFeds do
   end
 
   @doc """
-  Finds a federation in the default database by ID and returns the full federation record.
+  Finds a federation in the supplied list by ID and returns the full federation record.
 
   ## Example
-      iex> incommon = SmeeFeds.get(:incommon)
+      iex> federations = SmeeFeds.federations()
+      iex> incommon = SmeeFeds.get(federations, :incommon)
+      iex> incommon.url
+      "http://incommon.org/"
   """
-  @spec get(federation :: atom() | binary()) :: Federation.t() | nil
-  def get(id) do
-    DefaultData.federations()
-    |> Map.get(Utils.to_safe_atom(id))
+  @spec get(federations :: list(), id :: atom() | binary()) :: Federation.t() | nil
+  def get(federations, id) do
+    federations
+    |> Enum.find(fn f -> Utils.to_safe_atom(id) == f.id end)
   end
 
   @doc """
@@ -117,12 +146,13 @@ defmodule SmeeFeds do
   ## Example
 
       iex> source = Smee.source("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
-      iex> federation = SmeeFeds.publisher(source)
+      iex> federations = SmeeFeds.federations()
+      iex> federation = SmeeFeds.publisher(federations, source)
       %SmeeFeds.Federation{id: :ukamf} = federation
 
   """
-  @spec publisher(smee_struct :: Source.t() | Metadata.t() | Entity.t()) :: Federation.t() | nil
-  def publisher(smee_struct, federations \\ federations()) do
+  @spec publisher(federations :: list(), smee_struct :: Source.t() | Metadata.t() | Entity.t()) :: Federation.t() | nil
+  def publisher(federations, smee_struct) do
     federations
     |> Enum.find(fn federation -> publisher?(federation, smee_struct)  end)
   end
@@ -135,7 +165,8 @@ defmodule SmeeFeds do
   ## Example
 
       iex> source = Smee.source("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
-      iex> federation = SmeeFeds.get(:ukamf)
+      iex> federations = SmeeFeds.federations()
+      iex> federation = SmeeFeds.get(federations, :ukamf)
       iex> SmeeFeds.publisher?(federation, source)
       true
 
@@ -163,16 +194,19 @@ defmodule SmeeFeds do
     end
   end
 
+  ## Needs an update to Smee S, M, E modules first
+  #  def registrar()
+  #  def registrar?()
+
   @doc """
-  Lists all countries in the provided list of federations (or the default set if no federations are passed)
+  Lists all countries in the provided list of federations
 
   ## Examples
 
-      iex> SmeeFeds.countries()
       iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.countries()
 
   """
-  @spec countries(list(Federation.t())) :: list(struct())
+  @spec countries(federations :: list(Federation.t())) :: list(struct())
   def countries(federations) do
     federations
     |> List.wrap()
@@ -183,15 +217,14 @@ defmodule SmeeFeds do
   end
 
   @doc """
-  Lists all regions in the provided list of federations (or the default set if no federations are passed)
+  Lists all regions in the provided list of federations
 
   ## Examples
 
-      iex> SmeeFeds.regions()
       iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.regions()
       ["Americas", "Europe"]
   """
-  @spec regions(list(Federation.t())) :: list(struct())
+  @spec regions(federations :: list(Federation.t())) :: list(struct())
   def regions(federations) do
     federations
     |> countries()
@@ -201,15 +234,14 @@ defmodule SmeeFeds do
   end
 
   @doc """
-  Lists all sub_regions in the provided list of federations (or the default set if no federations are passed)
+  Lists all sub_regions in the provided list of federations
 
   ## Examples
 
-      iex> SmeeFeds.sub_regions()
       iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.sub_regions()
       ["Northern America", "Northern Europe"]
   """
-  @spec sub_regions(list(Federation.t())) :: list(struct())
+  @spec sub_regions(federations :: list(Federation.t())) :: list(struct())
   def sub_regions(federations) do
     federations
     |> countries()
@@ -219,21 +251,164 @@ defmodule SmeeFeds do
   end
 
   @doc """
-  Lists all super_regions in the provided list of federations (or the default set if no federations are passed)
+  Lists all super_regions in the provided list of federations
 
   ## Examples
 
-      iex> SmeeFeds.super_regions()
       iex> SmeeFeds.federations([:ukamf, :incommon]) |> SmeeFeds.super_regions()
       ["AMER", "EMEA"]
   """
-  @spec super_regions(list(Federation.t())) :: list(struct())
+  @spec super_regions(federations :: list(Federation.t())) :: list(struct())
   def super_regions(federations) do
     federations
     |> countries()
     |> Enum.map(fn c -> c.world_region end)
     |> Enum.uniq()
     |> Enum.sort()
+  end
+
+  @doc """
+  Lists all federation types in the provided list of federations, as atoms.
+
+  ## Examples
+
+      iex> SmeeFeds.federations() |> SmeeFeds.types()
+      [:inter, :nren]
+  """
+  @spec types(federations :: list(Federation.t())) :: list(atom())
+  def types(federations) do
+    federations
+    |> Enum.map(fn f -> Map.get(f, :type) end)
+    |> Enum.uniq
+    |> Enum.sort()
+  end
+
+  @doc """
+  Lists all types of structures in the provided list of federations, as atoms.
+
+  ## Examples
+
+      iex> SmeeFeds.federations() |> SmeeFeds.structures()
+      [:has, :mesh]
+  """
+  @spec structures(federations :: list(Federation.t())) :: list(atom())
+  def structures(federations) do
+    federations
+    |> Enum.map(fn f -> Map.get(f, :structure) end)
+    |> Enum.uniq
+    |> Enum.sort()
+  end
+
+  @doc """
+  Lists all ID types in the provided list of federations, as atoms.
+
+  ## Examples
+
+      iex> SmeeFeds.federations() |> SmeeFeds.id_types()
+      [:edugain, :met, :smee_feds, :uri]
+  """
+  @spec id_types(federations :: list(Federation.t())) :: list(atom())
+  def id_types(federations) do
+    federations
+    |> Enum.map(
+         fn f ->
+           Map.get(f, :alt_ids, %{})
+           |> Map.keys() end
+       )
+    |> Enum.concat([:smee_feds, :uri])
+    |> List.flatten()
+    |> Enum.uniq
+    |> Enum.sort()
+  end
+
+  @doc """
+  Lists all unique tags in the provided list of federations, as atoms.
+
+  ## Examples
+
+      iex> SmeeFeds.federations() |> SmeeFeds.tags()
+      []
+  """
+  @spec tags(federations :: list(Federation.t())) :: list(atom())
+  def tags(federations) do
+    federations
+    |> Enum.map(fn f -> Map.get(f, :tags) end)
+    |> List.flatten()
+    |> Enum.uniq
+    |> Enum.sort()
+  end
+
+  @doc """
+  Lists all unique protocols in the provided list of federations, as atoms.
+
+  ## Examples
+
+      iex> SmeeFeds.federations() |> SmeeFeds.protocols()
+      [:saml2]
+  """
+  @spec protocols(federations :: list(Federation.t())) :: list(atom())
+  def protocols(federations) do
+    federations
+    |> Enum.map(fn f -> Map.get(f, :protocols) end)
+    |> List.flatten()
+    |> Enum.uniq
+    |> Enum.sort()
+  end
+
+  @doc """
+  Lists all upstream federation IDs in the provided list of federations, as atoms.
+
+  ## Examples
+
+      iex> SmeeFeds.federations() |> SmeeFeds.upstream()
+      [:edugain]
+      iex> [%SmeeFeds.Federation{id: :edugain}] =  SmeeFeds.federations |> SmeeFeds.upstream() |> SmeeFeds.federations()
+
+  """
+  @spec upstream(federations :: list(Federation.t())) :: list(atom())
+  def upstream(federations) do
+    federations
+    |> Enum.map(fn f -> Map.get(f, :interfederates) end)
+    |> List.flatten()
+    |> Enum.uniq
+    |> Enum.sort()
+  end
+
+  @doc """
+  Returns a federation record if one with the specified ID is present in the list, or nil if one can't be found
+
+  Available IDs can be found using `SmeeFeds.id_types/1`. Two are built-in: `:uri` and `:smee_feds`. Any other
+    ID key used in the `alt_ids` part of the Federation struct can be searched.
+
+  ## Examples
+
+      iex> SmeeFeds.federations() |> SmeeFeds.get_by(:uri, "http://ukfederation.org.uk")
+      iex> SmeeFeds.federations() |> SmeeFeds.get_by(:edugain,  "HAKA")
+
+  """
+  @spec get_by(federations :: list(Federation.t()), id_type :: atom(), id :: atom() | binary()) :: Federation.t() | nil
+  def get_by(federations, id_type, id)
+  def get_by(federations, :smee_feds, id) do
+    get(federations, id)
+  end
+
+  def get_by(federations, :uri, id) do
+    federations
+    |> Enum.find(fn f -> id == f.uri end)
+  end
+
+  def get_by(federations, id_type, id) do
+
+    id = "#{id}"
+    id_type = Utils.to_safe_atom(id_type)
+
+    federations
+    |> Enum.find(
+         fn f ->
+           id == Map.get(f, :alt_ids, %{})
+                 |> Map.get(id_type, nil) end
+       )
+
   end
 
   #############################################################################

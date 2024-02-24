@@ -217,11 +217,25 @@ defmodule SmeeFedsTest do
 
   describe "sub_regions/1" do
     test "returns a list of all known sub_regions" do
-      assert ["Australia and New Zealand", "Central America", "Central Asia",
-        "Eastern Africa", "Eastern Asia", "Eastern Europe", "Northern Africa",
-        "Northern America", "Northern Europe", "South America", "South-Eastern Asia",
-        "Southern Africa", "Southern Asia", "Southern Europe", "Western Africa",
-        "Western Asia", "Western Europe"] = SmeeFeds.sub_regions(@federations_list)
+      assert [
+               "Australia and New Zealand",
+               "Central America",
+               "Central Asia",
+               "Eastern Africa",
+               "Eastern Asia",
+               "Eastern Europe",
+               "Northern Africa",
+               "Northern America",
+               "Northern Europe",
+               "South America",
+               "South-Eastern Asia",
+               "Southern Africa",
+               "Southern Asia",
+               "Southern Europe",
+               "Western Africa",
+               "Western Asia",
+               "Western Europe"
+             ] = SmeeFeds.sub_regions(@federations_list)
       assert is_list(SmeeFeds.sub_regions(@federations_list))
     end
 
@@ -247,6 +261,84 @@ defmodule SmeeFedsTest do
 
     test "super_regions are returned as strings" do
       assert Enum.all?(SmeeFeds.super_regions(@federations_list), fn v -> is_binary(v) end)
+    end
+
+  end
+
+  describe "types/1" do
+
+    test "returns a list of all types used in the provided federation list" do
+      assert [:inter, :nren] = SmeeFeds.types(@federations_list)
+    end
+
+  end
+
+  describe "structures/1" do
+
+    test "returns a list of all structures used in the provided federation list" do
+      assert [:has, :mesh] = SmeeFeds.structures(@federations_list)
+    end
+
+  end
+
+  describe "id_types/1" do
+
+    test "returns a list of all id_types used in the provided federation list" do
+      assert [:edugain, :met, :smee_feds, :uri] = SmeeFeds.id_types(@federations_list)
+    end
+
+  end
+
+  describe "protocols/1" do
+
+    test "returns a list of all protocols used in the provided federation list" do
+      assert [:saml2] = SmeeFeds.protocols(@federations_list)
+    end
+
+  end
+
+  describe "upstream/1" do
+
+    test "returns a list of all upstream used in the provided federation list" do
+      assert [:edugain] = SmeeFeds.upstream(@federations_list)
+    end
+
+  end
+
+  describe "tags/1" do
+
+    test "returns a list of all tags used in the provided federation list" do
+      assert [] = SmeeFeds.tags(@federations_list)
+    end
+
+  end
+
+  describe "get_by/3" do
+
+    test "returns a federation record if one exists with the specified ID of ID type" do
+      assert %Federation{id: :ukamf} = SmeeFeds.get_by(@federations_list, :uri, "http://ukfederation.org.uk")
+    end
+
+    test "returns a nil if no record exists with the specified ID of ID type" do
+      assert is_nil(SmeeFeds.get_by(@federations_list, :uri, "http://example.com/not_there"))
+    end
+
+    test "returns a nil if passed a non-existent type of ID" do
+      assert is_nil(SmeeFeds.get_by(@federations_list, :nonsense, "http://ukfederation.org.uk"))
+    end
+
+    test "is compatible with the URIs used to identity Federations" do
+      assert %Federation{id: :ukamf} = SmeeFeds.get_by(@federations_list, :uri, "http://ukfederation.org.uk")
+    end
+
+    test "is compatible with the built-in SmeeFeds IDs, even if strings" do
+      assert %Federation{id: :incommon} = SmeeFeds.get_by(@federations_list, :smee_feds, :incommon)
+      assert %Federation{id: :incommon} = SmeeFeds.get_by(@federations_list, :smee_feds, "incommon")
+    end
+
+    test "works with IDs present in the default/test data included with SmeeFeds" do
+      assert %Federation{id: :haka} = SmeeFeds.get_by(@federations_list, :edugain, "HAKA")
+      assert %Federation{id: :fer} = SmeeFeds.get_by(@federations_list, :met, "federation-education-recherche")
     end
 
   end

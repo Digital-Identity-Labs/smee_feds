@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### New Features
 - `Import.json/2` will load a list of federations from a JSON file, as produced by `Export.json/1`
 - `Federation.id/2` can retrieve alternative IDs for a federation
+- `Federation.get_by/3` can find federation records by various ID types (Smee, URI, or anything in `alt_id` fields)
 - `Filter.id_type/3` will filter federations by ID type - can be used to select records in other organization's lists
 - Default data can now be specified at runtime, using config `:smee_feds, :federations`
 - Federation records now have many more attributes, including multilingual descriptions and names, logos, interfederation
@@ -27,6 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Federation struct though `Federation.autotag!/2`
 - Federation sources now contain their federation's ID.
 - Multilingual `Federation.displayname/2` and `Federation.description/2` getter functions
+- Values present in ID, protocol, tags, type and structure fields can be listed with various new functions such as
+  `SmeeFeds.tags/1` and `SmeeFeds.types/1`, and so on.
 
 ### Improvements
 - Example federation data has been expanded with more fields and more data
