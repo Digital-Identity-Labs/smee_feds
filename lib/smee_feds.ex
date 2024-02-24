@@ -305,7 +305,7 @@ defmodule SmeeFeds do
   ## Examples
 
       iex> SmeeFeds.federations() |> SmeeFeds.id_types()
-      [:edugain, :met, :smee_feds, :uri]
+      [:edugain, :met, :smee, :uri]
   """
   @spec id_types(federations :: list(Federation.t())) :: list(atom())
   def id_types(federations) do
@@ -315,7 +315,7 @@ defmodule SmeeFeds do
            Map.get(f, :alt_ids, %{})
            |> Map.keys() end
        )
-    |> Enum.concat([:smee_feds, :uri])
+    |> Enum.concat([:smee, :uri])
     |> List.flatten()
     |> Enum.uniq
     |> Enum.sort()
@@ -377,7 +377,7 @@ defmodule SmeeFeds do
   @doc """
   Returns a federation record if one with the specified ID is present in the list, or nil if one can't be found
 
-  Available IDs can be found using `SmeeFeds.id_types/1`. Two are built-in: `:uri` and `:smee_feds`. Any other
+  Available IDs can be found using `SmeeFeds.id_types/1`. Two are built-in: `:uri` and `:smee`. Any other
     ID key used in the `alt_ids` part of the Federation struct can be searched.
 
   ## Examples
@@ -388,7 +388,7 @@ defmodule SmeeFeds do
   """
   @spec get_by(federations :: list(Federation.t()), id_type :: atom(), id :: atom() | binary()) :: Federation.t() | nil
   def get_by(federations, id_type, id)
-  def get_by(federations, :smee_feds, id) do
+  def get_by(federations, :smee, id) do
     get(federations, id)
   end
 

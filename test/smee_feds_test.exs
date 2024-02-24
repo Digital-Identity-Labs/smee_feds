@@ -284,7 +284,7 @@ defmodule SmeeFedsTest do
   describe "id_types/1" do
 
     test "returns a list of all id_types used in the provided federation list" do
-      assert [:edugain, :met, :smee_feds, :uri] = SmeeFeds.id_types(@federations_list)
+      assert [:edugain, :met, :smee, :uri] = SmeeFeds.id_types(@federations_list)
     end
 
   end
@@ -332,8 +332,8 @@ defmodule SmeeFedsTest do
     end
 
     test "is compatible with the built-in SmeeFeds IDs, even if strings" do
-      assert %Federation{id: :incommon} = SmeeFeds.get_by(@federations_list, :smee_feds, :incommon)
-      assert %Federation{id: :incommon} = SmeeFeds.get_by(@federations_list, :smee_feds, "incommon")
+      assert %Federation{id: :incommon} = SmeeFeds.get_by(@federations_list, :smee, :incommon)
+      assert %Federation{id: :incommon} = SmeeFeds.get_by(@federations_list, :smee, "incommon")
     end
 
     test "works with IDs present in the default/test data included with SmeeFeds" do
