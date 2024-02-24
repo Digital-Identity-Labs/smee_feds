@@ -4,6 +4,7 @@ defmodule SmeeFeds.Federation do
   information in them.
   """
   alias SmeeFeds.Federation
+  alias SmeeFeds.Utils
   alias Smee.Source
 
   @enforce_keys [:id]
@@ -167,7 +168,7 @@ defmodule SmeeFeds.Federation do
       descriptions: options[:descriptions] || %{},
       displaynames: options[:displaynames] || %{},
       logo: options[:logo],
-      interfederates: options[:interfederates] || [],
+      interfederates: Utils.to_safe_atoms(options[:interfederates] || []),
       tags: options[:tags] || [],
       protocols: options[:protocols] || [:saml2],
       contact: normalize_contact(options[:contact]),
