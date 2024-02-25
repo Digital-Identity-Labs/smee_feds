@@ -457,7 +457,6 @@ defmodule SmeeFeds.Federation do
        )
   end
 
-
   @spec process_sources(sources :: list() | map() | Smee.Source.t(), fedid :: atom()) :: map()
   defp process_sources(nil, _) do
     %{}

@@ -2,7 +2,6 @@ defmodule SmeeFedsDefaultDataTest do
   use ExUnit.Case
 
   alias SmeeFeds.DefaultData
-  alias SmeeFeds.Import
   alias SmeeFeds.Federation
 
   describe "federations/0" do

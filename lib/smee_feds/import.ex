@@ -3,7 +3,7 @@ defmodule SmeeFeds.Import do
   @moduledoc """
   Converts serialised federation data into the Federation structs used by SmeeFeds.
 
-  Please see the `Export` module too.
+  Please see the `SmeeFeds.Export` module too.
   """
 
   @mkeys [:active, :comment, :todo]
@@ -13,7 +13,7 @@ defmodule SmeeFeds.Import do
   @doc """
   Reads the specified filename and returns a list of Federations
 
-  The JSON format is expected to be the same as that as `Export.json_file!` and  `Export.json!`
+  The JSON format is expected to be the same as that as `SmeeFeds.Export.json_file!` and  `SmeeFeds.Export.json!`
   """
   @spec json_file!(filename :: binary()) :: list()
   def json_file!(filename) do
@@ -38,9 +38,9 @@ defmodule SmeeFeds.Import do
   Reads the specified filename and returns a map of Federations
 
   This format is intended for use inside `SmeeFeds` as the default federation data. In most cases it is better
-    to use `Import.json_file!` instead.
+    to use `SmeeFeds.Import.json_file!` instead.
 
-  The JSON format is expected to be the same as that as `Export.dd_json_file!` and  `Export.dd_json!`
+  The JSON format is expected to be the same as that as `SmeeFeds.Export.dd_json_file!` and  `SmeeFeds.Export.dd_json!`
   """
   @spec dd_json_file!(filename :: binary, options :: keyword()) :: map()
   def dd_json_file!(filename, options \\ []) do
@@ -55,7 +55,7 @@ defmodule SmeeFeds.Import do
   This format is intended for use inside `SmeeFeds` as the default federation data. In most cases it is better
     to use `Import.json!` instead.
 
-  The JSON format is expected to be the same as that as `Export.dd_json_file!` and  `Export.dd_json!`
+  The JSON format is expected to be the same as that as `SmeeFeds.Export.dd_json_file!` and  `SmeeFeds.Export.dd_json!`
   """
   @spec dd_json!(data :: binary, options :: keyword()) :: map()
   def dd_json!(data, options \\ []) do
