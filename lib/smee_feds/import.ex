@@ -1,20 +1,52 @@
 defmodule SmeeFeds.Import do
 
-  @schema_file Path.join(Application.app_dir(:smee_feds, "priv"), "data/federations.json")
-  @external_resource @schema_file
-  @schema File.read!(@schema_file)
-          |> Jason.decode!()
+  @moduledoc """
+  Converts serialised federation data into the Federation structs used by SmeeFeds.
 
-  @mkeys [:active, :comment]
+  Please see the `Export` module too.
+  """
+
+  @mkeys [:active, :comment, :todo]
 
   alias SmeeFeds.Federation
 
-  @spec json!(filename :: binary, options :: keyword()) :: map()
-  def json!(filename, options \\ []) do
+  @doc """
+
+  """
+  @spec json_file!(filename :: binary()) :: list()
+  def json_file!(filename) do
     filename
     |> File.read!()
+    |> json!()
+  end
+
+  @doc """
+
+  """
+  @spec json_file!(data :: binary()) :: list()
+  def json!(data) do
+    data
     |> Jason.decode!(keys: :atoms)
-      #   |> validate(filename)
+    |> Enum.map(fn data -> Federation.new(data[:id], data) end)
+  end
+
+  @doc """
+
+  """
+  @spec dd_json_file!(filename :: binary, options :: keyword()) :: map()
+  def dd_json_file!(filename, options \\ []) do
+    filename
+    |> File.read!()
+    |> dd_json!(options)
+  end
+
+  @doc """
+
+  """
+  @spec dd_json!(data :: binary, options :: keyword()) :: map()
+  def dd_json!(data, options \\ []) do
+    data
+    |> Jason.decode!(keys: :atoms)
     |> Enum.into(%{})
     |> filter_active(options)
     |> Enum.map(
@@ -32,18 +64,6 @@ defmodule SmeeFeds.Import do
        )
     |> Enum.sort()
     |> Enum.into(%{})
-  end
-
-#  def list(federations) do
-#
-#  end
-
-  @spec validate(json :: map(), filename :: binary) :: map()
-  def validate(json, filename) do
-    case ExJsonSchema.Validator.validate(@schema, json) do
-      :ok -> json
-      message -> raise "Unable to validate data at #{filename} using schema at #{@schema_file}: #{message}"
-    end
   end
 
   #############################################################################
