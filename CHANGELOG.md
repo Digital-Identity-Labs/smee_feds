@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.3.0] 
+## [0.3.0] - 2024-02-26
 
 ### Breaking Changes
 - You have to explicitly pass a list of federations to most functions now, they will *not* default to the built-in set.
@@ -18,28 +18,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Import.json/2` will load a list of federations from a JSON file, as produced by `Export.json/1`
 - `Federation.id/2` can retrieve alternative IDs for a federation
 - `Federation.get_by/3` can find federation records by various ID types (Smee, URI, or anything in `alt_id` fields)
-- `Filter.id_type/3` will filter federations by ID type - can be used to select records in other organization's lists
+- `Filter.id_type/3` will filter federations by ID type - can be used to select records in other organization's lists.
+  Many other new Federation filters have been added (mostly for the new Federation struct attributes)
 - Default data can now be specified at runtime, using config `:smee_feds, :federations`
 - Federation records now have many more attributes, including multilingual descriptions and names, logos, interfederation
   and tags.
 - Federation structs can be encoded to JSON using `Jason`, and printed as strings in the same format as `Smee`
   structs.
 - Federations and Sources can now have tags added automatically, using `autotag: true` option or by passing the 
-  Federation struct though `Federation.autotag!/2`
+  Federation struct though `Federation.autotag!/2`. 
+- You can autotag entire lists of federations at once with `SmeeFeds.autotag!/2`
 - Federation sources now contain their federation's ID.
 - Multilingual `Federation.displayname/2` and `Federation.description/2` getter functions
 - Values present in ID, protocol, tags, type and structure fields can be listed with various new functions such as
   `SmeeFeds.tags/1` and `SmeeFeds.types/1`, and so on.
 
 ### Improvements
-- Example federation data has been expanded with more fields and more data
+- Example federation data has been expanded with more fields and more data, links fixed, and generally improved.
 
 ### Fixes
 - Policies are now actually policy URLs and not contact email addresses
 
 ### Other Changes
 - Should now work with OTP 26 and Elixir 1.16
-- New Mix scripts for displaying different aspect of the default federations, to make review easier 
+- New Mix scripts for displaying different aspect of the default federations, to make review easier
+- The script for building data tests is now a Mix task (`smee_feds.gen.data_tests`)
 
 ## [0.2.0]
 
@@ -51,5 +54,7 @@ Missing dependency!
 ## [0.1.0] - 2023-04-24
 Initial release
 
+[0.3.0] https://github.com/Digital-Identity-Labs/smee/compare/0.2.0...0.3.0
+[0.2.0] https://github.com/Digital-Identity-Labs/smee/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/Digital-Identity-Labs/smee/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/Digital-Identity-Labs/smee_feds/compare/releases/tag/0.1.0
