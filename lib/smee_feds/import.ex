@@ -11,7 +11,9 @@ defmodule SmeeFeds.Import do
   alias SmeeFeds.Federation
 
   @doc """
+  Reads the specified filename and returns a list of Federations
 
+  The JSON format is expected to be the same as that as `Export.json_file!` and  `Export.json!`
   """
   @spec json_file!(filename :: binary()) :: list()
   def json_file!(filename) do
@@ -21,9 +23,11 @@ defmodule SmeeFeds.Import do
   end
 
   @doc """
+  Parses the JSON string and returns a list of Federations.
 
+  The JSON format is expected to be the same as that as `Export.json_file!` and  `Export.json!`
   """
-  @spec json_file!(data :: binary()) :: list()
+  @spec json!(data :: binary()) :: list()
   def json!(data) do
     data
     |> Jason.decode!(keys: :atoms)
@@ -31,7 +35,12 @@ defmodule SmeeFeds.Import do
   end
 
   @doc """
+  Reads the specified filename and returns a map of Federations
 
+  This format is intended for use inside `SmeeFeds` as the default federation data. In most cases it is better
+    to use `Import.json_file!` instead.
+
+  The JSON format is expected to be the same as that as `Export.dd_json_file!` and  `Export.dd_json!`
   """
   @spec dd_json_file!(filename :: binary, options :: keyword()) :: map()
   def dd_json_file!(filename, options \\ []) do
@@ -41,7 +50,12 @@ defmodule SmeeFeds.Import do
   end
 
   @doc """
+  Parses the JSON string and returns a map of Federations.
 
+  This format is intended for use inside `SmeeFeds` as the default federation data. In most cases it is better
+    to use `Import.json!` instead.
+
+  The JSON format is expected to be the same as that as `Export.dd_json_file!` and  `Export.dd_json!`
   """
   @spec dd_json!(data :: binary, options :: keyword()) :: map()
   def dd_json!(data, options \\ []) do
@@ -68,7 +82,8 @@ defmodule SmeeFeds.Import do
 
   #############################################################################
 
-  def filter_active(data, options) do
+  @spec filter_active(data :: map(), options :: keyword()) :: map()
+  defp filter_active(data, options) do
     if Keyword.get(options, :active, false) do
       data
       |> Enum.reject(

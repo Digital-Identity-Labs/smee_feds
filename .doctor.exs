@@ -1,5 +1,5 @@
 %Doctor.Config{
-  ignore_modules: [SmeeFeds.Data, SmeeFeds.DataLoader, SmeeFeds.Utils],
+  ignore_modules: [SmeeFeds.DefaultData, SmeeFeds.Utils],
   ignore_paths: [],
   min_module_doc_coverage: 40,
   min_module_spec_coverage: 0,

@@ -101,6 +101,7 @@ defmodule SmeeFeds do
        iex> Enum.slice(ids, 0..3)
        [:aaf, :aaieduhr, :aaiedumk, :afire]
   """
+  @spec ids(federations :: list()) :: list(atom())
   def ids(federations) do
     federations
     |> Enum.map(fn f -> f.id end)
