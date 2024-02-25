@@ -412,6 +412,26 @@ defmodule SmeeFeds do
 
   end
 
+  @doc """
+  Accepts a list of federations, and returns a list of federations with tags automatically added.
+
+  Uses `Federation.autotag!/2`, and works with lists and streams.
+
+  ## Examples
+
+      iex> tags = SmeeFeds.federations() |> SmeeFeds.autotag!() |> SmeeFeds.tags()
+      iex> "mesh" in tags
+      true
+
+  """
+  @spec autotag!(enum :: Enumerable.t(),  options :: keyword()) :: Enumerable.t()
+  def autotag!(federations, options \\ []) do
+    federations
+    |> List.wrap()
+    |> Enum.map(fn f -> Federation.autotag!(f, options) end)
+  end
+
+
   #############################################################################
 
 

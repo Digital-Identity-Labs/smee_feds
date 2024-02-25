@@ -343,4 +343,13 @@ defmodule SmeeFedsTest do
 
   end
 
+  describe "autotag!/2" do
+
+    test "runs autotag! on each federation in the enumerable" do
+      assert 0 = SmeeFeds.federations() |> SmeeFeds.tags() |> Enum.count()
+      assert 132 = SmeeFeds.federations() |> SmeeFeds.autotag!() |> SmeeFeds.tags() |> Enum.count()
+    end
+
+  end
+
 end
