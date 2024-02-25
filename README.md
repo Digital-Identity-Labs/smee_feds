@@ -1,6 +1,6 @@
 # SmeeFeds
 
-`SmeeFeds` is a small federation management extension to [Smee](https://github.com/Digital-Identity-Labs/smee) for use in
+`SmeeFeds` is a SAML federation data management extension to [Smee](https://github.com/Digital-Identity-Labs/smee) for use in
 research, testing and development.
 
 [Smee](https://github.com/Digital-Identity-Labs/smee) has tools for handling the sources of SAML metadata but 
@@ -16,22 +16,24 @@ collection of information about research and education federations.
 ## Features
 
 * Easily find information on National Research and Education organisation (NREN) federations.
-* Filter and group federations by location or EU membership
+* Filter and group federations by location, type, structure and tags.
 * Use federation records directly with Smee to download metadata from aggregates or MDQ servers
 * Export lists of federation information as CSV, JSON or Markdown documents
+* Manage and load federation data into your applications
 
 The top level `SmeeFeds` module has tools for selecting individual federation details or lists of many at once.
 SmeeFeds contain more tools for handling federations, such as:
 
 * `SmeeFeds.Federation` - tools for accessing data such as metadata download URLs, contacts, homepages, and so on.
-* `SmeeFeds.Export` - convert lists of federations into data for export, or simple text reports
+* `SmeeFeds.Export` - convert lists of federations into JSON or CSV data for export, or simple text reports
+* `SmeeFeds.Import` - convert JSON documents into Federation lists
 * `SmeeFeds.Filter` - filter lists of federations by various criteria
 
 ## IMPORTANT DISCLAIMER AND WARNING
 
 SmeeFeds comes with a built-in list of federations, using information gathered from various sources on the Internet.
 
-This collection of information is for use by **researchers, developers and testers**. 
+This collection of information is example data for use by **researchers, developers and testers**. 
 
 **IT IS NOT FOR USE IN PRODUCTION ENVIRONMENTS**
 
@@ -40,7 +42,8 @@ and certificate fingerprints to download and use metadata in live services witho
 
 If you must use SmeeFeds as part of a production service, then after information has been verified you can export only
 the verified information you need as a JSON file and set it as the new default using 
-`:smee_feds, :data_file` config setting in your application.
+`:smee_feds, :data_file` config setting in your application (if compiled) or set a list of Federations with 
+`:smee_feds, :federations` at runtime.
 
 There is absolutely no guarantee or warranty that the data in SmeeFeds is correct, and it is not supported by any of 
 the federations listed. It's totally unofficial. 
@@ -48,7 +51,7 @@ the federations listed. It's totally unofficial.
 ## Examples
 
 ### Using with Smee to download UK Access Management Federation metadata, pick a random entity and get its XML
-Useful for testing
+Useful for testing as there's no need to remember or look up metadata details.
 
 ```elixir
 random_xml = SmeeFeds.federation(:ukamf)
@@ -62,30 +65,47 @@ random_xml = SmeeFeds.federation(:ukamf)
 Very few MDQ services are present in the data, but they can be used as follows:
 
 ```elixir
-cern_idp = SmeeFeds.get(:incommon)
+cern_idp = SmeeFeds.federation(:incommon)
 |> SmeeFeds.Federation.mdq()
-|> MDQ.lookup!("https://cern.ch/login")
+|> Smee.MDQ.lookup!("https://cern.ch/login")
+```
+
+You can list the IDs of all federations that have an MDQ service using a filter:
+
+```elixir
+SmeeFeds.federations()
+|> SmeeFeds.Filter.mdq()
+|> SmeeFeds.ids()
 ```
 
 ### Getting a list of specific federations and writing their details to disk as a JSON file or CSV
-The JSON file can be used a new default set of federations. The CSV is a simpler, lossy summary.
+The JSON file can be used a new default set of federations. 
 
 ```elixir
-json = SmeeFeds.federations([:wayf, :haka, :dfnaai, :swamid])
-|> SmeeFeds.Export.json()
-File.write!("feds.json", json)
-
-csv = SmeeFeds.federations([:wayf, :haka, :dfnaai, :swamid])
-       |> SmeeFeds.Export.csv()
-File.write!("feds.csv", csv)
+SmeeFeds.federations([:wayf, :haka, :dfnaai, :swamid])
+|> SmeeFeds.Export.json_file!("my_feds.json")
 ```
 
-## Defining your own lists of federations
+The CSV export is a simpler, lossy summary.
+```elixir
+csv = SmeeFeds.federations([:wayf, :haka, :dfnaai, :swamid])
+       |> SmeeFeds.Export.csv()
+
+File.write!("my_feds.csv", csv)
+```
+
+### Defining your own lists of federations
+
+```elixir
+my_feds = [
+SmeeFeds.Federation.new(:fed1, name: "Example 1", sources: [Smee.Source.new("https://example.com/metadata")]),
+SmeeFeds.Federation.new(:fed2, name: "Example 2", sources: [Smee.Source.new("https://example.edu/metadata")])
+] 
+ ```
 
 ### Filtering lists of federations
 
-### Listing all known federations, then selecting those in the EU, and listing their unique IDs
-Each federation record has an ID for convenience
+Listing all known federations, then selecting those in the EU, and listing their unique IDs
 
 ```elixir
 SmeeFeds.federations()
@@ -93,21 +113,48 @@ SmeeFeds.federations()
 |> SmeeFeds.ids()
 ```
 
+Finding all hub-and-spoke networks with an MDQ service and returning their names
+
+```elixir
+SmeeFeds.federations()
+|> SmeeFeds.Filter.structure(:has)
+|> SmeeFeds.Filter.mdq()
+|> Enum.map(fn f -> f.name end)
+
+
+```
+
 ### Opening all homepages 
+
+Perhaps you want to check the homepages of all federations in a collection (this example works on a Mac)
+
+```elixir
 SmeeFeds.federations()
 |> Enum.each(fn f -> if f.url, do: System.cmd("open", [f.url]) end)
+```
 
-SmeeFeds.federations() |> Enum.each(fn f -> if f.logo, do: System.cmd("open", [f.logo])  end)
+Or see all logos
+
+```elixir
+SmeeFeds.federations()
+|> Enum.each(fn f -> if f.logo, do: System.cmd("open", [f.logo]) end)
+```
 
 ### Information about lists of federations
 
-### Changing the default data at compile-time
+The top level SmeeFeds module can return unique values present in collections. For example, all tags:
 
+```elixir
+tags = SmeeFeds.federations()
+|> SmeeFeds.tags()
+```
 
+or structure types
 
-### Changing the default data at runtime
-
-
+```elixir
+structures = SmeeFeds.federations()
+|> SmeeFeds.structures()
+```
 
 ## Installation
 
@@ -117,7 +164,7 @@ by adding `smee_feds` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:smee_feds, "~> 0.1.1"}
+    {:smee_feds, "~> 0.3.0"}
   ]
 end
 ```
@@ -127,10 +174,14 @@ please make sure you read the documentation for installing Smee before using Sme
 
 ## Uses
 
-The main reason SmeeFeds was hurriedly put together on a Sunday afternoon is that I needed to test Smee with a variety
+The main reason SmeeFeds was hurriedly put together on a Sunday afternoon is that I needed to test `Smee` with a variety
 of federations, and my various scattered notes and comments and tests with URLs and certificate fingerprints were becoming a nuisance.
+The original focus was on the default data, as a convenient resource for testing.
 
 It's possibly an over-engineered solution to that problem but it was fun.
+
+Over time the federation collection features of SmeeFeds have become useful in other projects as a way to load sources
+of metadata in a consistent way, so these have been expanded and strengthened. 
 
 ## Alternatives and Sources
 
@@ -157,7 +208,7 @@ If you are comfortable working with Python but Smee's Elixir code is unfamiliar 
 
 ## Copyright and License
 
-Copyright (c) 2023 Digital Identity Ltd, UK
+Copyright (c) 2023, 2024 Digital Identity Ltd, UK
 
 SmeeFeds is Apache 2.0 licensed.
 
