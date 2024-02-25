@@ -47,20 +47,11 @@ the federations listed. It's totally unofficial.
 
 ## Examples
 
-### Listing all known federations, then selecting those in the EU, and listing their unique IDs
-Each federation record has an ID for convenience
-
-```elixir
-SmeeFeds.federations()
-|> SmeeFeds.Filter.eu()
-|> SmeeFeds.ids()
-```
-
 ### Using with Smee to download UK Access Management Federation metadata, pick a random entity and get its XML
 Useful for testing
 
 ```elixir
-random_xml = SmeeFeds.get(:ukamf)
+random_xml = SmeeFeds.federation(:ukamf)
 |> SmeeFeds.Federation.aggregate()
 |> Smee.fetch!()
 |> Smee.Metadata.random_entity()
@@ -88,6 +79,35 @@ csv = SmeeFeds.federations([:wayf, :haka, :dfnaai, :swamid])
        |> SmeeFeds.Export.csv()
 File.write!("feds.csv", csv)
 ```
+
+## Defining your own lists of federations
+
+### Filtering lists of federations
+
+### Listing all known federations, then selecting those in the EU, and listing their unique IDs
+Each federation record has an ID for convenience
+
+```elixir
+SmeeFeds.federations()
+|> SmeeFeds.Filter.eu()
+|> SmeeFeds.ids()
+```
+
+### Opening all homepages 
+SmeeFeds.federations()
+|> Enum.each(fn f -> if f.url, do: System.cmd("open", [f.url]) end)
+
+SmeeFeds.federations() |> Enum.each(fn f -> if f.logo, do: System.cmd("open", [f.logo])  end)
+
+### Information about lists of federations
+
+### Changing the default data at compile-time
+
+
+
+### Changing the default data at runtime
+
+
 
 ## Installation
 
