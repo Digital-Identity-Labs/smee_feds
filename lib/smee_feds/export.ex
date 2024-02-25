@@ -76,27 +76,27 @@ defmodule SmeeFeds.Export do
   end
 
   @doc """
-  Produces a string containing all passed federations (or default set) in JSON format.
+  Produces a string containing all passed federations in the JSON format used for SmeeFeds default data.
+
+  This format is best used for creating new default data sets, and is not for general purpose serialization.
+
+  It is possible to use additional lines in federation records:
+
+   * `active: false` - prevents the record from loading
+   * `comment: "a comment"` - notes that will be ignored when the data is loaded
+   * `todo: "task details"` - developer notes that will be ignored when the data is loaded
 
   The JSON *should* contain all federation information and can be used by SmeeFeds as a replacement for the default source of
-  federation information.
+  federation information. Federations are stored in a map.
   """
-  @spec json(federations :: list(Federation.t())) :: binary()
-  def json(federations \\ SmeeFeds.federations()) do
+  @spec dd_json!(federations :: list(Federation.t())) :: binary()
+  def dd_json!(federations) do
     Enum.map(
       federations,
       fn f ->
         {
           f.id,
-          %{
-            name: f.name,
-            url: f.url,
-            countries: f.countries,
-            policy: f.policy,
-            contact: f.contact,
-            sources: jsources(f.sources)
-          }
-          |> purge_nulls()
+          f
         }
       end
     )
@@ -104,14 +104,51 @@ defmodule SmeeFeds.Export do
     |> Jason.encode!()
   end
 
-  #############################################################################
+  @doc """
+  Produces a string containing all passed federations in the JSON format used for SmeeFeds default data,
+    and then writes it directly to disk at the specified filename/path.
 
-  @spec purge_nulls(map :: map()) :: map()
-  defp purge_nulls(map) do
-    map
-    |> Enum.filter(fn {_key, value} -> !is_nil(value) end)
-    |> Map.new()
+  This format is best used for creating new default data sets, and is not for general purpose serialization.
+
+  It is possible to use additional lines in federation records:
+
+   * `active: false` - prevents the record from loading
+   * `comment: "a comment"` - notes that will be ignored when the data is loaded
+   * `todo: "task details"` - developer notes that will be ignored when the data is loaded
+
+  The JSON *should* contain all federation information and can be used by SmeeFeds as a replacement for the default source of
+  federation information. Federations are stored in a map.
+  """
+  @spec dd_json_file!(federations :: list(Federation.t()), path :: binary()) :: :ok
+  def dd_json_file!(federations, path) do
+    File.write!(path, dd_json!(federations))
   end
+
+  @doc """
+  Produces a string containing all passed federations in the normal Smee JSON format.
+
+  This format is best for general-purpose serialisation of the federation records.
+
+  Federations are stored as a list.
+  """
+  @spec json!(federations :: list(Federation.t())) :: binary()
+  def json!(federations) do
+    Jason.encode!(federations)
+  end
+
+  @doc """
+  Creates a file containing all passed federations in the normal Smee JSON format.
+
+  This format is best for general-purpose serialisation of the federation records.
+
+  Federations are stored as a list.
+  """
+  @spec json_file!(federations :: list(Federation.t()), path :: binary()) :: :ok
+  def json_file!(federations, path) do
+    File.write!(path, json!(federations))
+  end
+
+  #############################################################################
 
   @spec emt(text :: binary() | atom()) :: binary()
   defp emt(text) do
@@ -125,35 +162,6 @@ defmodule SmeeFeds.Export do
     |> Enum.map_join(", ", fn c -> String.downcase(emt(c)) end)
     #    |> Enum.map(fn c -> String.downcase(emt(c)) end)
     #    |> Enum.join(", ")
-  end
-
-  @spec jsources(sources :: map()) :: map()
-  defp jsources(sources) do
-    sources
-    |> Enum.map(
-         fn {id, source} ->
-           {
-             "#{id}",
-             %{
-               url: source.url,
-               cert_url: source.cert_url,
-               cert_fp: source.cert_fingerprint,
-               type: jstype(source)
-             }
-             |> purge_nulls()
-           }
-         end
-       )
-    |> Enum.into(%{})
-  end
-
-  @spec jstype(source :: map()) :: binary()
-  defp jstype(source) do
-    case source.type do
-      "" -> "aggregate"
-      nil -> "aggregate"
-      other -> "#{other}"
-    end
   end
 
   @spec ems(source :: nil | map()) :: binary()
