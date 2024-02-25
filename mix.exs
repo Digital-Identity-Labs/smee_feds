@@ -4,9 +4,9 @@ defmodule SmeeFeds.MixProject do
   def project do
     [
       app: :smee_feds,
-      version: "0.2.0",
+      version: "0.3.0",
       elixir: "~> 1.14",
-      description: "A federation extension for Smee, with example data",
+      description: "A SAML federation extension for Smee, with example data",
       package: package(),
       name: "SmeeFeds",
       source_url: "https://github.com/Digital-Identity-Labs/smee_feds",
@@ -48,8 +48,7 @@ defmodule SmeeFeds.MixProject do
       {:smee, "~> 0.4"},
       {:jason, "~> 1.4"},
       {:csv, "~> 3.2"},
-      {:rambo, "~> 0.3.4"},
-      # temporary fix
+      {:rambo, "~> 0.3.4"}, # temporary fix
       {:ex_json_schema, "~> 0.9.2"},
       {:nimble_options, "~> 1.1"},
       {:req, "~> 0.4"},
