@@ -170,7 +170,7 @@ defmodule SmeeFeds.Federation do
       logo: options[:logo],
       interfederates: Utils.to_safe_atoms(options[:interfederates] || []),
       tags: options[:tags] || [],
-      protocols: options[:protocols] || [:saml2],
+      protocols: Utils.to_safe_atoms(options[:protocols] || [:saml2]),
       contact: normalize_contact(options[:contact]),
       name: options[:name],
       url: options[:url],
@@ -410,7 +410,7 @@ defmodule SmeeFeds.Federation do
         id: id,
         type: type,
         label: "#{id} #{type}",
-        fedid: fedid
+        fedid: Utils.to_safe_atom(fedid)
       ]
     )
   end
