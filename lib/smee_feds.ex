@@ -1,7 +1,7 @@
 defmodule SmeeFeds do
   @moduledoc """
-  `SmeeFeds` is a small federation management extension to [Smee](https://github.com/Digital-Identity-Labs/smee) for use
-  in research, testing and development.
+  `SmeeFeds` is a SAML federation data management extension to [Smee](https://github.com/Digital-Identity-Labs/smee) for use in
+  research, testing and development.
 
   [Smee](https://github.com/Digital-Identity-Labs/smee) has tools for handling the sources of SAML metadata but
   nothing to represent the publishers of metadata. SmeeFeds adds a few tools for handling federations and includes a large
@@ -9,23 +9,25 @@ defmodule SmeeFeds do
 
   ## Features
 
-  * Easily find information about major federations
-  * Filter and group federations by location or EU membership
+  * Easily find information on National Research and Education organisation (NREN) federations.
+  * Filter and group federations by location, type, structure and tags.
   * Use federation records directly with Smee to download metadata from aggregates or MDQ servers
   * Export lists of federation information as CSV, JSON or Markdown documents
+  * Manage and load federation data into your applications
 
   The top level `SmeeFeds` module has tools for selecting individual federation details or lists of many at once.
   SmeeFeds contain more tools for handling federations, such as:
 
   * `SmeeFeds.Federation` - tools for accessing data such as metadata download URLs, contacts, homepages, and so on.
-  * `SmeeFeds.Export` - convert lists of federations into data for export, or simple text reports
+  * `SmeeFeds.Export` - convert lists of federations into JSON or CSV data for export, or simple text reports
+  * `SmeeFeds.Import` - convert JSON documents into Federation lists
   * `SmeeFeds.Filter` - filter lists of federations by various criteria
 
   ## IMPORTANT DISCLAIMER AND WARNING
 
   SmeeFeds comes with a built-in list of federations, using information gathered from various sources on the Internet.
 
-  This collection of information is for use by **researchers, developers and testers**.
+  This collection of information is example data for use by **researchers, developers and testers**.
 
   **IT IS NOT FOR USE IN PRODUCTION ENVIRONMENTS**
 
@@ -34,10 +36,11 @@ defmodule SmeeFeds do
 
   If you must use SmeeFeds as part of a production service, then after information has been verified you can export only
   the verified information you need as a JSON file and set it as the new default using
-  `:smee_feds, :data_file` config setting in your application.
+  `:smee_feds, :data_file` config setting in your application (if compiled) or set a list of Federations with
+  `:smee_feds, :federations` at runtime.
 
   There is absolutely no guarantee or warranty that the data in SmeeFeds is correct, and it is not supported by any of
-  the federations listed. It's totally unofficial.
+  the federations listed. It's totally unofficial. 
   """
 
   alias SmeeFeds.Federation
