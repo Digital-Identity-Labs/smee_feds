@@ -40,7 +40,7 @@ defmodule SmeeFeds do
   `:smee_feds, :federations` at runtime.
 
   There is absolutely no guarantee or warranty that the data in SmeeFeds is correct, and it is not supported by any of
-  the federations listed. It's totally unofficial. 
+  the federations listed. It's totally unofficial.
   """
 
   alias SmeeFeds.Federation
