@@ -1,18 +1,18 @@
-<!-- livebook:{"app_settings":{"slug":"smee"}} -->
+<!-- livebook:{"app_settings":{"slug":"smee_feds"}} -->
 
 # SmeeFeds Workbook
 
 ```elixir
-Mix.install([{:smee_feds, ">= 0.1.1"}, {:rambo, "~> 0.3.4"}])
+Mix.install([{:smee_feds, ">= 0.3.0"}, {:rambo, "~> 0.3.4"}])
 alias Smee.{Metadata, Entity, Source, MDQ}
-alias SmeeFeds.Federation
+alias SmeeFeds.{Federation, Import, Export}
 ```
 
 ## Requirements - Please Read!
 
 Backend tools
 Please note: Smee does not do all processing itself using Elixir - it sometimes cheats (OK, it often cheats) by sending
- data to external programs for processing. At the moment it requires the following commandline utilities:
+data to external programs for processing. At the moment it requires the following commandline utilities:
 
 * xmlsec1
 * xmllint
@@ -22,20 +22,88 @@ On Debian: `sudo apt-get install xmlsec1 libxml2-utils xsltproc`
 On RedHat: `sudo yum install xmlsec1 libxml2 libxslt`
 On Macs: `brew install xmlsec1 libxml2 libxslt`
 
-## Grabbing some metadata with Smee
+### Using with Smee to download UK Access Management Federation metadata, pick a random entity and get its XML
+
+Useful for testing as there's no need to remember or look up metadata details. This involves a large download, so may
+take awhile on slower connections.
 
 ```elixir
-xml =
-  Smee.source("http://metadata.ukfederation.org.uk/ukfederation-metadata.xml")
+random_xml =
+  SmeeFeds.federation(:ukamf)
+  |> SmeeFeds.Federation.aggregate()
   |> Smee.fetch!()
-  |> Smee.Metadata.xml()
+  |> Smee.Metadata.random_entity()
+  |> Smee.Entity.xml()
 ```
 
-## Using MDQ from SmeeFeds
+### Finding an MDQ service
+
+Very few MDQ services are present in the data, but they can be used as follows:
 
 ```elixir
 cern_idp =
-  SmeeFeds.get(:ukamf)
+  SmeeFeds.federation(:incommon)
   |> SmeeFeds.Federation.mdq()
-  |> MDQ.lookup!("https://cern.ch/login")
+  |> Smee.MDQ.lookup!("https://cern.ch/login")
+```
+
+You can list the IDs of all federations that have an MDQ service using a filter:
+
+```elixir
+SmeeFeds.federations()
+|> SmeeFeds.Filter.mdq()
+|> SmeeFeds.ids()
+```
+
+### Getting a list of specific federations and writing their details to disk as a JSON file or CSV
+
+The JSON file can be used a new default set of federations.
+
+```elixir
+SmeeFeds.federations([:wayf, :haka, :dfnaai, :swamid])
+|> SmeeFeds.Export.json_file!("my_feds.json")
+```
+
+The CSV export is a simpler, lossy summary.
+
+```elixir
+csv =
+  SmeeFeds.federations([:wayf, :haka, :dfnaai, :swamid])
+  |> SmeeFeds.Export.csv()
+
+File.write!("my_feds.csv", csv)
+```
+
+### Defining your own lists of federations
+
+```elixir
+my_feds = [
+  SmeeFeds.Federation.new(:fed1,
+    name: "Example 1",
+    sources: [Smee.Source.new("https://example.com/metadata")]
+  ),
+  SmeeFeds.Federation.new(:fed2,
+    name: "Example 2",
+    sources: [Smee.Source.new("https://example.edu/metadata")]
+  )
+]
+```
+
+### Filtering lists of federations
+
+Listing all known federations, then selecting those in the EU, and listing their unique IDs
+
+```elixir
+SmeeFeds.federations()
+|> SmeeFeds.Filter.eu()
+|> SmeeFeds.ids()
+```
+
+Finding all hub-and-spoke networks with an MDQ service and returning their names
+
+```elixir
+SmeeFeds.federations()
+|> SmeeFeds.Filter.structure(:has)
+|> SmeeFeds.Filter.mdq()
+|> Enum.map(fn f -> f.name end)
 ```
