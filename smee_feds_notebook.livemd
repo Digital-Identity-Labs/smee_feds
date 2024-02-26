@@ -22,20 +22,6 @@ On Debian: `sudo apt-get install xmlsec1 libxml2-utils xsltproc`
 On RedHat: `sudo yum install xmlsec1 libxml2 libxslt`
 On Macs: `brew install xmlsec1 libxml2 libxslt`
 
-### Using with Smee to download UK Access Management Federation metadata, pick a random entity and get its XML
-
-Useful for testing as there's no need to remember or look up metadata details. This involves a large download, so may
-take awhile on slower connections.
-
-```elixir
-random_xml =
-  SmeeFeds.federation(:ukamf)
-  |> SmeeFeds.Federation.aggregate()
-  |> Smee.fetch!()
-  |> Smee.Metadata.random_entity()
-  |> Smee.Entity.xml()
-```
-
 ### Finding an MDQ service
 
 Very few MDQ services are present in the data, but they can be used as follows:
@@ -106,4 +92,22 @@ SmeeFeds.federations()
 |> SmeeFeds.Filter.structure(:has)
 |> SmeeFeds.Filter.mdq()
 |> Enum.map(fn f -> f.name end)
+```
+
+```elixir
+IO.puts("Hello")
+```
+
+### Using with Smee to download UK Access Management Federation metadata, pick a random entity and get its XML
+
+Useful for testing as there's no need to remember or look up metadata details. This involves a large download, so may
+take awhile on slower connections.
+
+```elixir
+random_xml =
+  SmeeFeds.federation(:ukamf)
+  |> SmeeFeds.Federation.aggregate()
+  |> Smee.fetch!()
+  |> Smee.Metadata.random_entity()
+  |> Smee.Entity.xml()
 ```
