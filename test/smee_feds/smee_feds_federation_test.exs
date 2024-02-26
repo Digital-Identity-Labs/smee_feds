@@ -627,4 +627,24 @@ defmodule SmeeFedsFederationTest do
 
   end
 
+  describe "source/2" do
+
+    test "returns federation's source with matching ID" do
+      assert %Source{id: :default} = Federation.source(SmeeFeds.federation(:ukamf), :default)
+    end
+
+    test "returns nil if no matching ID" do
+      assert is_nil(Federation.source(SmeeFeds.federation(:ukamf), :defaultier))
+    end
+
+    test "returns first federation source with matching download URL" do
+      assert %Source{id: :mdq} = Federation.source(SmeeFeds.federation(:ukamf), "http://mdq.ukfederation.org.uk/")
+    end
+
+    test "returns nil if URL cannot be found" do
+      assert is_nil(Federation.source(SmeeFeds.federation(:ukamf), "http://example.com/"))
+    end
+
+  end
+
 end

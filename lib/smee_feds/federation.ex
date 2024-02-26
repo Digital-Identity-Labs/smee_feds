@@ -399,6 +399,21 @@ defmodule SmeeFeds.Federation do
     Map.get(texts, lang, nil) || Map.get(texts, :en, nil)
   end
 
+  @doc """
+  Returns a source with the specified source ID, or URL, or nil if one cannot be found.
+
+  IDs will be unique but URLs might not be, so the first matching source will be returned.
+  """
+  @spec source(federation :: Federation.t(), id :: atom() | binary()) :: Smee.Source.t() | nil
+  def source(federation, id) when is_atom(id) do
+    federation.sources[id]
+  end
+
+  def source(federation, id) when is_binary(id) do
+    sources(federation)
+    |> Enum.find(fn f -> f.url == id end)
+  end
+
   #############################################################################
 
   @spec normalize_source_options(id :: atom(), fedid :: atom(), data :: map()) :: keyword()
