@@ -4,7 +4,7 @@
       "edugain": "AAF",
       "met": "australian-access-federation"
     },
-    "contact": "support@aaf.edu.au",
+    "contact": "enquiries@aaf.edu.au",
     "countries": [
       "au"
     ],
@@ -15,7 +15,7 @@
     ],
     "logo": "https://aaf.edu.au/wp-content/uploads/AAF_LGO_lge-website.png",
     "name": "Australian Access Federation (AAF)",
-    "policy": "https://aaf.edu.au/about/federation-rules.html",
+    "policy": "https://aaf.edu.au/support/resources/",
     "sources": {
       "default": {
         "cert_fingerprint": "E2:FC:CC:CB:0E:0F:3B:32:FA:55:87:29:08:DE:E0:34:DA:A2:15:5A",
@@ -48,7 +48,8 @@
     "policy": "http://www.aaiedu.hr/docs/AAI@EduHr-pravilnik-ver1.3.1.pdf",
     "sources": {
       "upstream_edugain": {
-        "url": "https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml"
+        "url": "https://login.aaiedu.hr/edugain/aaieduhr_edugain.xml",
+        "cert_fingerprint": "5F5289004135920DDB95381CD4DB8FECF1A10F7E"
       }
     },
     "structure": "has",
@@ -74,17 +75,18 @@
     "name": "AAIEduMK",
     "sources": {
       "default": {
-        "url": "http://aaiedu.mk/metadata.aaiedumk.xml"
+        "url": "http://aaiedu.mk/metadata.aaiedumk.xml",
+        "cert_fingerprint": "B64B43755E1D24DF80D1BF9AA737CDD3404494B1"
       }
     },
     "structure": "mesh",
     "tags": [],
+    "policy": "https://aaiedu.mk/documents/",
     "type": "nren",
     "uri": "https://rr.aaiedu.mk",
     "url": "http://aaiedu.mk/?lang=en"
   },
   "aconet": {
-    "active": false,
     "alt_ids": {
       "edugain": "ACONET",
       "met": "aconet-identity-federation-eduidat"
@@ -104,7 +106,8 @@
     "policy": "https://wiki.univie.ac.at/display/federation/Policies",
     "sources": {
       "default": {
-        "url": "https://eduid.at/md/aconet-interfed.xml"
+        "url": "http://eduid.at/md/upstream-edugain.xml",
+        "cert_fingerprint": "6B115868AC6D45BC7E519B5D45222A8D85C1022F"
       }
     },
     "structure": "mesh",
@@ -118,6 +121,7 @@
       "edugain": "AFIRE",
       "met": "afire"
     },
+    "contact": "admin@afire.asnet.am",
     "countries": [
       "am"
     ],
@@ -130,11 +134,13 @@
     "name": "AFIRE",
     "sources": {
       "upstream_edugain": {
-        "url": "https://aai.asnet.am/metadata/edugain-upstream.xml"
+        "url": "https://aai.asnet.am/metadata/edugain-upstream.xml",
+        "cert_fingerprint": "B64B43755E1D24DF80D1BF9AA737CDD3404494B1"
       }
     },
     "structure": "mesh",
     "tags": [],
+    "policy": "https://afire.asnet.am/files/Policy.pdf",
     "type": "nren",
     "uri": "https://aai.asnet.am",
     "url": "http://afire.asnet.am/"
@@ -221,12 +227,13 @@
     },
     "structure": "has",
     "tags": [],
-    "type": "nren",
-    "uri": null,
+    "type": "misc",
+    "uri": "https://www.openathens.net",
     "url": "https://www.openathens.net/"
   },
   "azscinet": {
     "active": false,
+    "comment": "CA is missing",
     "alt_ids": {
       "edugain": "AZSCINET",
       "met": "azsciencenet-identity-federation"
@@ -255,7 +262,6 @@
     "url": "http://edugain.azsciencenet.az/"
   },
   "belnet": {
-    "active": false,
     "comment": "Certificate error - Erlang/Mint seems to be too strict with CRL parsing, need option for this",
     "alt_ids": {
       "edugain": "BELNET",
@@ -275,7 +281,7 @@
     "policy": "http://federation.belnet.be/files/federation-policy-EN.pdf",
     "sources": {
       "default": {
-        "url": "https://federation.belnet.be/federation-metadata.xml"
+        "url": "https://federation.belnet.be/metadata/edugain-metadata.xml"
       }
     },
     "structure": "mesh",
@@ -420,7 +426,7 @@
       }
     },
     "structure": "mesh",
-    "tags": [],
+    "tags": ["noSlow"],
     "type": "nren",
     "uri": "https://www.carsi.edu.cn",
     "url": "http://www.carsi.edu.cn/"
@@ -454,7 +460,6 @@
     "url": "http://cofre.reuna.cl/index.php/en/"
   },
   "colfire": {
-    "active": false,
     "alt_ids": {
       "edugain": "COLFIRE",
       "met": "colfire"
@@ -472,7 +477,7 @@
     "name": "COLFIRE",
     "sources": {
       "default": {
-        "url": "http://colfire.co/metadata/colfire-metadata.xml"
+        "url": "http://ds.renata.edu.co/metadata/colfire-metadata.xml"
       }
     },
     "structure": "mesh",
@@ -558,7 +563,22 @@
       "default": {
         "cert_fingerprint": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
         "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai.pem",
-        "url": "https://doku.tid.dfn.de/en:metadata"
+        "url": "http://www.aai.dfn.de/metadata/dfn-aai-test-metadata.xml"
+      },
+      "idp": {
+        "cert_fingerprint": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
+        "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai.pem",
+        "url": "http://www.aai.dfn.de/metadata/dfn-aai-idp-metadata.xml"
+      },
+      "sp": {
+        "cert_fingerprint": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
+        "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai.pem",
+        "url": "http://www.aai.dfn.de/metadata/dfn-aai-sp-metadata.xml"
+      },
+      "test": {
+        "cert_fingerprint": "28:0B:D5:0F:96:B8:60:8F:87:93:8C:73:C6:F1:16:63:CF:B2:2D:B2",
+        "cert_url": "https://www.aai.dfn.de/metadata/dfn-aai.pem",
+        "url": "http://www.aai.dfn.de/metadata/dfn-aai-test-metadata.xml"
       },
       "mdq": {
         "cert_fingerprint": "76:E6:8C:F1:AD:18:01:B2:4F:B3:66:5A:B2:BC:99:E2:14:B2:4F:05",
@@ -668,7 +688,6 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
-      "edugain"
     ],
     "logo": null,
     "name": "Burkina Faso Identity Federation",
@@ -732,7 +751,9 @@
     "policy": "http://eduid.hu/documents",
     "sources": {
       "default": {
-        "url": "https://metadata.eduid.hu/"
+        "url": "http://metadata.eduid.hu/current/href.xml",
+        "cert_url": "https://metadata.eduid.hu/href-metadata-signer-2011.crt",
+        "cert_fingerprint": "FE:AE:0B:E8:FB:59:ED:F7:CB:7F:69:DF:19:4F:8B:6D:C7:F6:96:66"
       }
     },
     "structure": "mesh",
@@ -742,7 +763,6 @@
     "url": "http://www.eduid.hu/"
   },
   "eduidlu": {
-    "active": false,
     "alt_ids": {
       "edugain": "EDUID-LU"
     },
@@ -760,7 +780,7 @@
     "policy": "http://www.eduid.lu/en/EN-AUP.html",
     "sources": {
       "default": {
-        "url": "https://www.eduid.lu/"
+        "url": "https://www.eduid.lu/metadata/upstream.xml"
       }
     },
     "structure": "mesh",
@@ -783,7 +803,6 @@
       "en": "Montenegrin Research and Education Network "
     },
     "interfederates": [
-      "edugain"
     ],
     "logo": "http://mren.ac.me/images/mren-logo_01.jpg",
     "name": "eduID.me",
@@ -807,8 +826,7 @@
     "policy": "https://www.eduidm.ma/files/policy-eduIDM-en.pdf",
     "sources": {
       "default": {
-        "url": "https://www.eduidm.ma/metadata/eduidm.xml",
-        "cert_url": null
+        "url": "https://www.eduidm.ma/metadata/eduidm.xml"
       }
     },
     "structure": "mesh",
@@ -859,7 +877,6 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
-      "edugain"
     ],
     "logo": null,
     "name": "eduID.tg",
@@ -934,7 +951,6 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
-      "edugain"
     ],
     "logo": "https://federasi.id/wp-content/uploads/2020/09/cropped-Logo-Federasi-Small.png",
     "name": "Federasi.ID",
@@ -982,7 +998,6 @@
     "url": "https://www.feide.no/"
   },
   "fenix": {
-    "active": false,
     "comment": "Site TLS certs expired for 50+ days",
     "alt_ids": {
       "edugain": "FENIX",
@@ -997,7 +1012,7 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "https://www.fenix.org.mx/fenix/public/logos/logo.png?v=320978",
     "name": "FENIX",
     "policy": "http://www.fenix.org.mx/procedimientos.html",
     "sources": {
@@ -1040,7 +1055,6 @@
     "url": "https://services.renater.fr/federation/index"
   },
   "fidern": {
-    "active": false,
     "alt_ids": {
       "edugain": "FIDERN",
       "met": "fidern"
@@ -1054,12 +1068,12 @@
     "interfederates": [
       "edugain"
     ],
-    "logo": null,
+    "logo": "http://www.fidern.ac.zm/sites/default/files/zamren%20logo_2.png",
     "name": "FIDERN",
     "policy": "http://www.fidern.ac.zm/policies",
     "sources": {
       "default": {
-        "url": "https://rr.ubuntunet.net/signedmetadata/federation/fidern/metadata.xml"
+        "url": "https://rr.fidern.ac.zm/signedmetadata/federation/fidern/metadata.xml"
       }
     },
     "structure": "mesh",
@@ -1140,7 +1154,7 @@
       "edugain"
     ],
     "logo": "https://gif.grena.ge/images/logo_eng.png",
-    "name": "GIF",
+    "name": "Grena Identity Federation (GIF)",
     "policy": "https://technical.edugain.org/Declarations/eduGAIN_Declaration_GE_2.pdf",
     "sources": {
       "default": {
@@ -1533,6 +1547,7 @@
   },
   "leaf": {
     "active": false,
+    "comment": "Unknown CA",
     "alt_ids": {
       "edugain": "LEAF",
       "met": "moldova-leaf"
@@ -1603,7 +1618,6 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
-      "edugain"
     ],
     "logo": "https://sites.aub.edu.lb/life/files/2017/01/lifelogo.jpg",
     "name": "LIFE",
@@ -1659,7 +1673,6 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
-      "edugain"
     ],
     "logo": "https://mif.maren.ac.mw/wp-content/themes/maren_mif/images/maren-logo.png",
     "name": "MAREN",
@@ -1754,7 +1767,6 @@
     "url": "http://home.trc.gov.om/tabid/601/language/en-US/Default.aspx"
   },
   "omren": {
-    "active": false,
     "alt_ids": {
       "edugain": "OMREN",
       "met": "omren-federation"
@@ -1772,7 +1784,7 @@
     "name": "OMREN Federation",
     "sources": {
       "default": {
-        "url": "https://omren.om/omrenfed.xml"
+        "url": "https://fed.omren.om/OMREN_export.xml"
       }
     },
     "structure": "mesh",
@@ -1876,7 +1888,7 @@
       "edugain"
     ],
     "logo": "https://rafiki.ke/sites/default/files/Rafiki10_0.png",
-    "name": "RAFIKI",
+    "name": "Kenyan Identity Federation (RAFIKI)",
     "policy": "https://rafiki.ke/sites/default/files/2022-01/RAFIKI_Identity_Federation_Policy.pdf",
     "sources": {
       "default": {
@@ -1919,8 +1931,6 @@
     "url": "https://eduid.rash.al/"
   },
   "rctsaai": {
-    "active": false,
-    "comment": "Certificate error of some sort, may need options",
     "alt_ids": {
       "edugain": "RCTSAAI",
       "met": "rctsaai-federation"
@@ -1976,8 +1986,6 @@
     "url": "https://id.ricerka.net.mt/"
   },
   "rif": {
-    "active": false,
-    "comment": "Bad TLS, missing CR data somehow",
     "alt_ids": {
       "edugain": "RIF",
       "met": "ricerkanet-identity-federation"
@@ -2106,7 +2114,9 @@
     "policy": "https://safire.ac.za/safire/policy/participation/",
     "sources": {
       "default": {
-        "url": "https://safire.ac.za/technical/metadata"
+        "url": "https://metadata.safire.ac.za/safire-hub-metadata.xml",
+        "cert_fingerprint": "FF:EF:5D:8E:AA:12:EA:5D:A1:81:4F:48:02:F3:07:22:4A:7D:FA:05",
+        "cert_url": "https://metadata.safire.ac.za/safire-metadata.crt"
       }
     },
     "structure": "has",
@@ -2221,7 +2231,9 @@
     "policy": "http://www.rediris.es/sir/docs/idp_conditions_use_1.0_20080220.pdf",
     "sources": {
       "default": {
-        "url": "http://www.rediris.es/sir/metadata.html.en"
+        "url": "https://www.rediris.es/sir/shib1metadata.xml",
+        "cert_url": "https://www.rediris.es/sir/metadata.sir.rediris.es.pem",
+        "cert_fingerprint": "e7d788530a2e67668520fa43730cd70e5eef0673"
       }
     },
     "structure": "has",
@@ -2283,7 +2295,9 @@
       }
     },
     "structure": "mesh",
-    "tags": [],
+    "tags": [
+      "noSlow"
+    ],
     "type": "nren",
     "uri": "http://www.swamid.se/",
     "url": "https://www.sunet.se/swamid/"
@@ -2384,7 +2398,6 @@
     "descriptions": {},
     "displaynames": {},
     "interfederates": [
-      "edugain"
     ],
     "logo": null,
     "name": "TARENA Identity Federation",
@@ -2401,7 +2414,6 @@
     "url": "https://tidf.tj/"
   },
   "tigerfed": {
-    "active": false,
     "comment": "Certificate expired",
     "alt_ids": {
       "edugain": "TIGERFED"
