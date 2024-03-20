@@ -10,6 +10,8 @@ defmodule Mix.Tasks.SmeeFeds.Gen.DataTests do
     IO.puts "Building basic compatibility test files..."
 
     SmeeFeds.federations()
+    |> SmeeFeds.Filter.tag("noSlow", false)
+    |> SmeeFeds.Filter.tag("noTest", false)
     |> Enum.each(
          fn federation ->
 
@@ -36,7 +38,7 @@ defmodule Mix.Tasks.SmeeFeds.Gen.DataTests do
 
                describe "default aggregate metadata url" do
 
-                @tag timeout: 60_000
+                @tag timeout: 30_000
                 test "URL for #{fed_id} aggregate responds to requests" do
                   url = SmeeFeds.federation(:#{fed_id})
                          |> Federation.aggregate()
@@ -45,16 +47,14 @@ defmodule Mix.Tasks.SmeeFeds.Gen.DataTests do
                    assert Audit.resource_present?(url)
                  end
 
-                 @tag timeout: 60_000
+                @tag timeout: 440_000
                  test "can download the metadata from #{fed_id}" do
 
-                  url = SmeeFeds.federation(:#{fed_id})
+                  md = SmeeFeds.federation(:#{fed_id})
                          |> Federation.aggregate()
-                         |> Map.get(:url)
+                         |> Smee.fetch!()
 
-                      response = Req.get!(url)
-
-                      assert %{status: 200} = response
+                      assert %Smee.Metadata{} = md
 
                  end
 
