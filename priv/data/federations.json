@@ -1163,7 +1163,7 @@
       }
     },
     "structure": "mesh",
-    "tags": [],
+    "tags": ["noTest"],
     "type": "nren",
     "uri": "https://mtd.gif.grena.ge",
     "url": "http://gif.grena.ge/"
@@ -1952,7 +1952,7 @@
       }
     },
     "structure": "mesh",
-    "tags": [],
+    "tags": ["noTest"],
     "type": "nren",
     "uri": "https://www.fccn.pt",
     "url": "https://www.fccn.pt/seguranca/rcts-aai/"
@@ -2008,7 +2008,7 @@
       }
     },
     "structure": "mesh",
-    "tags": [],
+    "tags": ["noTest"],
     "type": "nren",
     "uri": "https://www.renu.ac.ug",
     "url": "https://rif.renu.ac.ug/"
