@@ -29,3 +29,4 @@ smee_feds-*.tar
 /api\?action=edugain_status
 
 /scratch/*
+/*.xml
