@@ -860,7 +860,7 @@
       }
     },
     "structure": "mesh",
-    "tags": [],
+    "tags": ["noTest"],
     "type": "nren",
     "uri": "https://www.eduid.ng",
     "url": "https://www.eduid.ng/"
