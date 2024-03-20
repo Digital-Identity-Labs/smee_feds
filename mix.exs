@@ -4,7 +4,7 @@ defmodule SmeeFeds.MixProject do
   def project do
     [
       app: :smee_feds,
-      version: "0.3.0",
+      version: "0.3.1",
       elixir: "~> 1.14",
       description: "A SAML federation extension for Smee, with example data",
       package: package(),
