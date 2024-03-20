@@ -9,13 +9,16 @@ defmodule SmeeFedsFilterTest do
     test "by default only returns federations in the EU" do
       assert [
                :aaieduhr,
+               :aconet,
                :arnesaai,
+               :belnet,
                :bif,
                :cynet,
                :dfnaai,
                :edugate,
                :eduidcz,
                :eduidhu,
+               :eduidlu,
                :fer,
                :grnet,
                :haka,
@@ -23,6 +26,7 @@ defmodule SmeeFedsFilterTest do
                :laife,
                :litnet,
                :pionier,
+               :rctsaai,
                :ricerka,
                :roedunetid,
                :safeid,
@@ -57,10 +61,10 @@ defmodule SmeeFedsFilterTest do
 
     test "Only returns federations in the specified region" do
 
-      assert [:eduidmma, :eduidng, :rafiki, :safire] = SmeeFeds.federations
-                                                       |> Filter.region("Africa")
-                                                       |> SmeeFeds.ids()
-                                                       |> Enum.sort()
+      assert [:eduidmma, :eduidng, :fidern, :rafiki, :rif, :safire] = SmeeFeds.federations
+                                                                      |> Filter.region("Africa")
+                                                                      |> SmeeFeds.ids()
+                                                                      |> Enum.sort()
 
     end
 
@@ -111,6 +115,7 @@ defmodule SmeeFedsFilterTest do
                :sgaf,
                :sifulan,
                :thaildf,
+               :tigerfed,
                :tuakiri
              ] = SmeeFeds.federations
                  |> Filter.super_region("APAC")
@@ -131,18 +136,30 @@ defmodule SmeeFedsFilterTest do
   describe "id_type/3" do
 
     test "only returns federations with an ID of the specified type" do
-      assert 57 = SmeeFeds.federations
+      assert 65 = SmeeFeds.federations
                   |> Filter.id_type(:met)
                   |> Enum.count()
     end
 
     test "inverts the results if false is passed" do
-      assert [:bif, :cynet, :eduidafrica, :eduidng, :federasi, :fiel, :iamres, :rash, :thaildf] = SmeeFeds.federations
-                                                                                                  |> Filter.id_type(
-                                                                                                       :met,
-                                                                                                       false
-                                                                                                     )
-                                                                                                  |> SmeeFeds.ids()
+      assert [
+               :bif,
+               :cynet,
+               :eduidafrica,
+               :eduidlu,
+               :eduidng,
+               :federasi,
+               :fiel,
+               :iamres,
+               :rash,
+               :thaildf,
+               :tigerfed
+             ] = SmeeFeds.federations
+                 |> Filter.id_type(
+                      :met,
+                      false
+                    )
+                 |> SmeeFeds.ids()
     end
 
   end
@@ -150,13 +167,13 @@ defmodule SmeeFedsFilterTest do
   describe "type/3" do
 
     test "only returns federations with an type of the specified type" do
-      assert 65 = SmeeFeds.federations
+      assert 74 = SmeeFeds.federations
                   |> Filter.type(:nren)
                   |> Enum.count()
     end
 
     test "inverts the results if false is passed" do
-      assert 1 = SmeeFeds.federations
+      assert 2 = SmeeFeds.federations
                  |> Filter.type(:nren, false)
                  |> Enum.count()
     end
@@ -183,7 +200,7 @@ defmodule SmeeFedsFilterTest do
     end
 
     test "inverts the results if false is passed" do
-      assert 56 = SmeeFeds.federations
+      assert 66 = SmeeFeds.federations
                   |> Filter.structure(:has, false)
                   |> Enum.count()
     end
@@ -211,7 +228,7 @@ defmodule SmeeFedsFilterTest do
     end
 
     test "inverts the results if false is passed" do
-      assert 56 = SmeeFeds.federations()
+      assert 66 = SmeeFeds.federations()
                   |> SmeeFeds.autotag!()
                   |> Filter.tag("has", false)
                   |> Enum.count()
@@ -222,7 +239,7 @@ defmodule SmeeFedsFilterTest do
   describe "protocol/3" do
 
     test "only returns federations with a matching protocol" do
-      assert 66 = SmeeFeds.federations
+      assert 76 = SmeeFeds.federations
                   |> Filter.protocol(:saml2)
                   |> Enum.count()
       assert 0 = SmeeFeds.federations
@@ -231,7 +248,7 @@ defmodule SmeeFedsFilterTest do
     end
 
     test "inverts the results if false is passed" do
-      assert 66 = SmeeFeds.federations
+      assert 76 = SmeeFeds.federations
                   |> Filter.protocol(:cas, false)
                   |> Enum.count()
     end
@@ -241,13 +258,13 @@ defmodule SmeeFedsFilterTest do
   describe "interfederates/3" do
 
     test "only returns federations interfederating with the specified federation ID" do
-      assert 64 = SmeeFeds.federations
+      assert 72 = SmeeFeds.federations
                   |> Filter.interfederates(:edugain)
                   |> Enum.count()
     end
 
     test "inverts the results if false is passed" do
-      assert 2 = SmeeFeds.federations
+      assert 4 = SmeeFeds.federations
                  |> Filter.interfederates(:edugain, false)
                  |> Enum.count()
     end
@@ -257,7 +274,7 @@ defmodule SmeeFedsFilterTest do
   describe "aggregate/3" do
 
     test "only returns federations that provide an aggregate" do
-      assert 66 = SmeeFeds.federations
+      assert 76 = SmeeFeds.federations
                   |> Filter.aggregate()
                   |> Enum.count()
     end
@@ -279,7 +296,7 @@ defmodule SmeeFedsFilterTest do
     end
 
     test "inverts the results if false is passed" do
-      assert 63 = SmeeFeds.federations
+      assert 73 = SmeeFeds.federations
                   |> Filter.mdq(false)
                   |> Enum.count()
     end

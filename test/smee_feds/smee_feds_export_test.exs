@@ -25,8 +25,8 @@ defmodule SmeeFedsExportTest do
                  "Australian Access Federation (AAF)",
                  "http://www.aaf.edu.au/",
                  "AU",
-                 "https://aaf.edu.au/about/federation-rules.html",
-                 "support@aaf.edu.au",
+                 "https://aaf.edu.au/support/resources/",
+                 "enquiries@aaf.edu.au",
                  "https://md.aaf.edu.au/aaf-metadata.xml",
                  ""
                ],
@@ -86,7 +86,8 @@ defmodule SmeeFedsExportTest do
   describe "dd_json_file!/1" do
 
     @tag :tmp_dir
-    test "writes the specified federations as a JSON formatted file if passed a path and list of federations, returning :ok", %{tmp_dir: tmp_dir} do
+    test "writes the specified federations as a JSON formatted file if passed a path and list of federations, returning :ok",
+         %{tmp_dir: tmp_dir} do
 
       filepath = "#{tmp_dir}/test.json"
       federations = SmeeFeds.federations([:ukamf, :incommon])
@@ -134,7 +135,8 @@ defmodule SmeeFedsExportTest do
   describe "json_file!/1" do
 
     @tag :tmp_dir
-    test "writes the specified federations as a JSON formatted file if passed a path and list of federations, returning :ok", %{tmp_dir: tmp_dir} do
+    test "writes the specified federations as a JSON formatted file if passed a path and list of federations, returning :ok",
+         %{tmp_dir: tmp_dir} do
 
       filepath = "#{tmp_dir}/test.json"
       federations = SmeeFeds.federations([:ukamf, :incommon])

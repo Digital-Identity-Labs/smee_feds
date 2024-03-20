@@ -268,7 +268,7 @@ defmodule SmeeFedsTest do
   describe "types/1" do
 
     test "returns a list of all types used in the provided federation list" do
-      assert [:inter, :nren] = SmeeFeds.types(@federations_list)
+      assert [:inter, :misc, :nren] = SmeeFeds.types(@federations_list)
     end
 
   end
@@ -308,7 +308,7 @@ defmodule SmeeFedsTest do
   describe "tags/1" do
 
     test "returns a list of all tags used in the provided federation list" do
-      assert [] = SmeeFeds.tags(@federations_list)
+      assert ["noSlow", "noTest"] = SmeeFeds.tags(@federations_list)
     end
 
   end
@@ -346,8 +346,13 @@ defmodule SmeeFedsTest do
   describe "autotag!/2" do
 
     test "runs autotag! on each federation in the enumerable" do
-      assert 0 = SmeeFeds.federations() |> SmeeFeds.tags() |> Enum.count()
-      assert 132 = SmeeFeds.federations() |> SmeeFeds.autotag!() |> SmeeFeds.tags() |> Enum.count()
+      assert 2 = SmeeFeds.federations()
+                 |> SmeeFeds.tags()
+                 |> Enum.count()
+      assert 154 = SmeeFeds.federations()
+                   |> SmeeFeds.autotag!()
+                   |> SmeeFeds.tags()
+                   |> Enum.count()
     end
 
   end

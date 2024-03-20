@@ -58,7 +58,7 @@ defmodule SmeeFeds do
   ## Example
       iex> federations = SmeeFeds.federations()
       iex> Enum.count(federations)
-      66
+      76
   """
   @spec federations() :: list(Federation.t())
   def federations() do
@@ -102,7 +102,7 @@ defmodule SmeeFeds do
   ## Example
        iex> ids = SmeeFeds.ids(SmeeFeds.federations())
        iex> Enum.slice(ids, 0..3)
-       [:aaf, :aaieduhr, :aaiedumk, :afire]
+       [:aaf, :aaieduhr, :aaiedumk, :aconet]
   """
   @spec ids(federations :: list()) :: list(atom())
   def ids(federations) do
@@ -277,7 +277,7 @@ defmodule SmeeFeds do
   ## Examples
 
       iex> SmeeFeds.federations() |> SmeeFeds.types()
-      [:inter, :nren]
+      [:inter, :misc, :nren]
   """
   @spec types(federations :: list(Federation.t())) :: list(atom())
   def types(federations) do
@@ -331,7 +331,7 @@ defmodule SmeeFeds do
   ## Examples
 
       iex> SmeeFeds.federations() |> SmeeFeds.tags()
-      []
+      ["noSlow", "noTest"]
   """
   @spec tags(federations :: list(Federation.t())) :: list(atom())
   def tags(federations) do
