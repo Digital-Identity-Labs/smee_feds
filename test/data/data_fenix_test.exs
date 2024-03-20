@@ -1,4 +1,4 @@
-  defmodule DataSwamidTest do
+  defmodule DataFenixTest do
     use ExUnit.Case, async: false
 
     @moduletag :data
@@ -13,25 +13,23 @@
 
     describe "default aggregate metadata url" do
 
-     @tag timeout: 60_000
-     test "URL for swamid aggregate responds to requests" do
-       url = SmeeFeds.federation(:swamid)
+     @tag timeout: 30_000
+     test "URL for fenix aggregate responds to requests" do
+       url = SmeeFeds.federation(:fenix)
               |> Federation.aggregate()
               |> Map.get(:url)
 
         assert Audit.resource_present?(url)
       end
 
-      @tag timeout: 60_000
-      test "can download the metadata from swamid" do
+     @tag timeout: 440_000
+      test "can download the metadata from fenix" do
 
-       url = SmeeFeds.federation(:swamid)
+       md = SmeeFeds.federation(:fenix)
               |> Federation.aggregate()
-              |> Map.get(:url)
+              |> Smee.fetch!()
 
-           response = Req.get!(url)
-
-           assert %{status: 200} = response
+           assert %Smee.Metadata{} = md
 
       end
 

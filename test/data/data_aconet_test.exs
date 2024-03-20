@@ -1,4 +1,4 @@
-  defmodule DataBifTest do
+  defmodule DataAconetTest do
     use ExUnit.Case, async: false
 
     @moduletag :data
@@ -14,8 +14,8 @@
     describe "default aggregate metadata url" do
 
      @tag timeout: 30_000
-     test "URL for bif aggregate responds to requests" do
-       url = SmeeFeds.federation(:bif)
+     test "URL for aconet aggregate responds to requests" do
+       url = SmeeFeds.federation(:aconet)
               |> Federation.aggregate()
               |> Map.get(:url)
 
@@ -23,9 +23,9 @@
       end
 
      @tag timeout: 440_000
-      test "can download the metadata from bif" do
+      test "can download the metadata from aconet" do
 
-       md = SmeeFeds.federation(:bif)
+       md = SmeeFeds.federation(:aconet)
               |> Federation.aggregate()
               |> Smee.fetch!()
 

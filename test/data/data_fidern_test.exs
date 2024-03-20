@@ -1,4 +1,4 @@
-  defmodule DataGifTest do
+  defmodule DataFidernTest do
     use ExUnit.Case, async: false
 
     @moduletag :data
@@ -13,25 +13,23 @@
 
     describe "default aggregate metadata url" do
 
-     @tag timeout: 60_000
-     test "URL for gif aggregate responds to requests" do
-       url = SmeeFeds.federation(:gif)
+     @tag timeout: 30_000
+     test "URL for fidern aggregate responds to requests" do
+       url = SmeeFeds.federation(:fidern)
               |> Federation.aggregate()
               |> Map.get(:url)
 
         assert Audit.resource_present?(url)
       end
 
-      @tag timeout: 60_000
-      test "can download the metadata from gif" do
+     @tag timeout: 440_000
+      test "can download the metadata from fidern" do
 
-       url = SmeeFeds.federation(:gif)
+       md = SmeeFeds.federation(:fidern)
               |> Federation.aggregate()
-              |> Map.get(:url)
+              |> Smee.fetch!()
 
-           response = Req.get!(url)
-
-           assert %{status: 200} = response
+           assert %Smee.Metadata{} = md
 
       end
 

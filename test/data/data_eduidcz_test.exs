@@ -13,7 +13,7 @@
 
     describe "default aggregate metadata url" do
 
-     @tag timeout: 60_000
+     @tag timeout: 30_000
      test "URL for eduidcz aggregate responds to requests" do
        url = SmeeFeds.federation(:eduidcz)
               |> Federation.aggregate()
@@ -22,16 +22,14 @@
         assert Audit.resource_present?(url)
       end
 
-      @tag timeout: 60_000
+     @tag timeout: 440_000
       test "can download the metadata from eduidcz" do
 
-       url = SmeeFeds.federation(:eduidcz)
+       md = SmeeFeds.federation(:eduidcz)
               |> Federation.aggregate()
-              |> Map.get(:url)
+              |> Smee.fetch!()
 
-           response = Req.get!(url)
-
-           assert %{status: 200} = response
+           assert %Smee.Metadata{} = md
 
       end
 
