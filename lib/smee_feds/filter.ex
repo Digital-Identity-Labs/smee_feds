@@ -167,7 +167,7 @@ defmodule SmeeFeds.Filter do
 
   The filter is positive by default but can be inverted by specifying `false`
   """
-  @spec tag(enum :: Enumerable.t(), tag :: atom(), bool :: boolean) :: Enumerable.t()
+  @spec tag(enum :: Enumerable.t(), tag :: binary(), bool :: boolean) :: Enumerable.t()
   def tag(enum, tag, bool \\ true) do
     enum
     |> Enum.filter(
