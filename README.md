@@ -20,6 +20,7 @@ collection of information about research and education federations.
 * Use federation records directly with Smee to download metadata from aggregates or MDQ servers
 * Export lists of federation information as CSV, JSON or Markdown documents
 * Manage and load federation data into your applications
+* Includes over 70 research and education federations' details for use in tests
 
 The top level `SmeeFeds` module has tools for selecting individual federation details or lists of many at once.
 SmeeFeds contain more tools for handling federations, such as:
@@ -164,7 +165,7 @@ by adding `smee_feds` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:smee_feds, "~> 0.3.0"}
+    {:smee_feds, "~> 0.3.1"}
   ]
 end
 ```
