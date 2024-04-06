@@ -426,10 +426,37 @@
       }
     },
     "structure": "mesh",
-    "tags": ["noSlow"],
+    "tags": [
+      "noSlow"
+    ],
     "type": "nren",
     "uri": "https://www.carsi.edu.cn",
     "url": "http://www.carsi.edu.cn/"
+  },
+  "clarin": {
+    "alt_ids": {},
+    "contact": "spf@clarin.eu",
+    "countries": [
+    ],
+    "descriptions": {},
+    "displaynames": {},
+    "interfederates": [],
+    "logo": "https://www.clarin.eu/themes/contrib/clarin_bootstrap/logo.svg",
+    "name": "Clarin",
+    "sources": {
+      "default": {
+        "url": "https://infra.clarin.eu/aai/prod_md_about_clarin_erics_idp.xml"
+      },
+      "idps": {
+        "url": "https://infra.clarin.eu/aai/prod_md_about_spf_idps.xml"
+      }
+    },
+    "structure": "mesh",
+    "tags": [],
+    "type": "research",
+    "policy": "https://www.clarin.eu/content/pan-european-spf-agreement",
+    "uri": "http://www.clarin.eu",
+    "url": "https://www.clarin.eu/"
   },
   "cofre": {
     "alt_ids": {
@@ -440,8 +467,10 @@
     "countries": [
       "cl"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -468,8 +497,10 @@
     "countries": [
       "co"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -495,8 +526,10 @@
     "countries": [
       "cn"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -522,8 +555,10 @@
     "countries": [
       "cy"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -551,8 +586,10 @@
     "countries": [
       "de"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -599,8 +636,10 @@
     },
     "contact": "support@edugain.org",
     "countries": [],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [],
     "logo": "https://edugain.org/wp-content/uploads/2017/06/header_logo_small-1.gif",
     "name": "Edugain",
@@ -627,8 +666,10 @@
     "countries": [
       "ie"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -655,8 +696,10 @@
     "contact": "eduid-operations@ren.africa",
     "countries": [
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -685,8 +728,10 @@
     "countries": [
       "bf"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
     ],
     "logo": null,
@@ -713,8 +758,10 @@
     "countries": [
       "cz"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -741,8 +788,10 @@
     "countries": [
       "hu"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -770,8 +819,10 @@
     "countries": [
       "lu"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -798,7 +849,8 @@
     "countries": [
       "me"
     ],
-    "descriptions": {},
+    "descriptions": {
+    },
     "displaynames": {
       "en": "Montenegrin Research and Education Network "
     },
@@ -844,8 +896,10 @@
     "countries": [
       "ng"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -860,7 +914,9 @@
       }
     },
     "structure": "mesh",
-    "tags": ["noTest"],
+    "tags": [
+      "noTest"
+    ],
     "type": "nren",
     "uri": "https://www.eduid.ng",
     "url": "https://www.eduid.ng/"
@@ -874,8 +930,10 @@
     "countries": [
       "tg"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
     ],
     "logo": null,
@@ -895,8 +953,10 @@
     "countries": [
       "ru"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [],
     "logo": null,
     "name": "φEDUrus AAI",
@@ -922,8 +982,10 @@
     "countries": [
       "by"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -948,8 +1010,10 @@
     "countries": [
       "id"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
     ],
     "logo": "https://federasi.id/wp-content/uploads/2020/09/cropped-Logo-Federasi-Small.png",
@@ -978,8 +1042,10 @@
     "countries": [
       "no"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1007,8 +1073,10 @@
     "countries": [
       "mx"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1035,8 +1103,10 @@
     "countries": [
       "fr"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1063,8 +1133,10 @@
     "countries": [
       "zm"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1090,8 +1162,10 @@
     "countries": [
       "mx"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1120,8 +1194,10 @@
     "countries": [
       "jp"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1148,8 +1224,10 @@
     "countries": [
       "ge"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1163,7 +1241,9 @@
       }
     },
     "structure": "mesh",
-    "tags": ["noTest"],
+    "tags": [
+      "noTest"
+    ],
     "type": "nren",
     "uri": "https://mtd.gif.grena.ge",
     "url": "http://gif.grena.ge/"
@@ -1179,8 +1259,10 @@
     "countries": [
       "it"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1209,8 +1291,10 @@
     "countries": [
       "gr"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1237,8 +1321,10 @@
     "countries": [
       "fi"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1266,8 +1352,10 @@
       "hk",
       "cn"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1293,8 +1381,10 @@
     "countries": [
       "rs"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1323,8 +1413,10 @@
     "countries": [
       "it"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1352,8 +1444,10 @@
     "countries": [
       "us"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1386,8 +1480,10 @@
     "countries": [
       "in"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1414,8 +1510,10 @@
     "countries": [
       "ir"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1442,8 +1540,10 @@
     "countries": [
       "il"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1470,8 +1570,10 @@
     "countries": [
       "kr"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1498,8 +1600,10 @@
     "countries": [
       "kg"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1526,8 +1630,10 @@
     "countries": [
       "lv"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1556,8 +1662,10 @@
     "countries": [
       "md"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1584,8 +1692,10 @@
     "countries": [
       "lk"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1615,8 +1725,10 @@
     "countries": [
       "lb"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
     ],
     "logo": "https://sites.aub.edu.lb/life/files/2017/01/lifelogo.jpg",
@@ -1641,8 +1753,10 @@
     "countries": [
       "lt"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1670,8 +1784,10 @@
     "countries": [
       "mw"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
     ],
     "logo": "https://mif.maren.ac.mw/wp-content/themes/maren_mif/images/maren-logo.png",
@@ -1691,8 +1807,10 @@
     "countries": [
       "ar"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1719,8 +1837,10 @@
     "countries": [
       "ec"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1747,8 +1867,10 @@
     "countries": [
       "om"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1775,8 +1897,10 @@
     "countries": [
       "om"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1801,8 +1925,10 @@
     "countries": [
       "ua"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1828,8 +1954,10 @@
     "countries": [
       "pl"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1855,8 +1983,10 @@
     "countries": [
       "pk"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1882,8 +2012,10 @@
     "countries": [
       "ke"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1909,8 +2041,10 @@
     "countries": [
       "al"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1939,8 +2073,10 @@
     "countries": [
       "pt"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1952,7 +2088,9 @@
       }
     },
     "structure": "mesh",
-    "tags": ["noTest"],
+    "tags": [
+      "noTest"
+    ],
     "type": "nren",
     "uri": "https://www.fccn.pt",
     "url": "https://www.fccn.pt/seguranca/rcts-aai/"
@@ -1966,8 +2104,10 @@
     "countries": [
       "mt"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -1994,8 +2134,10 @@
     "countries": [
       "ug"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2008,7 +2150,9 @@
       }
     },
     "structure": "mesh",
-    "tags": ["noTest"],
+    "tags": [
+      "noTest"
+    ],
     "type": "nren",
     "uri": "https://www.renu.ac.ug",
     "url": "https://rif.renu.ac.ug/"
@@ -2022,8 +2166,10 @@
     "countries": [
       "ro"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2050,8 +2196,10 @@
     "countries": [
       "ru"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [],
     "logo": null,
     "name": "RUNNET AAI",
@@ -2076,8 +2224,10 @@
     "countries": [
       "sk"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2104,8 +2254,10 @@
     "countries": [
       "za"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2135,8 +2287,10 @@
     "countries": [
       "sa"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2165,8 +2319,10 @@
     "countries": [
       "sg"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2193,8 +2349,10 @@
     "countries": [
       "my"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2221,8 +2379,10 @@
     "countries": [
       "es"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2251,8 +2411,10 @@
     "countries": [
       "nl"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2281,8 +2443,10 @@
     "countries": [
       "se"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2311,8 +2475,10 @@
     "countries": [
       "ch"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2339,8 +2505,10 @@
     "countries": [
       "ee"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2366,8 +2534,10 @@
     "countries": [
       "th"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2395,8 +2565,10 @@
     "countries": [
       "tj"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
     ],
     "logo": null,
@@ -2422,8 +2594,10 @@
     "countries": [
       "bd"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2451,8 +2625,10 @@
     "countries": [
       "nz"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2480,8 +2656,10 @@
     "countries": [
       "gb"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2516,8 +2694,10 @@
     "countries": [
       "dk"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
@@ -2543,8 +2723,10 @@
     "countries": [
       "tr"
     ],
-    "descriptions": {},
-    "displaynames": {},
+    "descriptions": {
+    },
+    "displaynames": {
+    },
     "interfederates": [
       "edugain"
     ],
