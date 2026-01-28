@@ -217,7 +217,7 @@ defmodule SmeeFeds do
     |> Enum.flat_map(fn f -> Map.get(f, :countries, []) end)
     |> Enum.uniq()
     |> Enum.sort()
-    |> Enum.map(fn code -> Countries.get(code) end)
+    |> Enum.map(fn code -> BeamLabCountries.get(code) end)
   end
 
   @doc """

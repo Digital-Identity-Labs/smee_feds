@@ -17,6 +17,8 @@ Mostly a bugfix release, but with updated dependencies that *may* cause issues a
 * De-active SGAF since it seems to refuse connections from Smee
 * Added CLARIN federation
 * Fix metadata URL for TigerFed
+* ugh_brexit!()
+* BeamLabCountries.Country
 
 ### Breaking Changes (maybe)
 * Default Federation type is now :unknown, not :local

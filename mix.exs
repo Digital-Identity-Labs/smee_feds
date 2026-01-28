@@ -38,7 +38,7 @@ defmodule SmeeFeds.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:countries, "~> 1.6"},
+      {:beamlab_countries, "~> 1.0"},
       {:smee, "~>  0.6"},
       {:jason, "~> 1.4"},
       {:csv, "~> 3.2"},

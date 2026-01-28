@@ -287,8 +287,7 @@ defmodule SmeeFeds.Federation do
 
   def countries(federation) do
     Map.get(federation, :countries, [])
-    |> Enum.map(fn code -> Countries.get(code) end)
-    |> ugh_brexit!()
+    |> Enum.map(fn code -> BeamLabCountries.get(code) end)
   end
 
   @doc """
@@ -470,23 +469,6 @@ defmodule SmeeFeds.Federation do
          fn code -> "#{code}"
                     |> String.trim()
                     |> String.upcase()
-         end
-       )
-  end
-
-  @spec ugh_brexit!(countries :: list()) :: list()
-  defp ugh_brexit!(countries) do
-    countries
-    |> Enum.map(
-         fn country ->
-           if country.alpha2 == "GB", do: Map.merge(
-             country,
-             %{
-               eea_member: false,
-               eu_member: false
-             }
-           ),
-                                      else: country
          end
        )
   end

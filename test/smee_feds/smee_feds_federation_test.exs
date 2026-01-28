@@ -4,7 +4,7 @@ defmodule SmeeFedsFederationTest do
 
   alias SmeeFeds.Federation
   alias Smee.Source
-  alias Countries.Country
+  alias BeamLabCountries.Country
 
   describe "new/2" do
 

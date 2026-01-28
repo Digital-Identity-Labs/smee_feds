@@ -4,7 +4,7 @@ defmodule SmeeFedsTest do
 
   alias SmeeFeds
   alias SmeeFeds.Federation
-  alias Countries.Country
+  alias BeamLabCountries.Country
   alias Smee.Source
   alias Smee.Metadata
 

@@ -42,8 +42,8 @@ defmodule SmeeFedsDefaultDataTest do
 
   describe "Brexit (without swearing)" do
 
-    test "UK is no longer part of the EU but Countries library hasn't been updated, so manually fixed" do
-      assert %Countries.Country{eu_member: false} = Map.get(DefaultData.federations(), :ukamf)
+    test "UK is no longer part of the EU but Countries library hasn't been updated, so manually fixed (now fixed by changing library)" do
+      assert %BeamLabCountries.Country{eu_member: false} = Map.get(DefaultData.federations(), :ukamf)
                                                     |> Federation.countries()
                                                     |> List.first()
     end
