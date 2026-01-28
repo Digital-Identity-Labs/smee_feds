@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.4.0] - 2026-01-28
 
 * Update development tooling to latest Elixir and Erlang (1.19 / 28)
+* Update deps
+* 
 
 ## [0.3.1] - 2024-03-21
 

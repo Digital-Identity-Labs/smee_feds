@@ -4,7 +4,7 @@ defmodule SmeeFeds.MixProject do
   def project do
     [
       app: :smee_feds,
-      version: "0.3.1",
+      version: "0.4.0",
       elixir: "~> 1.14",
       description: "A SAML federation extension for Smee, with example data",
       package: package(),
@@ -45,23 +45,24 @@ defmodule SmeeFeds.MixProject do
   defp deps do
     [
       {:countries, "~> 1.6"},
-      {:smee, "~> 0.4"},
+      {:smee, "~>  0.6"},
       {:jason, "~> 1.4"},
       {:csv, "~> 3.2"},
       {:rambo, "~> 0.3.4"}, # temporary fix
-      {:ex_json_schema, "~> 0.9.2"},
+      {:ex_json_schema, "~> 0.11.2"},
       {:nimble_options, "~> 1.1"},
-      {:req, "~> 0.4"},
+      {:req, "~> 0.5"},
 
       {:apex, "~> 1.2", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.14 and >= 0.14.4", only: [:dev, :test]},
       {:benchee, "~> 1.3", only: [:dev, :test]},
-      {:ex_doc, "~> 0.31", only: :dev, runtime: false},
-      {:earmark, "~> 1.4", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.40.0"},
+      {:earmark, "~> 1.4", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false},
       {:doctor, "~> 0.21", only: :dev, runtime: false},
-      {:table_rex, "~> 4.0"}
+      {:json_comparator, "~> 1.0", only: :test, runtime: false},
+      {:table_rex, "~> 4.1"}
     ]
   end
 
@@ -75,13 +76,17 @@ defmodule SmeeFeds.MixProject do
   end
 
   defp aliases() do
-      [
-        "test.data": ["test --trace --include data test/data/"]
-      ]
+    [
+      "test.data": ["test --trace --include data test/data/"]
+    ]
   end
 
   def cli do
-    [preferred_envs:  ["test.data": :test]]
+    [
+      preferred_envs: [
+        "test.data": :test
+      ]
+    ]
   end
 
   # Specifies which paths to compile per environment.
