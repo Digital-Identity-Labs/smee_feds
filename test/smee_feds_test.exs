@@ -268,7 +268,7 @@ defmodule SmeeFedsTest do
   describe "types/1" do
 
     test "returns a list of all types used in the provided federation list" do
-      assert [:inter, :misc, :nren] = SmeeFeds.types(@federations_list)
+      assert [:inter, :misc, :nren, :research] = SmeeFeds.types(@federations_list)
     end
 
   end
@@ -349,7 +349,7 @@ defmodule SmeeFedsTest do
       assert 2 = SmeeFeds.federations()
                  |> SmeeFeds.tags()
                  |> Enum.count()
-      assert 154 = SmeeFeds.federations()
+      assert 156 = SmeeFeds.federations()
                    |> SmeeFeds.autotag!()
                    |> SmeeFeds.tags()
                    |> Enum.count()

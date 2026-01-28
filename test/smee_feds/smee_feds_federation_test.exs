@@ -33,7 +33,8 @@ defmodule SmeeFedsFederationTest do
                interfederates: [],
                logo: nil,
                structure: :mesh,
-               type: :local,
+               type: :unknown,
+               local: false,
                protocols: [:saml2]
              } = Federation.new(:example)
     end
@@ -227,14 +228,14 @@ defmodule SmeeFedsFederationTest do
     end
 
     test "if autotag option is set to true, tags are added to the federation" do
-      assert %Federation{tags: ["boop", "local", "mesh", "test"]} = Federation.new(:test, autotag: true, tags: ["boop"])
+      assert %Federation{tags: ["boop", "mesh", "test"]} = Federation.new(:test, autotag: true, tags: ["boop"])
     end
 
     test "if autotag option is set to true, tags are added to the federation's sources too" do
       assert %Federation{
                sources: %{
                  default: %Source{
-                   tags: ["aggregate", "local", "mesh", "test"]
+                   tags: ["aggregate", "mesh", "test"]
                  }
                }
              } = Federation.new(
@@ -368,7 +369,7 @@ defmodule SmeeFedsFederationTest do
   end
 
   describe "Protocol Jason Encoder" do
-    assert "{\"id\":\"ukamf\",\"name\":\"UK Access Management Federation\"" <> _ =
+    assert "{\"id\":\"ukamf\",\"local\":false,\"name\":\"UK Access Management Federation\"" <> _ =
              Jason.encode!(SmeeFeds.federation(:ukamf))
   end
 

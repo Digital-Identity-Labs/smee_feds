@@ -8,6 +8,7 @@ defmodule SmeeFeds.Federation do
   alias Smee.Source
 
   @fed_types [:nren, :research, :inter, :misc, :mil, :com, :bilateral, :unknown]
+  @fed_types @fed_types ++ Enum.map(@fed_types, fn a -> to_string(a) end)
 
   @enforce_keys [:id]
 
@@ -58,8 +59,8 @@ defmodule SmeeFeds.Federation do
   @option_defs NimbleOptions.new!(
                  [
                    type: [
-                     type: {:or, [:string, :atom]},
-                     default: :local
+                     type: {:in, @fed_types},
+                     default: :unknown
                    ],
                    structure: [
                      type: {:or, [:string, :atom]},
@@ -376,16 +377,17 @@ defmodule SmeeFeds.Federation do
   @spec autotag!(federation :: Federation.t(), _options :: keyword()) :: Federation.t()
   def autotag!(federation, _options \\ []) do
     original_tags = tags(federation)
-    attr_tags = [federation.structure, federation.type, federation.id]
+    attr_tags = [to_string(federation.structure), to_string(federation.type), to_string(federation.id)]
     c_tags = federation.countries
     f_tags = (original_tags ++ attr_tags ++ c_tags)
+             |> List.delete("unknown")
              |> Smee.Utils.tidy_tags()
              |> Enum.uniq() # TODO: Bug in Smee?
 
     sources = federation.sources
               |> Enum.map(
                    fn {k, s} ->
-                     s_tags = (s.tags ++ [s.type] ++ f_tags)
+                     s_tags = (s.tags ++ [to_string(s.type)] ++ f_tags)
                               |> Smee.Utils.tidy_tags()
                               |> Enum.uniq() # TODO: Bug in Smee?
                      {k, %{s | tags: s_tags, local: federation.local, bilateral: if(federation.type == :bilateral, do: true, else: false)}}
