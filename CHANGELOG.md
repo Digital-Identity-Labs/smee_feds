@@ -8,22 +8,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Mostly a bugfix release, but with updated dependencies that *may* cause issues and a couple of small new features.
 
+### New Features
+* Federations can have new `local` option set to true or false (defaults to false).
+* Autotag also sets `local` and `bilateral` flags on Sources automatically.
+
+### Improvements
 * Requires Smee 0.6 or higher as it uses new fields in Source structs.
-* Update development tooling to latest Elixir and Erlang (1.19 / 28)
-* Update deps
-* Elixir 1.19 compatibility
-* Default Federation type is now :unknown
-* Federations can have `local` set to true or false.
-* Autotag is now true by default, so federation tags will propagate down to sources, metadata and entities automatically
-* Autotag also sets `local` and `bilateral` flags on Sources.
-* Fix tests
+* De-active SGAF since it seems to refuse connections from Smee
 * Added CLARIN federation
 * Fix metadata URL for TigerFed
-* De-active SGAF since it seems to refuse connections from Smee
+
+### Breaking Changes (maybe)
+* Default Federation type is now :unknown, not :local
+* Autotag is now enabled by default, so federation tags will propagate down to sources, metadata and entities automatically
+
+### Fixes
+* Update development tooling to latest Elixir and Erlang (1.19 / 28)
+* Update dependencies to match latest Smee
+* Elixir 1.19 compatibility fixes
 
 ## [0.3.1] - 2024-03-21
 
-## Fixes
+### Fixes
 - Improvements and fixes to the built-in example data, more federations are now usable (75 I think)
 
 ### Improvements
@@ -81,6 +87,7 @@ Missing dependency!
 ## [0.1.0] - 2023-04-24
 Initial release
 
+[0.4.0] https://github.com/Digital-Identity-Labs/smee/compare/0.3.1...0.4.0
 [0.3.1] https://github.com/Digital-Identity-Labs/smee/compare/0.3.0...0.3.1
 [0.3.0] https://github.com/Digital-Identity-Labs/smee/compare/0.2.0...0.3.0
 [0.2.0] https://github.com/Digital-Identity-Labs/smee/compare/0.1.1...0.2.0

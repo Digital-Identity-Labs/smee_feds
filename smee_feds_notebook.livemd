@@ -3,7 +3,7 @@
 # SmeeFeds Workbook
 
 ```elixir
-Mix.install([{:smee_feds, ">= 0.3.1"}, {:rambo, "~> 0.3.4"}])
+Mix.install([{:smee_feds, ">= 0.4.0"}, {:rambo, "~> 0.3.4"}])
 alias Smee.{Metadata, Entity, Source, MDQ}
 alias SmeeFeds.{Federation, Import, Export}
 ```
