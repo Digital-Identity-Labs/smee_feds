@@ -7,6 +7,8 @@ defmodule SmeeFeds.Federation do
   alias SmeeFeds.Utils
   alias Smee.Source
 
+  @fed_types [:nren, :research, :inter, :misc, :mil, :com, :bilateral, :unknown]
+
   @enforce_keys [:id]
 
   @type t :: %__MODULE__{
@@ -48,8 +50,9 @@ defmodule SmeeFeds.Federation do
     interfederates: [],
     tags: [],
     structure: :mesh,
-    type: :local,
-    autotag: false
+    type: :unknown,
+    autotag: true,
+    local: false
   ]
 
   @option_defs NimbleOptions.new!(
@@ -117,6 +120,10 @@ defmodule SmeeFeds.Federation do
                    sources: [
                      type: {:or, [{:map, :atom, :map}, {:map, :atom, :keyword_list}, {:list, :any}]},
                      default: %{}
+                   ],
+                   local: [
+                     type: :boolean,
+                     default: false
                    ]
                  ]
                )
@@ -144,9 +151,11 @@ defmodule SmeeFeds.Federation do
     main MDQ service.
   * `structure`: Technical structure of the federation. Values are :mesh, :has, :hybrid. :Defaults to :mesh.
   * `tags`: List of tags which can be passed down to Sources, Metadata and Entities.
-  * `type`: The *federation's* type. Possible values are :nren, :research, :inter, :misc, :mil, :com, :local. Defaults to :local
+  * `type`: The *federation's* type. Possible values are :nren, :research, :inter, :misc, :mil, :com, :bilateral and :unknown
+    Defaults to :unknown
   * `uri`: The publisher URI of the federation
   * `url`: The URL of the federation's homepage
+  * `local`: Boolean to indicate that the "federation" is locally managed by your institution and only contains local services. Defaults to false
 
   Supported options: #{NimbleOptions.docs(@option_defs)}
 
@@ -178,7 +187,8 @@ defmodule SmeeFeds.Federation do
       countries: normalize_country_codes(options[:countries]),
       policy: options[:policy],
       sources: process_sources(options[:sources], id),
-      autotag: options[:autotag]
+      autotag: options[:autotag],
+      local: !!options[:local]
     }
     |> init_autotagger()
 
@@ -378,7 +388,7 @@ defmodule SmeeFeds.Federation do
                      s_tags = (s.tags ++ [s.type] ++ f_tags)
                               |> Smee.Utils.tidy_tags()
                               |> Enum.uniq() # TODO: Bug in Smee?
-                     {k, %{s | tags: s_tags}}
+                     {k, %{s | tags: s_tags, local: federation.local, bilateral: if(federation.type == :bilateral, do: true, else: false)}}
                    end
                  )
               |> Enum.into(%{})

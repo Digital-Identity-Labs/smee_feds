@@ -11,6 +11,10 @@ Mostly a bugfix release, but with updated dependencies that *may* cause issues a
 * Update development tooling to latest Elixir and Erlang (1.19 / 28)
 * Update deps
 * Elixir 1.19 compatibility
+* Default Federation type is now :unknown
+* Federations can have `local` set to true or false.
+* Autotag is now true by default, so federation tags will propagate down to sources, metadata and entities
+* Autotag also sets `local` and `bilateral` flags on Sources.
 
 ## [0.3.1] - 2024-03-21
 
