@@ -165,7 +165,7 @@ by adding `smee_feds` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:smee_feds, "~> 0.3.1"}
+    {:smee_feds, "~> 0.4.0"}
   ]
 end
 ```
@@ -192,6 +192,8 @@ websites is to read the websites of Edugain and REFEDS.
 * [Edugain](https://edugain.org/) "eduGAIN comprises over 80 participant federations connecting more than 8,000 Identity and Service Providers" 
 * [REFEDS](https://refeds.org/) "REFEDS is a community of practitioners actively engaged in access and identity work within their home countries and supportive of standards-compliant developments to enhance international collaboration"
 * [MET](https://met.refeds.org/) "Metadata explorer tool is a fast way to find federations, entities, and their relations through entity/federation metadata file information."
+* [Edugain List of federations](https://f-ticks.edugain.org/minstatbyfed.php?type=fedlist&value=technical) Clear list of federation names and locations
+
 
 ## Documentation
 
@@ -209,7 +211,7 @@ If you are comfortable working with Python but Smee's Elixir code is unfamiliar 
 
 ## Copyright and License
 
-Copyright (c) 2023, 2024 Digital Identity Ltd, UK
+Copyright (c) 2023, 2026 Digital Identity Ltd, UK
 
 SmeeFeds is Apache 2.0 licensed.
 
