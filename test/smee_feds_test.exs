@@ -349,7 +349,7 @@ defmodule SmeeFedsTest do
       assert 2 = SmeeFeds.federations()
                  |> SmeeFeds.tags()
                  |> Enum.count()
-      assert 156 = SmeeFeds.federations()
+      assert 154 = SmeeFeds.federations()
                    |> SmeeFeds.autotag!()
                    |> SmeeFeds.tags()
                    |> Enum.count()
