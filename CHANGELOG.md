@@ -17,6 +17,9 @@ Mostly a bugfix release, but with updated dependencies that *may* cause issues a
 * Autotag is now true by default, so federation tags will propagate down to sources, metadata and entities automatically
 * Autotag also sets `local` and `bilateral` flags on Sources.
 * Fix tests
+* Added CLARIN federation
+* Fix metadata URL for TigerFed
+* De-active SGAF since it seems to refuse connections from Smee
 
 ## [0.3.1] - 2024-03-21
 

@@ -2311,6 +2311,7 @@
     "url": "https://www.maeen.sa/services/identity/"
   },
   "sgaf": {
+    "active": false,
     "alt_ids": {
       "edugain": "SGAF",
       "met": "singapore-access-federation-sgaf"
@@ -2338,7 +2339,7 @@
     "tags": [],
     "type": "nren",
     "uri": "https://www.singaren.net.sg",
-    "url": "http://www.singaren.net.sg/SGAF"
+    "url": "https://www.singaren.net.sg/network-services/singapore-access-federation-sgaf/"
   },
   "sifulan": {
     "alt_ids": {
@@ -2607,7 +2608,7 @@
     "sources": {
       "default": {
         "cert_url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/tigerfed-metadata-certificate.pem",
-        "url": "https://registry.tigerfed.net.bd/rr3/signedmetadata/federation/tiger-fed/metadata.xml"
+        "url": "https://fedmanager.tigerfed.net.bd/metadata.xml"
       }
     },
     "structure": "mesh",
