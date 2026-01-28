@@ -51,7 +51,7 @@ defmodule SmeeFeds.MixProject do
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.14 and >= 0.14.4", only: [:dev, :test]},
       {:benchee, "~> 1.3", only: [:dev, :test]},
-      {:ex_doc, "~> 0.40.0"},
+      {:ex_doc, "~> 0.40.0"}, # FIX THIS
       {:earmark, "~> 1.4", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false},
       {:doctor, "~> 0.21", only: :dev, runtime: false},

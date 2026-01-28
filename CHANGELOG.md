@@ -15,14 +15,15 @@ Mostly a bugfix release, but with updated dependencies that *may* cause issues a
 ### Improvements
 * Requires Smee 0.6 or higher as it uses new fields in Source structs.
 * De-active SGAF since it seems to refuse connections from Smee
-* Added CLARIN federation
+* Added CLARIN federation, the first research federation in the example data
 * Fix metadata URL for TigerFed
-* ugh_brexit!()
-* BeamLabCountries.Country
 
 ### Breaking Changes (maybe)
 * Default Federation type is now :unknown, not :local
 * Autotag is now enabled by default, so federation tags will propagate down to sources, metadata and entities automatically
+* `BeamLabCountries.Country` structs are now being returned from Countries lookups rather than `Countries.Country`. They
+  are mostly compatible, but better. I've been able to remove the internal `ugh_brexit!/0` bodge function, although sadly not
+  for the ideal reason.
 
 ### Fixes
 * Update development tooling to latest Elixir and Erlang (1.19 / 28)
