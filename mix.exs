@@ -15,7 +15,6 @@ defmodule SmeeFeds.MixProject do
       test_coverage: [
         tool: ExCoveralls
       ],
-      cli: cli(),
       docs: [
         main: "readme",
         # logo: "path/to/logo.png",
@@ -70,13 +69,14 @@ defmodule SmeeFeds.MixProject do
     ]
   end
 
-  def cli do
+  defp cli do
     [
       preferred_envs: [
         coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.post": :test,
-        "coveralls.html": :test
+        "coveralls.html": :test,
+        "test.data": :test
       ]
     ]
   end
@@ -84,14 +84,6 @@ defmodule SmeeFeds.MixProject do
   defp aliases() do
     [
       "test.data": ["test --trace --include data test/data/"]
-    ]
-  end
-
-  def cli do
-    [
-      preferred_envs: [
-        "test.data": :test
-      ]
     ]
   end
 
