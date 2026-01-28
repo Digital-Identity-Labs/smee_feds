@@ -179,7 +179,8 @@ defmodule SmeeFeds.Federation do
       policy: options[:policy],
       sources: process_sources(options[:sources], id),
       autotag: options[:autotag]
-    } |> init_autotagger()
+    }
+    |> init_autotagger()
 
   end
 
@@ -367,14 +368,20 @@ defmodule SmeeFeds.Federation do
     original_tags = tags(federation)
     attr_tags = [federation.structure, federation.type, federation.id]
     c_tags = federation.countries
-    f_tags = (original_tags ++ attr_tags ++ c_tags) |> Smee.Utils.tidy_tags() |> Enum.uniq() # TODO: Bug in Smee?
+    f_tags = (original_tags ++ attr_tags ++ c_tags)
+             |> Smee.Utils.tidy_tags()
+             |> Enum.uniq() # TODO: Bug in Smee?
 
     sources = federation.sources
-    |> Enum.map(fn {k, s} ->
-        s_tags = (s.tags ++ [s.type] ++ f_tags) |> Smee.Utils.tidy_tags() |> Enum.uniq() # TODO: Bug in Smee?
-        {k, %{s | tags: s_tags }}
-    end)
-    |> Enum.into(%{})
+              |> Enum.map(
+                   fn {k, s} ->
+                     s_tags = (s.tags ++ [s.type] ++ f_tags)
+                              |> Smee.Utils.tidy_tags()
+                              |> Enum.uniq() # TODO: Bug in Smee?
+                     {k, %{s | tags: s_tags}}
+                   end
+                 )
+              |> Enum.into(%{})
 
     %{federation | tags: f_tags, sources: sources}
   end
@@ -496,7 +503,7 @@ defmodule SmeeFeds.Federation do
     |> Enum.into(%{})
   end
 
-  @spec normalize_contact(contact :: binary() | nil ) :: binary()
+  @spec normalize_contact(contact :: binary() | nil) :: binary()
   defp normalize_contact(nil) do
     nil
   end
