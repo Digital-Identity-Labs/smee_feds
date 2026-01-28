@@ -6,9 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.4.0] - 2026-01-28
 
+Mostly a bugfix release, but with updated dependencies that *may* cause issues and a couple of small new features.
+
 * Update development tooling to latest Elixir and Erlang (1.19 / 28)
 * Update deps
-* 
+* Elixir 1.19 compatibility
 
 ## [0.3.1] - 2024-03-21
 

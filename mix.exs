@@ -15,12 +15,7 @@ defmodule SmeeFeds.MixProject do
       test_coverage: [
         tool: ExCoveralls
       ],
-      preferred_cli_env: [
-        coveralls: :test,
-        "coveralls.detail": :test,
-        "coveralls.post": :test,
-        "coveralls.html": :test
-      ],
+      cli: cli(),
       docs: [
         main: "readme",
         # logo: "path/to/logo.png",
@@ -72,6 +67,17 @@ defmodule SmeeFeds.MixProject do
       links: %{
         "GitHub" => "https://github.com/Digital-Identity-Labs/smee_feds"
       }
+    ]
+  end
+
+  def cli do
+    [
+      preferred_envs: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
